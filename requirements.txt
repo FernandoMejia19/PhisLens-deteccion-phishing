@@ -1,5 +1,48 @@
-easyocr
-opencv-python
-matplotlib
-numpy
-pillow
+
+# ==========================================
+# 1. ANALISIS Y MANIPULACION DE DATOS
+# ==========================================
+numpy                  # Operaciones matematicas y manejo de arreglos multidimensionales.
+pandas                 # Lectura, limpieza, transformacion y analisis de datos tabulares.
+matplotlib             # Creacion de graficos para visualizar datos y resultados.
+seaborn                # Visualizaciones estadisticas basadas en Matplotlib.
+
+# ==========================================
+# 2. MACHINE LEARNING Y PROCESAMIENTO
+# ==========================================
+scikit-learn           # Algoritmos de ML, preprocesamiento, entrenamiento y evaluacion de modelos.
+imbalanced-learn       # Tecnicas para tratar datasets desbalanceados, como SMOTE.
+joblib                 # Guardar y cargar modelos entrenados y objetos de Python.
+
+# ==========================================
+# 3. ENTORNO DE DESARROLLO Y EXPERIMENTACION
+# ==========================================
+jupyterlab             # Entorno interactivo para desarrollar y documentar experimentos.
+ipykernel              # Permite ejecutar Python como kernel dentro de Jupyter.
+
+# ==========================================
+# 4. PROCESAMIENTO DE TEXTO Y WEB SCRAPING
+# ==========================================
+nltk                   # Procesamiento de lenguaje natural: tokenizacion, stopwords y stemming.
+beautifulsoup4         # Extraccion de texto y contenido desde documentos HTML.
+
+# ==========================================
+# 5. PROCESAMIENTO DE IMAGENES Y OCR
+# ==========================================
+easyocr                # Reconocimiento optico de caracteres (OCR) para extraer texto de imagenes.
+opencv-python          # Lectura, manipulacion y preprocesamiento de imagenes mediante vision artificial.
+pillow                 # Apertura, conversion y manipulacion basica de imagenes.
+
+# ==========================================
+# 6. DESARROLLO DE API Y BACKEND
+# ==========================================
+fastapi                # Framework para construir la API REST que expone el modelo de deteccion.
+uvicorn                # Servidor ASGI para ejecutar la aplicacion FastAPI.
+pydantic               # Validacion y estructuracion de los datos de entrada y salida de la API.
+python-multipart       # Procesamiento de archivos enviados mediante formularios, como imagenes.
+
+# ==========================================
+# 7. PRUEBAS Y VALIDACION
+# ==========================================
+pytest                 # Ejecucion de pruebas unitarias y de integracion.
+httpx                  # Cliente HTTP para probar los endpoints de FastAPI.
