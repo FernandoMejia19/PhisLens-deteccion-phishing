@@ -1,0 +1,200 @@
+{
+  "engine": "EasyOCR",
+  "languages": [
+    "es",
+    "en"
+  ],
+  "gpu": false,
+  "images": {
+    "ejcorreo": {
+      "path": "data/ejcorreo.png",
+      "shape": [
+        574,
+        893,
+        3
+      ],
+      "ground_truth": "Welcome to Email Tracking Via web form Agent Internal 1 minute ago Assign Email reading has been tracked by Email Tracking app Email was read 7 seconds after it was sent Sent on 13:05:49 9 January 2024 Europe/Kyiv Read on 13:05:56 9 January 2024 Europe/Kyiv Email body Welcome to Email Tracking If you have any questions or need any assistance please do not hesitate to contact our customer support team at contact@growthdot.com We are here to help you",
+      "variants": {
+        "original": {
+          "text": "Welcome to Email Tracking\n7\n9\nVia web form\nAgent\nInternal\nminute ago\nAssign\nEmail reading has been tracked by Email Tracking app\nEmail was read\nseconds after it was sent\nSent on 13.05.49 9 January 2024 Europe/Kyiv\nRead on 13.05.56 9 January 2024 Europe/Kyiv\nEmail body:\nWelcome to Email Tracking!\nIf you have any questions or need any assistance; please do not hesitate to contact\nour customer\nsupport team at contact@growthdot.com. We are here to help you",
+          "regions": 18,
+          "mean_confidence": 0.8768,
+          "min_confidence": 0.6143,
+          "elapsed_seconds": 4.267,
+          "cer": 0.031,
+          "wer": 0.1026,
+          "important_terms": {
+            "contact@growthdot.com": true,
+            "Email Tracking": true,
+            "Europe/Kyiv": true
+          }
+        },
+        "grayscale": {
+          "text": "Welcome to Email Tracking\n7\n9\nVia web form\nAgent\nInternal\nminute ago\nAssign\nEmail reading has been tracked by Email Tracking app\nEmail was read\nseconds after it was sent\nSent on 13.05.49 9 January 2024 Europe/Kyiv\nRead on 13.05.56 9 January 2024 Europe/Kyiv\nEmail body:\nWelcome to Email Tracking!\nIf you have any questions or need any assistance; please do not hesitate to contact\nour customer support team at contact@\ngrowthdot.com. We are here to help you",
+          "regions": 18,
+          "mean_confidence": 0.8408,
+          "min_confidence": 0.2835,
+          "elapsed_seconds": 3.996,
+          "cer": 0.0332,
+          "wer": 0.1154,
+          "important_terms": {
+            "contact@growthdot.com": false,
+            "Email Tracking": true,
+            "Europe/Kyiv": true
+          }
+        },
+        "upscale_2x": {
+          "text": "Welcome to Email Tracking\nVia web form\nAgent\nInternal\n1 minute ago\nAssign\nEmail\nreading has been tracked by Email Tracking app\nEmail was read 7 seconds after it was sent\nSent on 13.05.49 9 January 2024 Europe/Kyiv\nRead on 13.05.56 9 January 2024 Europe/Kyiv\nEmail body:\nWelcome to Email Tracking!\nIf you have any questions or need any assistance; please do not hesitate to contact\nour customer\nsupport team at contact@growthdot.com\nWe are here to help you",
+          "regions": 17,
+          "mean_confidence": 0.8903,
+          "min_confidence": 0.5765,
+          "elapsed_seconds": 9.834,
+          "cer": 0.0111,
+          "wer": 0.0385,
+          "important_terms": {
+            "contact@growthdot.com": true,
+            "Email Tracking": true,
+            "Europe/Kyiv": true
+          }
+        },
+        "upscale_clahe": {
+          "text": "Welcome to Email Tracking\nVia web form\nAgent\nInternal\n1 minute ago\nAssign\nEmail reading has been tracked by Email Tracking app\nEmail was read 7 seconds after it was sent\nSent on 13.05.49 9 January 2024 Europe/Kyiv\nRead on 13.05.56 9 January 2024 Europe/Kyiv\nEmail body:\nWelcome to Email Tracking!\nIf you have any questions or need any assistance; please do not hesitate to contact\nour customer\nsupport team at contact@growthdot.com. We are here to\nyou\nhelp",
+          "regions": 17,
+          "mean_confidence": 0.8825,
+          "min_confidence": 0.5909,
+          "elapsed_seconds": 9.587,
+          "cer": 0.031,
+          "wer": 0.0769,
+          "important_terms": {
+            "contact@growthdot.com": true,
+            "Email Tracking": true,
+            "Europe/Kyiv": true
+          }
+        },
+        "upscale_otsu": {
+          "text": "Welcome to Email\nTracking\nVia web form\nAgent\nInternal\nminute ago\nAssign\nEmail reading has been tracked by Email Tracking app\nEmail was read\n7 seconds after it was sent\nSent on 13.05.49 9 January 2024 Europe /Kyiv\nRead on 13.05.56 9 January 2024 Europe/Kyiv\nEmail body:\nWelcome to Email Tracking!\nIf you have any questions or need any assistance; please do not hesitate to contact\nour customer\nsupport team at contact@growthdot.com. We are here to help you",
+          "regions": 17,
+          "mean_confidence": 0.8264,
+          "min_confidence": 0.5015,
+          "elapsed_seconds": 9.436,
+          "cer": 0.0199,
+          "wer": 0.0897,
+          "important_terms": {
+            "contact@growthdot.com": true,
+            "Email Tracking": true,
+            "Europe/Kyiv": true
+          }
+        },
+        "upscale_denoise_otsu": {
+          "text": "Welcome to Email\nTracking\nVia web form\nAgent\nInternal\nminute ago\nAssign\nEmail reading has been tracked by Email Tracking app\nEmail was read\n7 seconds after it was sent\nSent on 13.05.49 9 January 2024 Europe/Kyiv\nRead on 13.05.56 9 January 2024 Europe/Kyiv\nEmail body:\nWelcome to Email Tracking!\nIf you have any questions or need any assistance; please do not hesitate to contact\nour customer\nsupport team at contact@growthdot.com. We are here to help you",
+          "regions": 17,
+          "mean_confidence": 0.8346,
+          "min_confidence": 0.5119,
+          "elapsed_seconds": 9.422,
+          "cer": 0.0177,
+          "wer": 0.0641,
+          "important_terms": {
+            "contact@growthdot.com": true,
+            "Email Tracking": true,
+            "Europe/Kyiv": true
+          }
+        }
+      }
+    },
+    "ejwpp": {
+      "path": "data/ejwpp.jpg",
+      "shape": [
+        458,
+        1200,
+        3
+      ],
+      "ground_truth": "Abuela en línea 22 DE AGOSTO DE 2014 Elias cual es mi contraseña de facebook 23:10 Abuela no tienes facebook 23:10 Ok 23:10",
+      "variants": {
+        "original": {
+          "text": "Abuela\nen línea\n22 DE AGOSTO DE 2014\nElias cual es mi contraseña de facebook\n23:10\nAbuela no tienes facebook  23:10\nOk  23.10",
+          "regions": 7,
+          "mean_confidence": 0.7591,
+          "min_confidence": 0.5665,
+          "elapsed_seconds": 2.673,
+          "cer": 0.0081,
+          "wer": 0.0435,
+          "important_terms": {
+            "contraseña": true,
+            "facebook": true,
+            "Abuela": true
+          }
+        },
+        "grayscale": {
+          "text": "Abuela\nen línea\n22 DE AGOSTO DE 2014\nElias cual es mi contraseña de facebook\n23:10\nAbuela no tienes facebook  23:10\nOk  23.10",
+          "regions": 7,
+          "mean_confidence": 0.7889,
+          "min_confidence": 0.5665,
+          "elapsed_seconds": 2.708,
+          "cer": 0.0081,
+          "wer": 0.0435,
+          "important_terms": {
+            "contraseña": true,
+            "facebook": true,
+            "Abuela": true
+          }
+        },
+        "upscale_2x": {
+          "text": "Abuela\n0\nen línea\n22 DE AGOSTO DE 2014\nElias cual es mi contraseña de facebook\n23.10\nAbuela no tienes facebook\n23.10\nOk 23.10",
+          "regions": 9,
+          "mean_confidence": 0.7733,
+          "min_confidence": 0.5886,
+          "elapsed_seconds": 8.77,
+          "cer": 0.0407,
+          "wer": 0.1739,
+          "important_terms": {
+            "contraseña": true,
+            "facebook": true,
+            "Abuela": true
+          }
+        },
+        "upscale_clahe": {
+          "text": "Abuela\n0\nen línea\n22 DE AGOSTO DE 2014\nElias cual es mi contraseña\nde facebook\n23.10\nAbuela no tienes facebook\n23.10\nOk 23:10",
+          "regions": 10,
+          "mean_confidence": 0.8434,
+          "min_confidence": 0.6417,
+          "elapsed_seconds": 10.791,
+          "cer": 0.0325,
+          "wer": 0.1304,
+          "important_terms": {
+            "contraseña": true,
+            "facebook": true,
+            "Abuela": true
+          }
+        },
+        "upscale_otsu": {
+          "text": "Abuela\n0\nen línea\n22 DE AGOSTO DE 2014\nElias cual es mi contraseña\nde facebook\nAbuela no tienes facebook\nOk",
+          "regions": 8,
+          "mean_confidence": 0.8351,
+          "min_confidence": 0.212,
+          "elapsed_seconds": 11.792,
+          "cer": 0.1626,
+          "wer": 0.1739,
+          "important_terms": {
+            "contraseña": true,
+            "facebook": true,
+            "Abuela": true
+          }
+        },
+        "upscale_denoise_otsu": {
+          "text": "Abuela\n0\nen línea\n22 DE AGOSTO DE 2014\nElias cual es mi contraseña\nde facebook\nAbuela no tienes facebook\nOk",
+          "regions": 8,
+          "mean_confidence": 0.8123,
+          "min_confidence": 0.1301,
+          "elapsed_seconds": 10.796,
+          "cer": 0.1626,
+          "wer": 0.1739,
+          "important_terms": {
+            "contraseña": true,
+            "facebook": true,
+            "Abuela": true
+          }
+        }
+      }
+    }
+  }
+}
