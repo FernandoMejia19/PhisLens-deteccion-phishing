@@ -1,0 +1,1963 @@
+{
+  "datasets": [
+    {
+      "spec": {
+        "slug": "email_detection_50k",
+        "path": "email-detection-dataset/dataset_v2.csv",
+        "target": "label",
+        "text_columns": [
+          "subject",
+          "email_body"
+        ],
+        "sep": ",",
+        "declared_language_column": "language",
+        "notes": "Copia ubicada en email-detection-dataset."
+      },
+      "path": "notebooks/data/email-detection-dataset/dataset_v2.csv",
+      "bytes": 34795895,
+      "sha256": "c090464babc627f396e3211113c48b94a533ac27a16be691d29e45c1c70110e9",
+      "rows": 50000,
+      "columns": 44,
+      "column_names": [
+        "email_id",
+        "sender_name",
+        "sender_email",
+        "sender_ip",
+        "sender_country",
+        "sender_domain",
+        "domain_age_days",
+        "recipient_email",
+        "subject",
+        "email_body",
+        "contains_link",
+        "url_domain",
+        "url_reputation",
+        "contains_attachment",
+        "attachment_type",
+        "brand_impersonated",
+        "spf_status",
+        "dkim_status",
+        "dmarc_status",
+        "is_html_email",
+        "email_length",
+        "word_count",
+        "reading_time_minutes",
+        "character_entropy",
+        "readability_score",
+        "num_links",
+        "num_special_characters",
+        "num_uppercase_words",
+        "suspicious_keyword_count",
+        "urgency_score",
+        "grammar_score",
+        "sender_reputation",
+        "spoofed_domain",
+        "sent_date",
+        "sent_time",
+        "day_of_week",
+        "month",
+        "hour",
+        "language",
+        "email_category",
+        "device_type",
+        "email_client",
+        "phishing_probability",
+        "label"
+      ],
+      "dtypes": {
+        "email_id": "str",
+        "sender_name": "str",
+        "sender_email": "str",
+        "sender_ip": "str",
+        "sender_country": "str",
+        "sender_domain": "str",
+        "domain_age_days": "int64",
+        "recipient_email": "str",
+        "subject": "str",
+        "email_body": "str",
+        "contains_link": "str",
+        "url_domain": "str",
+        "url_reputation": "str",
+        "contains_attachment": "str",
+        "attachment_type": "str",
+        "brand_impersonated": "str",
+        "spf_status": "str",
+        "dkim_status": "str",
+        "dmarc_status": "str",
+        "is_html_email": "str",
+        "email_length": "int64",
+        "word_count": "int64",
+        "reading_time_minutes": "float64",
+        "character_entropy": "float64",
+        "readability_score": "int64",
+        "num_links": "int64",
+        "num_special_characters": "int64",
+        "num_uppercase_words": "int64",
+        "suspicious_keyword_count": "int64",
+        "urgency_score": "int64",
+        "grammar_score": "int64",
+        "sender_reputation": "str",
+        "spoofed_domain": "str",
+        "sent_date": "str",
+        "sent_time": "str",
+        "day_of_week": "str",
+        "month": "str",
+        "hour": "int64",
+        "language": "str",
+        "email_category": "str",
+        "device_type": "str",
+        "email_client": "str",
+        "phishing_probability": "int64",
+        "label": "str"
+      },
+      "nulls": {
+        "email_id": 0,
+        "sender_name": 0,
+        "sender_email": 0,
+        "sender_ip": 0,
+        "sender_country": 0,
+        "sender_domain": 0,
+        "domain_age_days": 0,
+        "recipient_email": 0,
+        "subject": 0,
+        "email_body": 0,
+        "contains_link": 0,
+        "url_domain": 21128,
+        "url_reputation": 0,
+        "contains_attachment": 0,
+        "attachment_type": 22695,
+        "brand_impersonated": 24036,
+        "spf_status": 0,
+        "dkim_status": 0,
+        "dmarc_status": 0,
+        "is_html_email": 0,
+        "email_length": 0,
+        "word_count": 0,
+        "reading_time_minutes": 0,
+        "character_entropy": 0,
+        "readability_score": 0,
+        "num_links": 0,
+        "num_special_characters": 0,
+        "num_uppercase_words": 0,
+        "suspicious_keyword_count": 0,
+        "urgency_score": 0,
+        "grammar_score": 0,
+        "sender_reputation": 0,
+        "spoofed_domain": 0,
+        "sent_date": 0,
+        "sent_time": 0,
+        "day_of_week": 0,
+        "month": 0,
+        "hour": 0,
+        "language": 0,
+        "email_category": 0,
+        "device_type": 0,
+        "email_client": 0,
+        "phishing_probability": 0,
+        "label": 0
+      },
+      "null_percent": {
+        "email_id": 0.0,
+        "sender_name": 0.0,
+        "sender_email": 0.0,
+        "sender_ip": 0.0,
+        "sender_country": 0.0,
+        "sender_domain": 0.0,
+        "domain_age_days": 0.0,
+        "recipient_email": 0.0,
+        "subject": 0.0,
+        "email_body": 0.0,
+        "contains_link": 0.0,
+        "url_domain": 42.256,
+        "url_reputation": 0.0,
+        "contains_attachment": 0.0,
+        "attachment_type": 45.39,
+        "brand_impersonated": 48.072,
+        "spf_status": 0.0,
+        "dkim_status": 0.0,
+        "dmarc_status": 0.0,
+        "is_html_email": 0.0,
+        "email_length": 0.0,
+        "word_count": 0.0,
+        "reading_time_minutes": 0.0,
+        "character_entropy": 0.0,
+        "readability_score": 0.0,
+        "num_links": 0.0,
+        "num_special_characters": 0.0,
+        "num_uppercase_words": 0.0,
+        "suspicious_keyword_count": 0.0,
+        "urgency_score": 0.0,
+        "grammar_score": 0.0,
+        "sender_reputation": 0.0,
+        "spoofed_domain": 0.0,
+        "sent_date": 0.0,
+        "sent_time": 0.0,
+        "day_of_week": 0.0,
+        "month": 0.0,
+        "hour": 0.0,
+        "language": 0.0,
+        "email_category": 0.0,
+        "device_type": 0.0,
+        "email_client": 0.0,
+        "phishing_probability": 0.0,
+        "label": 0.0
+      },
+      "full_row_duplicates": 0,
+      "text_duplicates": 0,
+      "unique_normalized_texts": 50000,
+      "conflicting_normalized_texts": 0,
+      "target_distribution": {
+        "Legitimate": 29629,
+        "Phishing": 20371
+      },
+      "length_characters": {
+        "count": 50000,
+        "min": 234.0,
+        "q25": 318.0,
+        "median": 362.0,
+        "mean": 362.2145,
+        "q75": 406.0,
+        "p95": 448.0,
+        "max": 516.0
+      },
+      "length_words": {
+        "count": 50000,
+        "min": 32.0,
+        "q25": 44.0,
+        "median": 51.0,
+        "mean": 50.69014,
+        "q75": 57.0,
+        "p95": 63.0,
+        "max": 75.0
+      },
+      "length_by_target": {
+        "Legitimate": {
+          "records": 29629,
+          "characters": {
+            "count": 29629,
+            "min": 234.0,
+            "q25": 319.0,
+            "median": 364.0,
+            "mean": 364.4350129940261,
+            "q75": 409.0,
+            "p95": 451.0,
+            "max": 516.0
+          },
+          "words": {
+            "count": 29629,
+            "min": 33.0,
+            "q25": 45.0,
+            "median": 51.0,
+            "mean": 51.525161159674646,
+            "q75": 58.0,
+            "p95": 64.0,
+            "max": 75.0
+          }
+        },
+        "Phishing": {
+          "records": 20371,
+          "characters": {
+            "count": 20371,
+            "min": 240.0,
+            "q25": 316.0,
+            "median": 359.0,
+            "mean": 358.9848313779392,
+            "q75": 401.0,
+            "p95": 442.0,
+            "max": 499.0
+          },
+          "words": {
+            "count": 20371,
+            "min": 32.0,
+            "q25": 43.0,
+            "median": 49.0,
+            "mean": 49.47562711698002,
+            "q75": 55.0,
+            "p95": 62.0,
+            "max": 73.0
+          }
+        }
+      },
+      "language_heuristic": {
+        "en": 50000
+      },
+      "declared_languages": {
+        "English": 50000
+      },
+      "rows_with_url_pattern": 0,
+      "rows_with_email_pattern": 0,
+      "rows_with_phone_pattern": 0,
+      "rows_with_replacement_character": 0,
+      "rows_with_mojibake_marker": 0,
+      "empty_text_rows": 0,
+      "examples": {
+        "Legitimate": [
+          "Payment Schedule Received Dear User, We're reaching out regarding your recent activity. The requested report has been generated. No additional action is required. Your transaction was completed successfully. Your payment has been received. Your transaction was completed successfu…",
+          "Monthly Report Processed Good Afternoon, Please review the following information. Your transaction was completed successfully. Your transaction was completed successfully. Your meeting invitation has been created. No additional action is required. Your transaction was completed s…"
+        ],
+        "Phishing": [
+          "Action Required: Recover Your Security Hi, Your banking information requires verification. Click the secure link below. Claim your reward before it expires. Login now to prevent interruption. Your payment method has expired. Failure to respond may suspend your account. Click the …",
+          "Attention: Confirm Your Identity Dear User, Your mailbox storage is almost full. Your payment method has expired. Your password expires today. Restore account access now. Verify your account immediately. Update your billing information. Failure to respond may suspend your account…"
+        ]
+      },
+      "translation_quality": null,
+      "leakage_checks": {
+        "phishing_probability_by_target": {
+          "Legitimate": {
+            "count": 29629,
+            "min": 0.0,
+            "q25": 16.0,
+            "median": 22.0,
+            "mean": 22.759661142799285,
+            "q75": 29.0,
+            "p95": 40.0,
+            "max": 49.0
+          },
+          "Phishing": {
+            "count": 20371,
+            "min": 50.0,
+            "q25": 97.0,
+            "median": 100.0,
+            "mean": 97.7495950125178,
+            "q75": 100.0,
+            "p95": 100.0,
+            "max": 100.0
+          }
+        },
+        "url_reputation_by_target": {
+          "Legitimate": {
+            "Safe": 26952,
+            "Suspicious": 2299,
+            "Malicious": 378
+          },
+          "Phishing": {
+            "Malicious": 14193,
+            "Suspicious": 5116,
+            "Safe": 1062
+          }
+        },
+        "spf_status_by_target": {
+          "Legitimate": {
+            "Pass": 28238,
+            "Fail": 1391
+          },
+          "Phishing": {
+            "Fail": 16067,
+            "Pass": 4304
+          }
+        },
+        "dkim_status_by_target": {
+          "Legitimate": {
+            "Pass": 28512,
+            "Fail": 1117
+          },
+          "Phishing": {
+            "Fail": 15081,
+            "Pass": 5290
+          }
+        },
+        "dmarc_status_by_target": {
+          "Legitimate": {
+            "Pass": 28780,
+            "Fail": 849
+          },
+          "Phishing": {
+            "Fail": 17036,
+            "Pass": 3335
+          }
+        },
+        "spoofed_domain_by_target": {
+          "Legitimate": {
+            "No": 29629
+          },
+          "Phishing": {
+            "Yes": 16939,
+            "No": 3432
+          }
+        }
+      }
+    },
+    {
+      "spec": {
+        "slug": "phishing_email_detection_50k_copy",
+        "path": "PhishingEmailDetection50KEmails/phishing_email_detection_dataset_v2.csv",
+        "target": "label",
+        "text_columns": [
+          "subject",
+          "email_body"
+        ],
+        "sep": ",",
+        "declared_language_column": "language",
+        "notes": "Copia ubicada en PhishingEmailDetection50KEmails."
+      },
+      "path": "notebooks/data/PhishingEmailDetection50KEmails/phishing_email_detection_dataset_v2.csv",
+      "bytes": 34795895,
+      "sha256": "c090464babc627f396e3211113c48b94a533ac27a16be691d29e45c1c70110e9",
+      "rows": 50000,
+      "columns": 44,
+      "column_names": [
+        "email_id",
+        "sender_name",
+        "sender_email",
+        "sender_ip",
+        "sender_country",
+        "sender_domain",
+        "domain_age_days",
+        "recipient_email",
+        "subject",
+        "email_body",
+        "contains_link",
+        "url_domain",
+        "url_reputation",
+        "contains_attachment",
+        "attachment_type",
+        "brand_impersonated",
+        "spf_status",
+        "dkim_status",
+        "dmarc_status",
+        "is_html_email",
+        "email_length",
+        "word_count",
+        "reading_time_minutes",
+        "character_entropy",
+        "readability_score",
+        "num_links",
+        "num_special_characters",
+        "num_uppercase_words",
+        "suspicious_keyword_count",
+        "urgency_score",
+        "grammar_score",
+        "sender_reputation",
+        "spoofed_domain",
+        "sent_date",
+        "sent_time",
+        "day_of_week",
+        "month",
+        "hour",
+        "language",
+        "email_category",
+        "device_type",
+        "email_client",
+        "phishing_probability",
+        "label"
+      ],
+      "dtypes": {
+        "email_id": "str",
+        "sender_name": "str",
+        "sender_email": "str",
+        "sender_ip": "str",
+        "sender_country": "str",
+        "sender_domain": "str",
+        "domain_age_days": "int64",
+        "recipient_email": "str",
+        "subject": "str",
+        "email_body": "str",
+        "contains_link": "str",
+        "url_domain": "str",
+        "url_reputation": "str",
+        "contains_attachment": "str",
+        "attachment_type": "str",
+        "brand_impersonated": "str",
+        "spf_status": "str",
+        "dkim_status": "str",
+        "dmarc_status": "str",
+        "is_html_email": "str",
+        "email_length": "int64",
+        "word_count": "int64",
+        "reading_time_minutes": "float64",
+        "character_entropy": "float64",
+        "readability_score": "int64",
+        "num_links": "int64",
+        "num_special_characters": "int64",
+        "num_uppercase_words": "int64",
+        "suspicious_keyword_count": "int64",
+        "urgency_score": "int64",
+        "grammar_score": "int64",
+        "sender_reputation": "str",
+        "spoofed_domain": "str",
+        "sent_date": "str",
+        "sent_time": "str",
+        "day_of_week": "str",
+        "month": "str",
+        "hour": "int64",
+        "language": "str",
+        "email_category": "str",
+        "device_type": "str",
+        "email_client": "str",
+        "phishing_probability": "int64",
+        "label": "str"
+      },
+      "nulls": {
+        "email_id": 0,
+        "sender_name": 0,
+        "sender_email": 0,
+        "sender_ip": 0,
+        "sender_country": 0,
+        "sender_domain": 0,
+        "domain_age_days": 0,
+        "recipient_email": 0,
+        "subject": 0,
+        "email_body": 0,
+        "contains_link": 0,
+        "url_domain": 21128,
+        "url_reputation": 0,
+        "contains_attachment": 0,
+        "attachment_type": 22695,
+        "brand_impersonated": 24036,
+        "spf_status": 0,
+        "dkim_status": 0,
+        "dmarc_status": 0,
+        "is_html_email": 0,
+        "email_length": 0,
+        "word_count": 0,
+        "reading_time_minutes": 0,
+        "character_entropy": 0,
+        "readability_score": 0,
+        "num_links": 0,
+        "num_special_characters": 0,
+        "num_uppercase_words": 0,
+        "suspicious_keyword_count": 0,
+        "urgency_score": 0,
+        "grammar_score": 0,
+        "sender_reputation": 0,
+        "spoofed_domain": 0,
+        "sent_date": 0,
+        "sent_time": 0,
+        "day_of_week": 0,
+        "month": 0,
+        "hour": 0,
+        "language": 0,
+        "email_category": 0,
+        "device_type": 0,
+        "email_client": 0,
+        "phishing_probability": 0,
+        "label": 0
+      },
+      "null_percent": {
+        "email_id": 0.0,
+        "sender_name": 0.0,
+        "sender_email": 0.0,
+        "sender_ip": 0.0,
+        "sender_country": 0.0,
+        "sender_domain": 0.0,
+        "domain_age_days": 0.0,
+        "recipient_email": 0.0,
+        "subject": 0.0,
+        "email_body": 0.0,
+        "contains_link": 0.0,
+        "url_domain": 42.256,
+        "url_reputation": 0.0,
+        "contains_attachment": 0.0,
+        "attachment_type": 45.39,
+        "brand_impersonated": 48.072,
+        "spf_status": 0.0,
+        "dkim_status": 0.0,
+        "dmarc_status": 0.0,
+        "is_html_email": 0.0,
+        "email_length": 0.0,
+        "word_count": 0.0,
+        "reading_time_minutes": 0.0,
+        "character_entropy": 0.0,
+        "readability_score": 0.0,
+        "num_links": 0.0,
+        "num_special_characters": 0.0,
+        "num_uppercase_words": 0.0,
+        "suspicious_keyword_count": 0.0,
+        "urgency_score": 0.0,
+        "grammar_score": 0.0,
+        "sender_reputation": 0.0,
+        "spoofed_domain": 0.0,
+        "sent_date": 0.0,
+        "sent_time": 0.0,
+        "day_of_week": 0.0,
+        "month": 0.0,
+        "hour": 0.0,
+        "language": 0.0,
+        "email_category": 0.0,
+        "device_type": 0.0,
+        "email_client": 0.0,
+        "phishing_probability": 0.0,
+        "label": 0.0
+      },
+      "full_row_duplicates": 0,
+      "text_duplicates": 0,
+      "unique_normalized_texts": 50000,
+      "conflicting_normalized_texts": 0,
+      "target_distribution": {
+        "Legitimate": 29629,
+        "Phishing": 20371
+      },
+      "length_characters": {
+        "count": 50000,
+        "min": 234.0,
+        "q25": 318.0,
+        "median": 362.0,
+        "mean": 362.2145,
+        "q75": 406.0,
+        "p95": 448.0,
+        "max": 516.0
+      },
+      "length_words": {
+        "count": 50000,
+        "min": 32.0,
+        "q25": 44.0,
+        "median": 51.0,
+        "mean": 50.69014,
+        "q75": 57.0,
+        "p95": 63.0,
+        "max": 75.0
+      },
+      "length_by_target": {
+        "Legitimate": {
+          "records": 29629,
+          "characters": {
+            "count": 29629,
+            "min": 234.0,
+            "q25": 319.0,
+            "median": 364.0,
+            "mean": 364.4350129940261,
+            "q75": 409.0,
+            "p95": 451.0,
+            "max": 516.0
+          },
+          "words": {
+            "count": 29629,
+            "min": 33.0,
+            "q25": 45.0,
+            "median": 51.0,
+            "mean": 51.525161159674646,
+            "q75": 58.0,
+            "p95": 64.0,
+            "max": 75.0
+          }
+        },
+        "Phishing": {
+          "records": 20371,
+          "characters": {
+            "count": 20371,
+            "min": 240.0,
+            "q25": 316.0,
+            "median": 359.0,
+            "mean": 358.9848313779392,
+            "q75": 401.0,
+            "p95": 442.0,
+            "max": 499.0
+          },
+          "words": {
+            "count": 20371,
+            "min": 32.0,
+            "q25": 43.0,
+            "median": 49.0,
+            "mean": 49.47562711698002,
+            "q75": 55.0,
+            "p95": 62.0,
+            "max": 73.0
+          }
+        }
+      },
+      "language_heuristic": {
+        "en": 50000
+      },
+      "declared_languages": {
+        "English": 50000
+      },
+      "rows_with_url_pattern": 0,
+      "rows_with_email_pattern": 0,
+      "rows_with_phone_pattern": 0,
+      "rows_with_replacement_character": 0,
+      "rows_with_mojibake_marker": 0,
+      "empty_text_rows": 0,
+      "examples": {
+        "Legitimate": [
+          "Payment Schedule Received Dear User, We're reaching out regarding your recent activity. The requested report has been generated. No additional action is required. Your transaction was completed successfully. Your payment has been received. Your transaction was completed successfu…",
+          "Monthly Report Processed Good Afternoon, Please review the following information. Your transaction was completed successfully. Your transaction was completed successfully. Your meeting invitation has been created. No additional action is required. Your transaction was completed s…"
+        ],
+        "Phishing": [
+          "Action Required: Recover Your Security Hi, Your banking information requires verification. Click the secure link below. Claim your reward before it expires. Login now to prevent interruption. Your payment method has expired. Failure to respond may suspend your account. Click the …",
+          "Attention: Confirm Your Identity Dear User, Your mailbox storage is almost full. Your payment method has expired. Your password expires today. Restore account access now. Verify your account immediately. Update your billing information. Failure to respond may suspend your account…"
+        ]
+      },
+      "translation_quality": null,
+      "leakage_checks": {
+        "phishing_probability_by_target": {
+          "Legitimate": {
+            "count": 29629,
+            "min": 0.0,
+            "q25": 16.0,
+            "median": 22.0,
+            "mean": 22.759661142799285,
+            "q75": 29.0,
+            "p95": 40.0,
+            "max": 49.0
+          },
+          "Phishing": {
+            "count": 20371,
+            "min": 50.0,
+            "q25": 97.0,
+            "median": 100.0,
+            "mean": 97.7495950125178,
+            "q75": 100.0,
+            "p95": 100.0,
+            "max": 100.0
+          }
+        },
+        "url_reputation_by_target": {
+          "Legitimate": {
+            "Safe": 26952,
+            "Suspicious": 2299,
+            "Malicious": 378
+          },
+          "Phishing": {
+            "Malicious": 14193,
+            "Suspicious": 5116,
+            "Safe": 1062
+          }
+        },
+        "spf_status_by_target": {
+          "Legitimate": {
+            "Pass": 28238,
+            "Fail": 1391
+          },
+          "Phishing": {
+            "Fail": 16067,
+            "Pass": 4304
+          }
+        },
+        "dkim_status_by_target": {
+          "Legitimate": {
+            "Pass": 28512,
+            "Fail": 1117
+          },
+          "Phishing": {
+            "Fail": 15081,
+            "Pass": 5290
+          }
+        },
+        "dmarc_status_by_target": {
+          "Legitimate": {
+            "Pass": 28780,
+            "Fail": 849
+          },
+          "Phishing": {
+            "Fail": 17036,
+            "Pass": 3335
+          }
+        },
+        "spoofed_domain_by_target": {
+          "Legitimate": {
+            "No": 29629
+          },
+          "Phishing": {
+            "Yes": 16939,
+            "No": 3432
+          }
+        }
+      }
+    },
+    {
+      "spec": {
+        "slug": "spam_multilingual_augmented",
+        "path": "spam/data-augmented.csv",
+        "target": "labels",
+        "text_columns": [
+          "text"
+        ],
+        "sep": ",",
+        "declared_language_column": null,
+        "notes": "Incluye una columna original y 21 columnas de traducciones."
+      },
+      "path": "notebooks/data/spam/data-augmented.csv",
+      "bytes": 14234243,
+      "sha256": "f90ca26ca52ca65acdb71c1d73bf1d1c3806bb12f9489ae3f0b6e4e64a76920f",
+      "rows": 5572,
+      "columns": 23,
+      "column_names": [
+        "Unnamed: 0",
+        "labels",
+        "text",
+        "text_hi",
+        "text_de",
+        "text_fr",
+        "text_es",
+        "text_zh",
+        "text_ar",
+        "text_bn",
+        "text_ru",
+        "text_pt",
+        "text_ja",
+        "text_id",
+        "text_ur",
+        "text_pa",
+        "text_jv",
+        "text_tr",
+        "text_ko",
+        "text_mr",
+        "text_uk",
+        "text_sv",
+        "text_no"
+      ],
+      "dtypes": {
+        "Unnamed: 0": "int64",
+        "labels": "str",
+        "text": "str",
+        "text_hi": "str",
+        "text_de": "str",
+        "text_fr": "str",
+        "text_es": "str",
+        "text_zh": "str",
+        "text_ar": "str",
+        "text_bn": "str",
+        "text_ru": "str",
+        "text_pt": "str",
+        "text_ja": "str",
+        "text_id": "str",
+        "text_ur": "str",
+        "text_pa": "str",
+        "text_jv": "str",
+        "text_tr": "str",
+        "text_ko": "str",
+        "text_mr": "str",
+        "text_uk": "str",
+        "text_sv": "str",
+        "text_no": "str"
+      },
+      "nulls": {
+        "Unnamed: 0": 0,
+        "labels": 0,
+        "text": 0,
+        "text_hi": 0,
+        "text_de": 0,
+        "text_fr": 0,
+        "text_es": 0,
+        "text_zh": 26,
+        "text_ar": 1,
+        "text_bn": 0,
+        "text_ru": 0,
+        "text_pt": 0,
+        "text_ja": 0,
+        "text_id": 0,
+        "text_ur": 0,
+        "text_pa": 0,
+        "text_jv": 0,
+        "text_tr": 0,
+        "text_ko": 56,
+        "text_mr": 0,
+        "text_uk": 0,
+        "text_sv": 0,
+        "text_no": 0
+      },
+      "null_percent": {
+        "Unnamed: 0": 0.0,
+        "labels": 0.0,
+        "text": 0.0,
+        "text_hi": 0.0,
+        "text_de": 0.0,
+        "text_fr": 0.0,
+        "text_es": 0.0,
+        "text_zh": 0.4666,
+        "text_ar": 0.0179,
+        "text_bn": 0.0,
+        "text_ru": 0.0,
+        "text_pt": 0.0,
+        "text_ja": 0.0,
+        "text_id": 0.0,
+        "text_ur": 0.0,
+        "text_pa": 0.0,
+        "text_jv": 0.0,
+        "text_tr": 0.0,
+        "text_ko": 1.005,
+        "text_mr": 0.0,
+        "text_uk": 0.0,
+        "text_sv": 0.0,
+        "text_no": 0.0
+      },
+      "full_row_duplicates": 0,
+      "text_duplicates": 706,
+      "unique_normalized_texts": 5156,
+      "conflicting_normalized_texts": 0,
+      "target_distribution": {
+        "ham": 4825,
+        "spam": 747
+      },
+      "length_characters": {
+        "count": 5572,
+        "min": 2.0,
+        "q25": 35.75,
+        "median": 61.0,
+        "mean": 80.3691672648959,
+        "q75": 122.0,
+        "p95": 160.0,
+        "max": 910.0
+      },
+      "length_words": {
+        "count": 5572,
+        "min": 0.0,
+        "q25": 7.0,
+        "median": 12.0,
+        "mean": 15.714285714285714,
+        "q75": 23.0,
+        "p95": 33.0,
+        "max": 190.0
+      },
+      "length_by_target": {
+        "ham": {
+          "records": 4825,
+          "characters": {
+            "count": 4825,
+            "min": 2.0,
+            "q25": 33.0,
+            "median": 52.0,
+            "mean": 71.44849740932642,
+            "q75": 93.0,
+            "p95": 159.0,
+            "max": 910.0
+          },
+          "words": {
+            "count": 4825,
+            "min": 0.0,
+            "q25": 7.0,
+            "median": 11.0,
+            "mean": 14.598756476683938,
+            "q75": 19.0,
+            "p95": 33.0,
+            "max": 190.0
+          }
+        },
+        "spam": {
+          "records": 747,
+          "characters": {
+            "count": 747,
+            "min": 7.0,
+            "q25": 132.0,
+            "median": 149.0,
+            "mean": 137.9892904953146,
+            "q75": 157.0,
+            "p95": 162.0,
+            "max": 223.0
+          },
+          "words": {
+            "count": 747,
+            "min": 1.0,
+            "q25": 21.0,
+            "median": 24.0,
+            "mean": 22.919678714859437,
+            "q75": 27.0,
+            "p95": 30.0,
+            "max": 36.0
+          }
+        }
+      },
+      "language_heuristic": {
+        "en": 2927,
+        "indeterminado": 2640,
+        "es": 5
+      },
+      "declared_languages": null,
+      "rows_with_url_pattern": 108,
+      "rows_with_email_pattern": 7,
+      "rows_with_phone_pattern": 417,
+      "rows_with_replacement_character": 0,
+      "rows_with_mojibake_marker": 0,
+      "empty_text_rows": 0,
+      "examples": {
+        "ham": [
+          "I can't right this second, gotta hit people up first",
+          "Can ü all decide faster cos my sis going home liao.."
+        ],
+        "spam": [
+          "Spook up your mob with a Halloween collection of a logo & pic message plus a free eerie tone, txt CARD SPOOK to 8007 zed 08701417012150p per logo/pic",
+          "complimentary 4 STAR Ibiza Holiday or £10,000 cash needs your URGENT collection. [telefono-oculto] NOW from Landline not to lose out! Box434SK38WP150PPM18+"
+        ]
+      },
+      "translation_quality": {
+        "text_hi": {
+          "nulls": 0,
+          "rows_with_mojibake": 0,
+          "mean_characters": 74.91
+        },
+        "text_de": {
+          "nulls": 0,
+          "rows_with_mojibake": 1,
+          "mean_characters": 91.05
+        },
+        "text_fr": {
+          "nulls": 0,
+          "rows_with_mojibake": 0,
+          "mean_characters": 88.5
+        },
+        "text_es": {
+          "nulls": 0,
+          "rows_with_mojibake": 0,
+          "mean_characters": 85.27
+        },
+        "text_zh": {
+          "nulls": 26,
+          "rows_with_mojibake": 0,
+          "mean_characters": 38.84
+        },
+        "text_ar": {
+          "nulls": 1,
+          "rows_with_mojibake": 0,
+          "mean_characters": 72.99
+        },
+        "text_bn": {
+          "nulls": 0,
+          "rows_with_mojibake": 0,
+          "mean_characters": 84.1
+        },
+        "text_ru": {
+          "nulls": 0,
+          "rows_with_mojibake": 0,
+          "mean_characters": 83.27
+        },
+        "text_pt": {
+          "nulls": 0,
+          "rows_with_mojibake": 11,
+          "mean_characters": 84.94
+        },
+        "text_ja": {
+          "nulls": 0,
+          "rows_with_mojibake": 0,
+          "mean_characters": 53.65
+        },
+        "text_id": {
+          "nulls": 0,
+          "rows_with_mojibake": 0,
+          "mean_characters": 92.9
+        },
+        "text_ur": {
+          "nulls": 0,
+          "rows_with_mojibake": 0,
+          "mean_characters": 86.44
+        },
+        "text_pa": {
+          "nulls": 0,
+          "rows_with_mojibake": 0,
+          "mean_characters": 100.38
+        },
+        "text_jv": {
+          "nulls": 0,
+          "rows_with_mojibake": 0,
+          "mean_characters": 94.66
+        },
+        "text_tr": {
+          "nulls": 0,
+          "rows_with_mojibake": 0,
+          "mean_characters": 82.93
+        },
+        "text_ko": {
+          "nulls": 56,
+          "rows_with_mojibake": 0,
+          "mean_characters": 53.75
+        },
+        "text_mr": {
+          "nulls": 0,
+          "rows_with_mojibake": 0,
+          "mean_characters": 87.16
+        },
+        "text_uk": {
+          "nulls": 0,
+          "rows_with_mojibake": 0,
+          "mean_characters": 84.36
+        },
+        "text_sv": {
+          "nulls": 0,
+          "rows_with_mojibake": 0,
+          "mean_characters": 81.5
+        },
+        "text_no": {
+          "nulls": 0,
+          "rows_with_mojibake": 0,
+          "mean_characters": 79.97
+        }
+      },
+      "leakage_checks": {}
+    },
+    {
+      "spec": {
+        "slug": "spam_spanish",
+        "path": "spam/data.csv",
+        "target": "labels",
+        "text_columns": [
+          "text"
+        ],
+        "sep": ",",
+        "declared_language_column": null,
+        "notes": ""
+      },
+      "path": "notebooks/data/spam/data.csv",
+      "bytes": 1289659,
+      "sha256": "1d455d3a28bbd58e310591be4bee236cf6d2244b5406af76ce1052f7301158ac",
+      "rows": 15016,
+      "columns": 2,
+      "column_names": [
+        "text",
+        "labels"
+      ],
+      "dtypes": {
+        "text": "str",
+        "labels": "int64"
+      },
+      "nulls": {
+        "text": 0,
+        "labels": 0
+      },
+      "null_percent": {
+        "text": 0.0,
+        "labels": 0.0
+      },
+      "full_row_duplicates": 266,
+      "text_duplicates": 416,
+      "unique_normalized_texts": 14743,
+      "conflicting_normalized_texts": 0,
+      "target_distribution": {
+        "1": 7982,
+        "0": 7034
+      },
+      "length_characters": {
+        "count": 15016,
+        "min": 14.0,
+        "q25": 66.0,
+        "median": 78.0,
+        "mean": 79.77870271710175,
+        "q75": 91.0,
+        "p95": 114.0,
+        "max": 1320.0
+      },
+      "length_words": {
+        "count": 15016,
+        "min": 0.0,
+        "q25": 10.0,
+        "median": 12.0,
+        "mean": 12.30500799147576,
+        "q75": 14.0,
+        "p95": 18.0,
+        "max": 149.0
+      },
+      "length_by_target": {
+        "0": {
+          "records": 7034,
+          "characters": {
+            "count": 7034,
+            "min": 18.0,
+            "q25": 61.0,
+            "median": 73.0,
+            "mean": 74.10619846460051,
+            "q75": 85.0,
+            "p95": 106.0,
+            "max": 180.0
+          },
+          "words": {
+            "count": 7034,
+            "min": 1.0,
+            "q25": 10.0,
+            "median": 12.0,
+            "mean": 11.845891384702872,
+            "q75": 14.0,
+            "p95": 17.0,
+            "max": 29.0
+          }
+        },
+        "1": {
+          "records": 7982,
+          "characters": {
+            "count": 7982,
+            "min": 14.0,
+            "q25": 71.0,
+            "median": 83.0,
+            "mean": 84.77749937359057,
+            "q75": 96.0,
+            "p95": 119.0,
+            "max": 1320.0
+          },
+          "words": {
+            "count": 7982,
+            "min": 0.0,
+            "q25": 11.0,
+            "median": 12.0,
+            "mean": 12.70959659233275,
+            "q75": 15.0,
+            "p95": 18.0,
+            "max": 149.0
+          }
+        }
+      },
+      "language_heuristic": {
+        "es": 12244,
+        "indeterminado": 2751,
+        "en": 21
+      },
+      "declared_languages": null,
+      "rows_with_url_pattern": 707,
+      "rows_with_email_pattern": 94,
+      "rows_with_phone_pattern": 192,
+      "rows_with_replacement_character": 0,
+      "rows_with_mojibake_marker": 1,
+      "empty_text_rows": 0,
+      "examples": {
+        "0": [
+          "Hola, ¿cómo estás? Me gustaría concertar una cita para la próxima semana.",
+          "El evento de today fue un éxito. Gracias por tu apoyo y par la próxima!,."
+        ],
+        "1": [
+          "¡Esquema piramidal! Invita a 3 personas y gane $5000. ¡Comparte este mensaje ahora!",
+          "¡Felicidades! Has ganado un viaje a Puerto Rico. Clic en este enlace para confirmar"
+        ]
+      },
+      "translation_quality": null,
+      "leakage_checks": {}
+    },
+    {
+      "spec": {
+        "slug": "sms_spam_5971",
+        "path": "spam/Dataset_5971.csv",
+        "target": "LABEL",
+        "text_columns": [
+          "TEXT"
+        ],
+        "sep": ",",
+        "declared_language_column": null,
+        "notes": ""
+      },
+      "path": "notebooks/data/spam/Dataset_5971.csv",
+      "bytes": 595987,
+      "sha256": "649844f1c62a6b27e145eaf17a65f7010c56c390e11a794ea8329993a05ba71e",
+      "rows": 5971,
+      "columns": 5,
+      "column_names": [
+        "LABEL",
+        "TEXT",
+        "URL",
+        "EMAIL",
+        "PHONE"
+      ],
+      "dtypes": {
+        "LABEL": "str",
+        "TEXT": "str",
+        "URL": "str",
+        "EMAIL": "str",
+        "PHONE": "str"
+      },
+      "nulls": {
+        "LABEL": 0,
+        "TEXT": 0,
+        "URL": 0,
+        "EMAIL": 0,
+        "PHONE": 0
+      },
+      "null_percent": {
+        "LABEL": 0.0,
+        "TEXT": 0.0,
+        "URL": 0.0,
+        "EMAIL": 0.0,
+        "PHONE": 0.0
+      },
+      "full_row_duplicates": 17,
+      "text_duplicates": 273,
+      "unique_normalized_texts": 5831,
+      "conflicting_normalized_texts": 49,
+      "target_distribution": {
+        "ham": 4844,
+        "Smishing": 616,
+        "spam": 466,
+        "Spam": 23,
+        "smishing": 22
+      },
+      "length_characters": {
+        "count": 5971,
+        "min": 2.0,
+        "q25": 38.0,
+        "median": 66.0,
+        "mean": 83.197119410484,
+        "q75": 127.0,
+        "p95": 161.0,
+        "max": 910.0
+      },
+      "length_words": {
+        "count": 5971,
+        "min": 0.0,
+        "q25": 8.0,
+        "median": 13.0,
+        "mean": 15.948752302796851,
+        "q75": 23.0,
+        "p95": 32.0,
+        "max": 190.0
+      },
+      "length_by_target": {
+        "Smishing": {
+          "records": 616,
+          "characters": {
+            "count": 616,
+            "min": 33.0,
+            "q25": 128.0,
+            "median": 146.0,
+            "mean": 139.71266233766235,
+            "q75": 156.0,
+            "p95": 172.0,
+            "max": 383.0
+          },
+          "words": {
+            "count": 616,
+            "min": 3.0,
+            "q25": 19.0,
+            "median": 23.0,
+            "mean": 22.084415584415584,
+            "q75": 25.0,
+            "p95": 29.0,
+            "max": 66.0
+          }
+        },
+        "Spam": {
+          "records": 23,
+          "characters": {
+            "count": 23,
+            "min": 59.0,
+            "q25": 139.5,
+            "median": 152.0,
+            "mean": 153.04347826086956,
+            "q75": 156.0,
+            "p95": 161.8,
+            "max": 365.0
+          },
+          "words": {
+            "count": 23,
+            "min": 6.0,
+            "q25": 20.5,
+            "median": 24.0,
+            "mean": 24.17391304347826,
+            "q75": 25.5,
+            "p95": 27.9,
+            "max": 60.0
+          }
+        },
+        "ham": {
+          "records": 4844,
+          "characters": {
+            "count": 4844,
+            "min": 2.0,
+            "q25": 34.0,
+            "median": 53.0,
+            "mean": 70.69281585466557,
+            "q75": 91.0,
+            "p95": 158.84999999999945,
+            "max": 910.0
+          },
+          "words": {
+            "count": 4844,
+            "min": 0.0,
+            "q25": 7.0,
+            "median": 11.0,
+            "mean": 14.462840627580512,
+            "q75": 19.0,
+            "p95": 33.0,
+            "max": 190.0
+          }
+        },
+        "smishing": {
+          "records": 22,
+          "characters": {
+            "count": 22,
+            "min": 50.0,
+            "q25": 111.0,
+            "median": 133.0,
+            "mean": 128.86363636363637,
+            "q75": 152.0,
+            "p95": 162.95,
+            "max": 163.0
+          },
+          "words": {
+            "count": 22,
+            "min": 6.0,
+            "q25": 17.0,
+            "median": 21.0,
+            "mean": 20.59090909090909,
+            "q75": 25.75,
+            "p95": 27.0,
+            "max": 28.0
+          }
+        },
+        "spam": {
+          "records": 466,
+          "characters": {
+            "count": 466,
+            "min": 18.0,
+            "q25": 118.0,
+            "median": 142.0,
+            "mean": 132.86695278969958,
+            "q75": 155.0,
+            "p95": 161.0,
+            "max": 379.0
+          },
+          "words": {
+            "count": 466,
+            "min": 1.0,
+            "q25": 19.25,
+            "median": 23.0,
+            "mean": 22.658798283261802,
+            "q75": 27.0,
+            "p95": 30.0,
+            "max": 62.0
+          }
+        }
+      },
+      "language_heuristic": {
+        "en": 3253,
+        "indeterminado": 2716,
+        "es": 2
+      },
+      "declared_languages": null,
+      "rows_with_url_pattern": 183,
+      "rows_with_email_pattern": 22,
+      "rows_with_phone_pattern": 709,
+      "rows_with_replacement_character": 145,
+      "rows_with_mojibake_marker": 145,
+      "empty_text_rows": 0,
+      "examples": {
+        "Smishing": [
+          "FreeMsg Why haven't you replied to my text? I'm female and live local. Luv to hear from u. Netcollex Ltd 08700621170150p per msg reply Stop to end",
+          "SMS. ac Blind Date 4U!: Rodds1 is 21/m from Aberdeen, United Kingdom. Check Him out hxxp://img. sms. ac/W/icmb3cktz8r7!-4 no Blind Dates send HIDE"
+        ],
+        "Spam": [
+          "-PLS STOP bootydelious (32/F) is inviting you to be her friend. Reply YES-434 or NO-434 See her: www.SMS.ac/u/bootydelious STOP? Send STOP FRND to 62468",
+          "Property Bhi Aapki Rent Bhi Aapka, Invest Rs 17k Lacs in Fully Furnished Office Spaces & Earn Rs 17k per Month Wid Bank Guarantee, Noida Cont.[telefono-oculto]"
+        ],
+        "ham": [
+          "Gud ni8 dear..slp well..take care..swt dreams..Muah..",
+          "Yupz... I've oredi booked slots 4 my weekends liao..."
+        ],
+        "smishing": [
+          "WIN: We have a winner! Mr. T. Tilo won an iPod! More exciting prizes soon, so keep an eye on ur mobile or visit www.win-82050.co.uk",
+          "Loan INR5,00,000 - 7,50,000. Homeowners + Tenants welcome. Have you been previously refused? We can still help. Call Free [telefono-oculto]"
+        ],
+        "spam": [
+          "Had your mobile 11mths+? You are entitled to update to the latest colour camera mobile for Free! Call The Mobile Update Co FREE on [telefono-oculto]",
+          "Wan2 win a Meet+Greet with Westlife 4 U or a m8? They are currently on what tour? 1)Unbreakable, 2)Untamed, 3)Unkempt. Text 1,2 or 3 to 83049."
+        ]
+      },
+      "translation_quality": null,
+      "leakage_checks": {}
+    },
+    {
+      "spec": {
+        "slug": "spanish_phishing",
+        "path": "spanish-dataset/SpanishDataset.csv",
+        "target": "Label",
+        "text_columns": [
+          "subject",
+          "body"
+        ],
+        "sep": ",",
+        "declared_language_column": null,
+        "notes": ""
+      },
+      "path": "notebooks/data/spanish-dataset/SpanishDataset.csv",
+      "bytes": 5098917,
+      "sha256": "656b2245d58da72d640680e5c2a168673a130b38607f2a427c773bbb167e995e",
+      "rows": 1395,
+      "columns": 47,
+      "column_names": [
+        "hash",
+        "subject",
+        "body",
+        "date",
+        "url_count",
+        "urls",
+        "attachments_count",
+        "attachments_types",
+        "attachments_total_size",
+        "attachments_sizes",
+        "hops_count",
+        "Label",
+        "authority_A",
+        "justif_authority_A",
+        "social_proof_A",
+        "justif_social_proof_A",
+        "liking_similarity_deception_A",
+        "justif_liking_similarity_deception_A",
+        "commitment_integrity_reciprocation_A",
+        "justif_commitment_integrity_reciprocation_A",
+        "distraction_A",
+        "justif_distraction_A",
+        "authority_B",
+        "justif_authority_B",
+        "social_proof_B",
+        "justif_social_proof_B",
+        "liking_similarity_deception_B",
+        "justif_liking_similarity_deception_B",
+        "commitment_integrity_reciprocation_B",
+        "justif_commitment_integrity_reciprocation_B",
+        "distraction_B",
+        "justif_distraction_B",
+        "authority_C",
+        "justif_authority_C",
+        "social_proof_C",
+        "justif_social_proof_C",
+        "liking_similarity_deception_C",
+        "justif_liking_similarity_deception_C",
+        "commitment_integrity_reciprocation_C",
+        "justif_commitment_integrity_reciprocation_C",
+        "distraction_C",
+        "justif_distraction_C",
+        "authority",
+        "social_proof",
+        "liking_similarity_deception",
+        "commitment_integrity_reciprocation",
+        "distraction"
+      ],
+      "dtypes": {
+        "hash": "str",
+        "subject": "str",
+        "body": "str",
+        "date": "str",
+        "url_count": "int64",
+        "urls": "str",
+        "attachments_count": "int64",
+        "attachments_types": "str",
+        "attachments_total_size": "int64",
+        "attachments_sizes": "str",
+        "hops_count": "int64",
+        "Label": "int64",
+        "authority_A": "int64",
+        "justif_authority_A": "str",
+        "social_proof_A": "int64",
+        "justif_social_proof_A": "str",
+        "liking_similarity_deception_A": "int64",
+        "justif_liking_similarity_deception_A": "str",
+        "commitment_integrity_reciprocation_A": "int64",
+        "justif_commitment_integrity_reciprocation_A": "str",
+        "distraction_A": "int64",
+        "justif_distraction_A": "str",
+        "authority_B": "int64",
+        "justif_authority_B": "str",
+        "social_proof_B": "int64",
+        "justif_social_proof_B": "str",
+        "liking_similarity_deception_B": "int64",
+        "justif_liking_similarity_deception_B": "str",
+        "commitment_integrity_reciprocation_B": "int64",
+        "justif_commitment_integrity_reciprocation_B": "str",
+        "distraction_B": "int64",
+        "justif_distraction_B": "str",
+        "authority_C": "int64",
+        "justif_authority_C": "str",
+        "social_proof_C": "int64",
+        "justif_social_proof_C": "str",
+        "liking_similarity_deception_C": "int64",
+        "justif_liking_similarity_deception_C": "str",
+        "commitment_integrity_reciprocation_C": "int64",
+        "justif_commitment_integrity_reciprocation_C": "str",
+        "distraction_C": "int64",
+        "justif_distraction_C": "str",
+        "authority": "int64",
+        "social_proof": "int64",
+        "liking_similarity_deception": "int64",
+        "commitment_integrity_reciprocation": "int64",
+        "distraction": "int64"
+      },
+      "nulls": {
+        "hash": 0,
+        "subject": 3,
+        "body": 0,
+        "date": 24,
+        "url_count": 0,
+        "urls": 195,
+        "attachments_count": 0,
+        "attachments_types": 1124,
+        "attachments_total_size": 0,
+        "attachments_sizes": 1124,
+        "hops_count": 0,
+        "Label": 0,
+        "authority_A": 0,
+        "justif_authority_A": 0,
+        "social_proof_A": 0,
+        "justif_social_proof_A": 0,
+        "liking_similarity_deception_A": 0,
+        "justif_liking_similarity_deception_A": 0,
+        "commitment_integrity_reciprocation_A": 0,
+        "justif_commitment_integrity_reciprocation_A": 0,
+        "distraction_A": 0,
+        "justif_distraction_A": 5,
+        "authority_B": 0,
+        "justif_authority_B": 0,
+        "social_proof_B": 0,
+        "justif_social_proof_B": 0,
+        "liking_similarity_deception_B": 0,
+        "justif_liking_similarity_deception_B": 0,
+        "commitment_integrity_reciprocation_B": 0,
+        "justif_commitment_integrity_reciprocation_B": 0,
+        "distraction_B": 0,
+        "justif_distraction_B": 3,
+        "authority_C": 0,
+        "justif_authority_C": 0,
+        "social_proof_C": 0,
+        "justif_social_proof_C": 0,
+        "liking_similarity_deception_C": 0,
+        "justif_liking_similarity_deception_C": 0,
+        "commitment_integrity_reciprocation_C": 0,
+        "justif_commitment_integrity_reciprocation_C": 0,
+        "distraction_C": 0,
+        "justif_distraction_C": 0,
+        "authority": 0,
+        "social_proof": 0,
+        "liking_similarity_deception": 0,
+        "commitment_integrity_reciprocation": 0,
+        "distraction": 0
+      },
+      "null_percent": {
+        "hash": 0.0,
+        "subject": 0.2151,
+        "body": 0.0,
+        "date": 1.7204,
+        "url_count": 0.0,
+        "urls": 13.9785,
+        "attachments_count": 0.0,
+        "attachments_types": 80.5735,
+        "attachments_total_size": 0.0,
+        "attachments_sizes": 80.5735,
+        "hops_count": 0.0,
+        "Label": 0.0,
+        "authority_A": 0.0,
+        "justif_authority_A": 0.0,
+        "social_proof_A": 0.0,
+        "justif_social_proof_A": 0.0,
+        "liking_similarity_deception_A": 0.0,
+        "justif_liking_similarity_deception_A": 0.0,
+        "commitment_integrity_reciprocation_A": 0.0,
+        "justif_commitment_integrity_reciprocation_A": 0.0,
+        "distraction_A": 0.0,
+        "justif_distraction_A": 0.3584,
+        "authority_B": 0.0,
+        "justif_authority_B": 0.0,
+        "social_proof_B": 0.0,
+        "justif_social_proof_B": 0.0,
+        "liking_similarity_deception_B": 0.0,
+        "justif_liking_similarity_deception_B": 0.0,
+        "commitment_integrity_reciprocation_B": 0.0,
+        "justif_commitment_integrity_reciprocation_B": 0.0,
+        "distraction_B": 0.0,
+        "justif_distraction_B": 0.2151,
+        "authority_C": 0.0,
+        "justif_authority_C": 0.0,
+        "social_proof_C": 0.0,
+        "justif_social_proof_C": 0.0,
+        "liking_similarity_deception_C": 0.0,
+        "justif_liking_similarity_deception_C": 0.0,
+        "commitment_integrity_reciprocation_C": 0.0,
+        "justif_commitment_integrity_reciprocation_C": 0.0,
+        "distraction_C": 0.0,
+        "justif_distraction_C": 0.0,
+        "authority": 0.0,
+        "social_proof": 0.0,
+        "liking_similarity_deception": 0.0,
+        "commitment_integrity_reciprocation": 0.0,
+        "distraction": 0.0
+      },
+      "full_row_duplicates": 0,
+      "text_duplicates": 0,
+      "unique_normalized_texts": 1395,
+      "conflicting_normalized_texts": 0,
+      "target_distribution": {
+        "1": 731,
+        "0": 664
+      },
+      "length_characters": {
+        "count": 1395,
+        "min": 17.0,
+        "q25": 505.0,
+        "median": 759.0,
+        "mean": 1255.0014336917563,
+        "q75": 1317.5,
+        "p95": 3731.5,
+        "max": 28673.0
+      },
+      "length_words": {
+        "count": 1395,
+        "min": 2.0,
+        "q25": 72.5,
+        "median": 111.0,
+        "mean": 190.21720430107527,
+        "q75": 198.0,
+        "p95": 590.8999999999999,
+        "max": 3384.0
+      },
+      "length_by_target": {
+        "0": {
+          "records": 664,
+          "characters": {
+            "count": 664,
+            "min": 31.0,
+            "q25": 663.5,
+            "median": 1144.0,
+            "mean": 1801.9307228915663,
+            "q75": 2039.75,
+            "p95": 5401.4000000000015,
+            "max": 28673.0
+          },
+          "words": {
+            "count": 664,
+            "min": 4.0,
+            "q25": 99.0,
+            "median": 169.0,
+            "mean": 275.8418674698795,
+            "q75": 302.75,
+            "p95": 886.2500000000001,
+            "max": 3384.0
+          }
+        },
+        "1": {
+          "records": 731,
+          "characters": {
+            "count": 731,
+            "min": 17.0,
+            "q25": 443.0,
+            "median": 617.0,
+            "mean": 758.2010943912449,
+            "q75": 875.5,
+            "p95": 1623.0,
+            "max": 11350.0
+          },
+          "words": {
+            "count": 731,
+            "min": 2.0,
+            "q25": 63.0,
+            "median": 87.0,
+            "mean": 112.44049247606019,
+            "q75": 127.0,
+            "p95": 244.0,
+            "max": 1864.0
+          }
+        }
+      },
+      "language_heuristic": {
+        "es": 1350,
+        "indeterminado": 25,
+        "en": 20
+      },
+      "declared_languages": null,
+      "rows_with_url_pattern": 411,
+      "rows_with_email_pattern": 334,
+      "rows_with_phone_pattern": 601,
+      "rows_with_replacement_character": 6,
+      "rows_with_mojibake_marker": 16,
+      "empty_text_rows": 0,
+      "examples": {
+        "0": [
+          "Registro_Beneficiarios_Plataforma_SNI REGISTRO DE BENEFICIARIOS EN CASO DE FALLECIMIENTO A los investigadores de nuevo ingreso y reingreso no-vigente cuya vigencia inició el 1º de enero del 2025, se hace de su conocimiento que pueden realizar el registro de sus beneficiarios en l…",
+          "MyOwn Mario Castillo Buen día Dr. Lázaro, un gusto saludarle, no sé si me recuerde, soy Mario Castillo de MyOwn, tomé materia de la Maestría en Ciberseguridad con Usted, le comento que actualmente sigo en MyOwn, y estoy realizando trámites para el ingreso a Doctorado aquí en MyOw…"
+        ],
+        "1": [
+          "Ezequiela Miguelina - Tienes (1) paquete esperando ser entregado 📦. Usa tu código para rastrearlo y recibirlo ___🚚. ID#41868 ❒ ENTREGA DEL PAQUETE PENDIENTE ◉ Registro / Inicio de sesión ❒ Correos [telefono-oculto] SEGUIMIENTO ➢ pablito Tienes (1) paquete pendiente de entrega ---…",
+          ">>Ezequiela Miguelina!! - Hai un (1) pacco in attesa di consegna 📦. Usa il tuo codice per tracciarlo e riceverlo ___🚚. ENTREGA DEL PAQUETE PENDIENTE ◉ Registro / Inicio de sesión ❒SEUR. [telefono-oculto] SEGUIMIENTO ➢ Claudia Ramírez Tienes (1) paquete pendiente de entrega ------…"
+        ]
+      },
+      "translation_quality": null,
+      "leakage_checks": {}
+    },
+    {
+      "spec": {
+        "slug": "spear_phish_mx",
+        "path": "spear-pish/SpearPhishMX_dataset_publico.csv",
+        "target": "etiqueta",
+        "text_columns": [
+          "asunto",
+          "cuerpo_sanitizado"
+        ],
+        "sep": ";",
+        "declared_language_column": null,
+        "notes": ""
+      },
+      "path": "notebooks/data/spear-pish/SpearPhishMX_dataset_publico.csv",
+      "bytes": 5118920,
+      "sha256": "12c4f5fbd6458fe0a73f44db4abd634f04055e64e40d8d104f7cece5ce53ae32",
+      "rows": 3006,
+      "columns": 17,
+      "column_names": [
+        "hash",
+        "id_original",
+        "etiqueta",
+        "asunto",
+        "cuerpo_sanitizado",
+        "fecha",
+        "conteo_urls",
+        "urls_desactivadas",
+        "dirigido_a_persona_v2",
+        "destinatario_detectado_v2",
+        "destinatario_tiene_apellido_v2",
+        "destinatario_normalizado",
+        "conteo_adjuntos",
+        "tipos_adjuntos",
+        "tamano_total_adjuntos",
+        "tamanos_adjuntos",
+        "conteo_saltos"
+      ],
+      "dtypes": {
+        "hash": "str",
+        "id_original": "int64",
+        "etiqueta": "int64",
+        "asunto": "str",
+        "cuerpo_sanitizado": "str",
+        "fecha": "float64",
+        "conteo_urls": "int64",
+        "urls_desactivadas": "str",
+        "dirigido_a_persona_v2": "bool",
+        "destinatario_detectado_v2": "str",
+        "destinatario_tiene_apellido_v2": "bool",
+        "destinatario_normalizado": "str",
+        "conteo_adjuntos": "int64",
+        "tipos_adjuntos": "float64",
+        "tamano_total_adjuntos": "int64",
+        "tamanos_adjuntos": "float64",
+        "conteo_saltos": "float64"
+      },
+      "nulls": {
+        "hash": 0,
+        "id_original": 0,
+        "etiqueta": 0,
+        "asunto": 2,
+        "cuerpo_sanitizado": 0,
+        "fecha": 3006,
+        "conteo_urls": 0,
+        "urls_desactivadas": 0,
+        "dirigido_a_persona_v2": 0,
+        "destinatario_detectado_v2": 283,
+        "destinatario_tiene_apellido_v2": 0,
+        "destinatario_normalizado": 0,
+        "conteo_adjuntos": 0,
+        "tipos_adjuntos": 3006,
+        "tamano_total_adjuntos": 0,
+        "tamanos_adjuntos": 3006,
+        "conteo_saltos": 3006
+      },
+      "null_percent": {
+        "hash": 0.0,
+        "id_original": 0.0,
+        "etiqueta": 0.0,
+        "asunto": 0.0665,
+        "cuerpo_sanitizado": 0.0,
+        "fecha": 100.0,
+        "conteo_urls": 0.0,
+        "urls_desactivadas": 0.0,
+        "dirigido_a_persona_v2": 0.0,
+        "destinatario_detectado_v2": 9.4145,
+        "destinatario_tiene_apellido_v2": 0.0,
+        "destinatario_normalizado": 0.0,
+        "conteo_adjuntos": 0.0,
+        "tipos_adjuntos": 100.0,
+        "tamano_total_adjuntos": 0.0,
+        "tamanos_adjuntos": 100.0,
+        "conteo_saltos": 100.0
+      },
+      "full_row_duplicates": 0,
+      "text_duplicates": 4,
+      "unique_normalized_texts": 3004,
+      "conflicting_normalized_texts": 0,
+      "target_distribution": {
+        "1": 1891,
+        "0": 1115
+      },
+      "length_characters": {
+        "count": 3006,
+        "min": 50.0,
+        "q25": 254.0,
+        "median": 433.0,
+        "mean": 1011.3582834331337,
+        "q75": 896.75,
+        "p95": 3652.5,
+        "max": 28478.0
+      },
+      "length_words": {
+        "count": 3006,
+        "min": 6.0,
+        "q25": 34.0,
+        "median": 60.0,
+        "mean": 151.00532268795743,
+        "q75": 135.75,
+        "p95": 550.0,
+        "max": 4178.0
+      },
+      "length_by_target": {
+        "0": {
+          "records": 1115,
+          "characters": {
+            "count": 1115,
+            "min": 50.0,
+            "q25": 535.0,
+            "median": 813.0,
+            "mean": 1466.1946188340808,
+            "q75": 1451.0,
+            "p95": 4991.5999999999985,
+            "max": 28453.0
+          },
+          "words": {
+            "count": 1115,
+            "min": 6.0,
+            "q25": 78.0,
+            "median": 122.0,
+            "mean": 224.92376681614348,
+            "q75": 218.5,
+            "p95": 828.6999999999996,
+            "max": 4177.0
+          }
+        },
+        "1": {
+          "records": 1891,
+          "characters": {
+            "count": 1891,
+            "min": 57.0,
+            "q25": 233.0,
+            "median": 293.0,
+            "mean": 743.1708090957165,
+            "q75": 490.0,
+            "p95": 2718.5,
+            "max": 28478.0
+          },
+          "words": {
+            "count": 1891,
+            "min": 8.0,
+            "q25": 30.0,
+            "median": 42.0,
+            "mean": 107.42041248016922,
+            "q75": 65.0,
+            "p95": 424.0,
+            "max": 4178.0
+          }
+        }
+      },
+      "language_heuristic": {
+        "es": 2916,
+        "indeterminado": 54,
+        "en": 36
+      },
+      "declared_languages": null,
+      "rows_with_url_pattern": 1928,
+      "rows_with_email_pattern": 4,
+      "rows_with_phone_pattern": 304,
+      "rows_with_replacement_character": 16,
+      "rows_with_mojibake_marker": 28,
+      "empty_text_rows": 0,
+      "examples": {
+        "0": [
+          "Maestria Hola Emanuel Ortega Carbajal, Nesti mira... donde trabajaba mike.... ¿Sabías que en la Unidad del CICESE en Tepic tenemos una maestría que pertenece al Sistema Nacional de Posgrado? ¿Que sus objetivos son \"Formar recursos humanos altamente especializados con conocimiento…",
+          "Missxtranger, Advertencia final: ¡tu cuenta de Netflix será eliminada! Hola Juan Galván Torres, ¡Continúa disfrutando de películas, programas de TV y más ilimitados! ¿Listo para mirar? N E T F L I X ¡Tu membresía ha caducado! Querido cliente, Su membresía ha caducado. Pero, como …"
+        ],
+        "1": [
+          "Problema con Configuración de Load Balancer Hola Bernal Ramos García, Su configuración de load balancer presenta errores. Revisar settings en: hxxp://www[.]xmadwater[.]com[.]cn/js/?app=com-d3&us[.]battle[.]net/login/en/?ref=us[.]battle[.]net/d3/en/index Urgente - plazo 10 días. L…",
+          "Oferta de Capacitación en Containers Estimado Herlindo De La Cruz Gómez, Programa especial de capacitación en tecnologías de contenedores. Registro en: hxxp://paypal[.]com[.]myaccount[.]validation[.]jossy[.]psess<TELEFONO>[.]blesuites[.]com Cupos limitados - válido hasta 19/12/20…"
+        ]
+      },
+      "translation_quality": null,
+      "leakage_checks": {}
+    }
+  ],
+  "text_overlaps": {
+    "email_detection_50k__phishing_email_detection_50k_copy": {
+      "shared_unique_texts": 50000,
+      "left_unique_texts": 50000,
+      "right_unique_texts": 50000
+    },
+    "spam_multilingual_augmented__sms_spam_5971": {
+      "shared_unique_texts": 4933,
+      "left_unique_texts": 5156,
+      "right_unique_texts": 5831
+    }
+  }
+}
