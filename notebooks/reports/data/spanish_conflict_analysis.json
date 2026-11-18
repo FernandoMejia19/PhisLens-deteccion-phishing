@@ -1,0 +1,3754 @@
+{
+  "method": {
+    "threshold": 0.95,
+    "similarity": "TF-IDF de caracteres 3-5 y coseno; mejor vecino de cada SpaPhish en SpearPhishMX",
+    "canonical_review": "NFKC, eliminación de marcas invisibles, saludo/destinatario, defang, PII y números",
+    "warning": "La similitud y las reglas de cambio no demuestran origen común ni adjudican etiquetas."
+  },
+  "inputs": {
+    "spaphish_sha256": "656b2245d58da72d640680e5c2a168673a130b38607f2a427c773bbb167e995e",
+    "spearphishmx_sha256": "038fdfeac20c554a66b1ef42b2044627b3d2f5692135ac444b8a9e8486444a5b"
+  },
+  "summary": {
+    "pairs": 175,
+    "label_pairs": {
+      "0->0": 52,
+      "0->1": 11,
+      "1->0": 109,
+      "1->1": 3
+    },
+    "same_label": 55,
+    "different_label": 120,
+    "primary_causes": {
+      "formato_unicode_o_espaciado": 4,
+      "personalizacion": 105,
+      "personalizacion_y_sanitizacion": 54,
+      "sanitizacion": 10,
+      "variacion_adicional_no_resuelta": 2
+    },
+    "primary_causes_by_label_pair": {
+      "0->0": {
+        "formato_unicode_o_espaciado": 2,
+        "personalizacion": 26,
+        "personalizacion_y_sanitizacion": 24
+      },
+      "0->1": {
+        "personalizacion_y_sanitizacion": 2,
+        "sanitizacion": 9
+      },
+      "1->0": {
+        "formato_unicode_o_espaciado": 2,
+        "personalizacion": 79,
+        "personalizacion_y_sanitizacion": 26,
+        "variacion_adicional_no_resuelta": 2
+      },
+      "1->1": {
+        "personalizacion_y_sanitizacion": 2,
+        "sanitizacion": 1
+      }
+    },
+    "change_flags": {
+      "asunto_igual": 173,
+      "contenido_canonico_casi_igual": 96,
+      "defang": 34,
+      "personalizacion": 159,
+      "sanitizacion_pii": 42
+    },
+    "spa1_to_spear0": {
+      "pairs": 109,
+      "directed_to_person_true": 105,
+      "subject_equal": 108,
+      "canonical_similarity_ge_0_98": 52,
+      "cause_counts": {
+        "formato_unicode_o_espaciado": 2,
+        "personalizacion": 79,
+        "personalizacion_y_sanitizacion": 26,
+        "variacion_adicional_no_resuelta": 2
+      }
+    },
+    "spear_internal_exact_duplicates": {
+      "records": 4,
+      "groups": 2,
+      "surplus_records": 2,
+      "label_conflicts": 0
+    }
+  },
+  "representative_samples_redacted": [
+    {
+      "pair_id": "conflict-0151",
+      "spa_row": 1301,
+      "spa_record_id": "spaphish:7deb3354bb9d4eac9bbedc3cf016ed725e0944270672bddece32008ac8b88609",
+      "spa_target": 0,
+      "spear_row": 2926,
+      "spear_record_id": "spearphishmx:2977",
+      "spear_hash": "485a27dfcc9c652dcb04f0a311d3937d49dbd7e91281481d0f6adfb15b7ca41d",
+      "spear_target": 0,
+      "cosine_similarity": 0.997215,
+      "canonical_sequence_similarity": 0.99789,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion",
+      "spa_subject_redacted": "Tu nuevo precio para moverte es un acuerdo 👍",
+      "spear_subject_redacted": "Tu nuevo precio para moverte es un acuerdo 👍",
+      "spa_body_redacted": "Barranquilla: con Uber Acuerdo puedes elegir cuánto pagar por trayecto Tu destino, tu precio. Eso es Uber Acuerdo. Hola, Guadalupe: Como seguro lo habrás notado…",
+      "spear_body_redacted": "Hola <DESTINATARIO>, Barranquilla: con Uber Acuerdo puedes elegir cuánto pagar por trayecto Tu destino, tu precio. Eso es Uber Acuerdo. Hola, Guadalupe: Como se…"
+    },
+    {
+      "pair_id": "conflict-0169",
+      "spa_row": 1356,
+      "spa_record_id": "spaphish:4a8ff62b9b6c6049b9988c1b069cbd1dad374b4c8ed65aa38711458c5457326a",
+      "spa_target": 0,
+      "spear_row": 2969,
+      "spear_record_id": "spearphishmx:3020",
+      "spear_hash": "1c9ad4142571fbd88f0f3a200bc6076677d3059c13813a1f28b79c45723317b9",
+      "spear_target": 0,
+      "cosine_similarity": 0.995461,
+      "canonical_sequence_similarity": 0.99219,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "defang",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion_y_sanitizacion",
+      "spa_subject_redacted": "¡Evento Imperdible! Webinar: Potencia la Autoestima! 💪🏼",
+      "spear_subject_redacted": "¡Evento Imperdible! Webinar: Potencia la Autoestima! 💪🏼",
+      "spa_body_redacted": "Ver como página Web [ <URL> ] [ <URL> ] Hola 👋, Inscríbete a nuestro Webinar “​​Potencia la autoestima desde una mirada compasiva”, espacio ideal para identific…",
+      "spear_body_redacted": "Hola <DESTINATARIO>, Ver como página Web [ <URL_DESACTIVADA> ] [ <URL_DESACTIVADA> ] Hola 👋, Inscríbete a nuestro Webinar “​​Potencia la autoestima desde una mi…"
+    },
+    {
+      "pair_id": "conflict-0160",
+      "spa_row": 1328,
+      "spa_record_id": "spaphish:7a3e04b4a0ad39f8632fcadffb725b3da2448d80de779fde40c1db930013a128",
+      "spa_target": 0,
+      "spear_row": 1867,
+      "spear_record_id": "spearphishmx:1918",
+      "spear_hash": "59137f2335618cca4b5320a581e79da6e1ad6716ae6d81cfb250a2eb6afba11b",
+      "spear_target": 1,
+      "cosine_similarity": 0.99373,
+      "canonical_sequence_similarity": 1.0,
+      "subject_equal_normalized": true,
+      "directed_to_person": false,
+      "change_flags": [
+        "defang",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "sanitizacion",
+      "spa_subject_redacted": "Guadalupe! ¡No puedo esperar a tenerte de nuevo a bordo!",
+      "spear_subject_redacted": "Guadalupe! ¡No puedo esperar a tenerte de nuevo a bordo!",
+      "spa_body_redacted": "58.066.0female [ <URL> ] [ <URL> ] ¡Hola, Guadalupe! ¡Cuánto tiempo sin verte! ¿Cómo has estado? Espero que la vida te haya tratado bien. Has estado en nuestras…",
+      "spear_body_redacted": "58.066.0female [ <URL_DESACTIVADA> ] [ <URL_DESACTIVADA> ] ¡Hola, Guadalupe! ¡Cuánto tiempo sin verte! ¿Cómo has estado? Espero que la vida te haya tratado bien…"
+    },
+    {
+      "pair_id": "conflict-0157",
+      "spa_row": 1315,
+      "spa_record_id": "spaphish:1742f895d8a8295af3126c1b8c4cbbc56d288c3512b28b698690837cabf26d82",
+      "spa_target": 0,
+      "spear_row": 1860,
+      "spear_record_id": "spearphishmx:1911",
+      "spear_hash": "edc17c7d8b75cc2920404175cdeca1a7676a875dbcfdbff2735b55094b67ce51",
+      "spear_target": 1,
+      "cosine_similarity": 0.987153,
+      "canonical_sequence_similarity": 0.988968,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "defang",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "sanitizacion",
+      "spa_subject_redacted": "Verano Low Cost",
+      "spear_subject_redacted": "Verano Low Cost",
+      "spa_body_redacted": "¡Hola de nuevo! Si quieres avanzar con tu inglés con un curso \"low cost\"... Tengo una cosa para ti. El curso completo por suscripción mensual te da acceso a tod…",
+      "spear_body_redacted": "¡Hola <DESTINATARIO>! Si quieres avanzar con tu inglés con un curso \"low cost\"... Tengo una cosa para ti. El curso completo por suscripción mensual te da acceso…"
+    },
+    {
+      "pair_id": "conflict-0013",
+      "spa_row": 179,
+      "spa_record_id": "spaphish:84cef9b7accbdc6d09b289d55898eadea238ee62a6a412efe718567da63a02b5",
+      "spa_target": 1,
+      "spear_row": 2042,
+      "spear_record_id": "spearphishmx:2093",
+      "spear_hash": "5f31baa89760d30011f19ddf81bb3b89d31d6fd096d08d90a063429791a7fb3a",
+      "spear_target": 0,
+      "cosine_similarity": 0.99801,
+      "canonical_sequence_similarity": 0.99738,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "defang",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion_y_sanitizacion",
+      "spa_subject_redacted": "𝅶A𝅶c𝅶c𝅶o𝅶u𝅶n𝅶t𝅶 𝅶L𝅶o𝅶c𝅶k𝅶e𝅶d= yPtGm7CJLIUFkGmLrOh6WFGgNQLx35nzNaDm",
+      "spear_subject_redacted": "𝅶A𝅶c𝅶c𝅶o𝅶u𝅶n𝅶t𝅶 𝅶L𝅶o𝅶c𝅶k𝅶e𝅶d= yPtGm7CJLIUFkGmLrOh6WFGgNQLx35nzNaDm",
+      "spa_body_redacted": "Y​o​u​r​ ​a​c​c​o​u​n​t​ ​h​a​s​ ​b​e​e​n​ ​l​o​c​k​e​d​ ​f​o​r​ ​s​e​c​u​r​ i​t​y​ ​p​u​r​p​o​s​e​s​.​ ​W​e​ ​h​a​v​e​ ​f​a​c​e​d​ ​s​o​m​e​ ​p​r​o​b​l​ e​m​s​…",
+      "spear_body_redacted": "Hola <DESTINATARIO>, Y​o​u​r​ ​a​c​c​o​u​n​t​ ​h​a​s​ ​b​e​e​n​ ​l​o​c​k​e​d​ ​f​o​r​ ​s​e​c​u​r​ i​t​y​ ​p​u​r​p​o​s​e​s​.​ ​W​e​ ​h​a​v​e​ ​f​a​c​e​d​ ​s​o​m​…"
+    },
+    {
+      "pair_id": "conflict-0089",
+      "spa_row": 629,
+      "spa_record_id": "spaphish:2667aeef9b485dfba77422c20ab1fab7b1d2f5c40ba07572ad2ad77f8c3933bc",
+      "spa_target": 1,
+      "spear_row": 2410,
+      "spear_record_id": "spearphishmx:2461",
+      "spear_hash": "a5510d6b21eb172d2f7df9506c71e46cdd3e193fb8c75ca77ce77acf31b12d95",
+      "spear_target": 0,
+      "cosine_similarity": 0.994117,
+      "canonical_sequence_similarity": 0.991171,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "sanitizacion_pii",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion_y_sanitizacion",
+      "spa_subject_redacted": "('Notificación') > T͏u͏ c͏u͏e͏n͏t͏a͏ d͏e͏ P͏a͏y͏P͏a͏l͏ s͏e͏ h͏a͏ s͏u͏s͏p͏e͏n͏d͏i͏d͏o͏ t͏e͏m͏p͏o͏r͏a͏l͏m͏e͏n͏t͏e͏ [Case-ID : EJ5CP-<TELEFONO>]",
+      "spear_subject_redacted": "('Notificación') > T͏u͏ c͏u͏e͏n͏t͏a͏ d͏e͏ P͏a͏y͏P͏a͏l͏ s͏e͏ h͏a͏ s͏u͏s͏p͏e͏n͏d͏i͏d͏o͏ t͏e͏m͏p͏o͏r͏a͏l͏m͏e͏n͏t͏e͏ [Case-ID : EJ5CP-<TELEFONO>]",
+      "spa_body_redacted": "<EMAIL>, Y͏͏͏͏o͏͏͏͏u͏͏͏͏r͏͏͏͏ P͏͏͏͏a͏͏͏͏y͏͏͏͏P͏͏͏͏a͏͏͏͏l͏͏͏͏ a͏͏͏͏c͏͏͏͏c͏͏͏͏o͏͏͏͏u͏͏͏͏n͏͏͏͏t͏͏͏͏ h͏͏͏͏a͏͏͏͏s͏͏͏͏ b͏͏͏͏e͏͏͏͏e͏͏͏͏n͏͏͏͏ t͏͏͏͏e͏͏͏͏m͏͏͏͏p͏͏͏͏o͏͏͏͏r…",
+      "spear_body_redacted": "Hola <DESTINATARIO>, <EMAIL>, Y͏͏͏͏o͏͏͏͏u͏͏͏͏r͏͏͏͏ P͏͏͏͏a͏͏͏͏y͏͏͏͏P͏͏͏͏a͏͏͏͏l͏͏͏͏ a͏͏͏͏c͏͏͏͏c͏͏͏͏o͏͏͏͏u͏͏͏͏n͏͏͏͏t͏͏͏͏ h͏͏͏͏a͏͏͏͏s͏͏͏͏ b͏͏͏͏e͏͏͏͏e͏͏͏͏n͏͏͏͏ t͏͏͏͏…"
+    },
+    {
+      "pair_id": "conflict-0083",
+      "spa_row": 603,
+      "spa_record_id": "spaphish:55cf9378416fe75d9138ba9e19a7f49fc961ebbdff0858e5cf406665fbb3b3d0",
+      "spa_target": 1,
+      "spear_row": 1648,
+      "spear_record_id": "spearphishmx:1699",
+      "spear_hash": "87a821b55d971d1df8f24492beb76195bfe33d31fd3297c69f0502658d801ab0",
+      "spear_target": 1,
+      "cosine_similarity": 0.987503,
+      "canonical_sequence_similarity": 0.991243,
+      "subject_equal_normalized": true,
+      "directed_to_person": false,
+      "change_flags": [
+        "defang",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "sanitizacion",
+      "spa_subject_redacted": "Tax Filing Update Required Immediately",
+      "spear_subject_redacted": "Tax Filing Update Required Immediately",
+      "spa_body_redacted": "Estimado cliente: Para cumplir con las regulaciones financieras, debe proporcionar información fiscal actualizada lo antes posible. No hacerlo podría provocar r…",
+      "spear_body_redacted": "Estimado <DESTINATARIO>: Para cumplir con las regulaciones financieras, debe proporcionar información fiscal actualizada lo antes posible. No hacerlo podría pro…"
+    },
+    {
+      "pair_id": "conflict-0106",
+      "spa_row": 697,
+      "spa_record_id": "spaphish:31ed20681317baf61269974f8561aa0fc6db08175d2446cd206cf29f934210c4",
+      "spa_target": 1,
+      "spear_row": 1653,
+      "spear_record_id": "spearphishmx:1704",
+      "spear_hash": "e5106ad9697507710fe0faa2be77fcec3ea99e6b61f40e3872e1a0989b8ea8ef",
+      "spear_target": 1,
+      "cosine_similarity": 0.959559,
+      "canonical_sequence_similarity": 0.976122,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "defang",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion_y_sanitizacion",
+      "spa_subject_redacted": "el equipo de Spo­­­­­­­­­­­­­­­­­tif­­­­­­­­­­­­­­­­­y­­­­­­­­­­­­­­­­­ !#2WPHl",
+      "spear_subject_redacted": "el equipo de Spo­­­­­­­­­­­­­­­­­tif­­­­­­­­­­­­­­­­­y­­­­­­­­­­­­­­­­­ !#2WPHl",
+      "spa_body_redacted": "¡Este mensaje fue enviado por alguien ajeno a la Universidad! **************************************************************************** ¡Un pequeño problema …",
+      "spear_body_redacted": "Estimada<DESTINATARIO>, ¡Este mensaje fue enviado por alguien ajeno a la Universidad! **************************************************************************…"
+    }
+  ],
+  "pair_registry": [
+    {
+      "pair_id": "conflict-0001",
+      "spa_row": 5,
+      "spa_record_id": "spaphish:131d5737b8f552dac26488cb0763e60fd6399c34369e931725564b35ba9e4e3b",
+      "spa_target": 1,
+      "spear_row": 1895,
+      "spear_record_id": "spearphishmx:1946",
+      "spear_hash": "f053f2f2c74739079d17086096945cf60f5e6a4a2698cfc1b9d7fbcba5a15be5",
+      "spear_target": 0,
+      "cosine_similarity": 0.957991,
+      "canonical_sequence_similarity": 0.976431,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0002",
+      "spa_row": 20,
+      "spa_record_id": "spaphish:237da9094162a7a3e28c0bb4bf8b17c2009a8726a49eac2cc79977ba5df5f6ce",
+      "spa_target": 1,
+      "spear_row": 1908,
+      "spear_record_id": "spearphishmx:1959",
+      "spear_hash": "50a17b6b7b34cdddbfbaa8331575bd38980f893565597bed7d4085e30bb2fe1e",
+      "spear_target": 0,
+      "cosine_similarity": 0.962305,
+      "canonical_sequence_similarity": 0.969609,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0003",
+      "spa_row": 41,
+      "spa_record_id": "spaphish:d3cf84b0b69f43497781efc80bb1d366a38b0ecbd159f65d82e3e51efe1071ed",
+      "spa_target": 1,
+      "spear_row": 1927,
+      "spear_record_id": "spearphishmx:1978",
+      "spear_hash": "9ce524564d7613629918b263ac3a4f80d2adc85789aa817707b24c7df98158b9",
+      "spear_target": 0,
+      "cosine_similarity": 0.958768,
+      "canonical_sequence_similarity": 0.986916,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0004",
+      "spa_row": 74,
+      "spa_record_id": "spaphish:69be13a080157b2cdf624312b41c7c651d87b9d7e8a13a95a7fb4ddae98458cf",
+      "spa_target": 1,
+      "spear_row": 1956,
+      "spear_record_id": "spearphishmx:2007",
+      "spear_hash": "a15c56678da72826de4a283eb6a4037ae874b41f03b38ee0da621af8b1b845b0",
+      "spear_target": 0,
+      "cosine_similarity": 0.967837,
+      "canonical_sequence_similarity": 0.984433,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0005",
+      "spa_row": 90,
+      "spa_record_id": "spaphish:21fd8640b2ed76dbca19d3d21d383d327b75a4e39a87a4c644f8f8ae335300f6",
+      "spa_target": 1,
+      "spear_row": 1968,
+      "spear_record_id": "spearphishmx:2019",
+      "spear_hash": "488c73006ae72bfd815b19f276ace118cb9400effe6c81b1b5949dc9c3713a84",
+      "spear_target": 0,
+      "cosine_similarity": 0.972004,
+      "canonical_sequence_similarity": 0.97855,
+      "subject_equal_normalized": true,
+      "directed_to_person": false,
+      "change_flags": [
+        "asunto_igual"
+      ],
+      "primary_cause": "variacion_adicional_no_resuelta"
+    },
+    {
+      "pair_id": "conflict-0006",
+      "spa_row": 96,
+      "spa_record_id": "spaphish:438599bd8cc4551c0cb726648f4075d665d13cb3d5daf47e01bba26ce4c5faa0",
+      "spa_target": 1,
+      "spear_row": 1974,
+      "spear_record_id": "spearphishmx:2025",
+      "spear_hash": "875f4d2e88eb6d0949784f99877a37aa3d024ea9fe11df22542d7de9c31d5f8a",
+      "spear_target": 0,
+      "cosine_similarity": 0.962922,
+      "canonical_sequence_similarity": 0.983407,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "sanitizacion_pii",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion_y_sanitizacion"
+    },
+    {
+      "pair_id": "conflict-0007",
+      "spa_row": 99,
+      "spa_record_id": "spaphish:3fbcf4061f97592f6dbeb1738d92cf25d1fcc30c67fb24be28166d7c51428075",
+      "spa_target": 1,
+      "spear_row": 1977,
+      "spear_record_id": "spearphishmx:2028",
+      "spear_hash": "12aca08e8d26d779588bfafc5a204eb7081b364ec826d1a83eab4ac41f48a98a",
+      "spear_target": 0,
+      "cosine_similarity": 0.974279,
+      "canonical_sequence_similarity": 0.982614,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0008",
+      "spa_row": 129,
+      "spa_record_id": "spaphish:bf0336db680b051d0f7694990aa81a05ff12c272a127a4a26e3b48445800e9b8",
+      "spa_target": 1,
+      "spear_row": 2000,
+      "spear_record_id": "spearphishmx:2051",
+      "spear_hash": "4d74bfa90f3da9ef5f2b31c4a5d895dcb86ab2267df0b8e0bbc19d25e0d7344e",
+      "spear_target": 0,
+      "cosine_similarity": 0.967111,
+      "canonical_sequence_similarity": 0.99266,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "sanitizacion_pii",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion_y_sanitizacion"
+    },
+    {
+      "pair_id": "conflict-0009",
+      "spa_row": 135,
+      "spa_record_id": "spaphish:d4ca25fea5439adeb00209847cbdc19ce30aa6f0d74a5354d223fac216f08044",
+      "spa_target": 1,
+      "spear_row": 2005,
+      "spear_record_id": "spearphishmx:2056",
+      "spear_hash": "06360178f4a7f867bb2dab748c17787af1fd5343c216e7b5caf2bbe4cb287708",
+      "spear_target": 0,
+      "cosine_similarity": 0.963897,
+      "canonical_sequence_similarity": 0.975207,
+      "subject_equal_normalized": true,
+      "directed_to_person": false,
+      "change_flags": [
+        "asunto_igual"
+      ],
+      "primary_cause": "variacion_adicional_no_resuelta"
+    },
+    {
+      "pair_id": "conflict-0010",
+      "spa_row": 165,
+      "spa_record_id": "spaphish:3789a2ffee2ba87ffed091a3ebe459cd91f25fb927568a75aed81335caadff37",
+      "spa_target": 1,
+      "spear_row": 2030,
+      "spear_record_id": "spearphishmx:2081",
+      "spear_hash": "0f179137ede9d640ebd24a098919d7d02301a8cd29f0766c96e2e599da858e19",
+      "spear_target": 0,
+      "cosine_similarity": 0.990832,
+      "canonical_sequence_similarity": 0.986319,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0011",
+      "spa_row": 169,
+      "spa_record_id": "spaphish:7cb99c378f32efbd8e3515b0ea9e8842987d0d0f59cde0834f504e56266f261f",
+      "spa_target": 1,
+      "spear_row": 2034,
+      "spear_record_id": "spearphishmx:2085",
+      "spear_hash": "c7dc812cba2d2fbb1105f898112df61a8e808e255372240a64ab32d48d69d5b4",
+      "spear_target": 0,
+      "cosine_similarity": 0.961686,
+      "canonical_sequence_similarity": 0.983801,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "sanitizacion_pii",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion_y_sanitizacion"
+    },
+    {
+      "pair_id": "conflict-0012",
+      "spa_row": 178,
+      "spa_record_id": "spaphish:211726dab40ae4d7a435a9cdf0c259ca5d0f80bb64c6d9cead7cba6dcceb7037",
+      "spa_target": 1,
+      "spear_row": 2041,
+      "spear_record_id": "spearphishmx:2092",
+      "spear_hash": "13d159e7a4e41e00d32f98c9fb001a200579a58bcd1fa6d5b9002c0e32044805",
+      "spear_target": 0,
+      "cosine_similarity": 0.962197,
+      "canonical_sequence_similarity": 0.981553,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "sanitizacion_pii",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion_y_sanitizacion"
+    },
+    {
+      "pair_id": "conflict-0013",
+      "spa_row": 179,
+      "spa_record_id": "spaphish:84cef9b7accbdc6d09b289d55898eadea238ee62a6a412efe718567da63a02b5",
+      "spa_target": 1,
+      "spear_row": 2042,
+      "spear_record_id": "spearphishmx:2093",
+      "spear_hash": "5f31baa89760d30011f19ddf81bb3b89d31d6fd096d08d90a063429791a7fb3a",
+      "spear_target": 0,
+      "cosine_similarity": 0.99801,
+      "canonical_sequence_similarity": 0.99738,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "defang",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion_y_sanitizacion"
+    },
+    {
+      "pair_id": "conflict-0014",
+      "spa_row": 181,
+      "spa_record_id": "spaphish:255b2ce1745ea09c793d1074272fdbb9ab96e496b47c656b5ed2daef1ca1263c",
+      "spa_target": 1,
+      "spear_row": 2044,
+      "spear_record_id": "spearphishmx:2095",
+      "spear_hash": "495dba7942421583ba99eae450d6c3396f5c3c69870264841cb1bcd64a5ec5fa",
+      "spear_target": 0,
+      "cosine_similarity": 0.976524,
+      "canonical_sequence_similarity": 0.979827,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0015",
+      "spa_row": 188,
+      "spa_record_id": "spaphish:3004d34a4d882480d37b101e5a970d02df2bb63826ccec7cc8259e4df93769f2",
+      "spa_target": 1,
+      "spear_row": 2049,
+      "spear_record_id": "spearphishmx:2100",
+      "spear_hash": "1caa2f1c8a89122da0dcfec117a7e885c2d7f6b2f67c82aafbaff9b60745aff2",
+      "spear_target": 0,
+      "cosine_similarity": 0.955281,
+      "canonical_sequence_similarity": 0.990712,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "sanitizacion_pii",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion_y_sanitizacion"
+    },
+    {
+      "pair_id": "conflict-0016",
+      "spa_row": 203,
+      "spa_record_id": "spaphish:326148e531397dd2d01b08f8368efdef2a2d5ca9132f20732ad6ff4b47c91241",
+      "spa_target": 1,
+      "spear_row": 2061,
+      "spear_record_id": "spearphishmx:2112",
+      "spear_hash": "5ccc4e3ff8ffab9f182823062eb780786728932509687f2c01eafb59b3572898",
+      "spear_target": 0,
+      "cosine_similarity": 0.957866,
+      "canonical_sequence_similarity": 0.977099,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0017",
+      "spa_row": 232,
+      "spa_record_id": "spaphish:60f64ddb3cdf580dc0419b7e9b145faa02ff2db2c335917bbd413fd0f9ceb9bf",
+      "spa_target": 1,
+      "spear_row": 2080,
+      "spear_record_id": "spearphishmx:2131",
+      "spear_hash": "a3d120fb34f4857a9ac73b3cf64a27890fdd93756c411b3797df084a5d4a7f2e",
+      "spear_target": 0,
+      "cosine_similarity": 0.975677,
+      "canonical_sequence_similarity": 0.977219,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0018",
+      "spa_row": 233,
+      "spa_record_id": "spaphish:270f701d4aa6b7362ad61886f871145bf9452a4c0f3dd3e4110bf58b8525353f",
+      "spa_target": 1,
+      "spear_row": 2081,
+      "spear_record_id": "spearphishmx:2132",
+      "spear_hash": "1d46d5f425ba5104f8e61d8b7b92ca9797ca7857b5d0c92303ff4d4a6f8655b8",
+      "spear_target": 0,
+      "cosine_similarity": 0.969601,
+      "canonical_sequence_similarity": 0.984479,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0019",
+      "spa_row": 237,
+      "spa_record_id": "spaphish:87703adf52a181b1097e17b342a6b0f23d1dce91de328474be9ce5c9eb1aac21",
+      "spa_target": 1,
+      "spear_row": 2083,
+      "spear_record_id": "spearphishmx:2134",
+      "spear_hash": "da4da5c5356466e3ab057e1cbdc654323ac73576164ca2846463d9aaaad310fd",
+      "spear_target": 0,
+      "cosine_similarity": 0.957666,
+      "canonical_sequence_similarity": 0.967265,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "defang",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion_y_sanitizacion"
+    },
+    {
+      "pair_id": "conflict-0020",
+      "spa_row": 241,
+      "spa_record_id": "spaphish:77b9b05178a73b9ba0b826bd896362f53cf83ef4cb2184d30e139778afe5114f",
+      "spa_target": 1,
+      "spear_row": 2088,
+      "spear_record_id": "spearphishmx:2139",
+      "spear_hash": "ac9cb45a21803f6768d4165c7f4c630ea00201d71e14abafe77227ba72be0a46",
+      "spear_target": 0,
+      "cosine_similarity": 0.950443,
+      "canonical_sequence_similarity": 0.952212,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0021",
+      "spa_row": 258,
+      "spa_record_id": "spaphish:affa43acdcaa8390ca75284f0ac86baebab825992ea46325d5c4f91983381a49",
+      "spa_target": 1,
+      "spear_row": 2101,
+      "spear_record_id": "spearphishmx:2152",
+      "spear_hash": "ab72394a339123d315182bb32c7d00b6d858ec6deec9b3056fb0765db952e1e8",
+      "spear_target": 0,
+      "cosine_similarity": 0.980095,
+      "canonical_sequence_similarity": 0.991334,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "sanitizacion_pii",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion_y_sanitizacion"
+    },
+    {
+      "pair_id": "conflict-0022",
+      "spa_row": 260,
+      "spa_record_id": "spaphish:d6e82524b22544ce737dc574b3d9bd49ce4dea29c5db0fab1d8bee3b298ee415",
+      "spa_target": 1,
+      "spear_row": 2103,
+      "spear_record_id": "spearphishmx:2154",
+      "spear_hash": "771cda47c5f669adf15f5f704296b8b621e00d00479eaf8ad82de77dca15cb56",
+      "spear_target": 0,
+      "cosine_similarity": 0.953321,
+      "canonical_sequence_similarity": 0.961644,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0023",
+      "spa_row": 274,
+      "spa_record_id": "spaphish:150926df76e782a4416051f5c31d47b4d994341c084ec36074506ebb6814f767",
+      "spa_target": 1,
+      "spear_row": 2112,
+      "spear_record_id": "spearphishmx:2163",
+      "spear_hash": "732e7fc9925087057c2cf3ced4fe17fcee7850359968c59dee722e57fa619f1d",
+      "spear_target": 0,
+      "cosine_similarity": 0.950835,
+      "canonical_sequence_similarity": 0.960039,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "sanitizacion_pii",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion_y_sanitizacion"
+    },
+    {
+      "pair_id": "conflict-0024",
+      "spa_row": 276,
+      "spa_record_id": "spaphish:b0ddb1b4871753c71378592983c9dc562f879eab87745d1c57980c337ee0bb5b",
+      "spa_target": 1,
+      "spear_row": 2114,
+      "spear_record_id": "spearphishmx:2165",
+      "spear_hash": "0288376e2ac6dbfb1e7d0a04af5fee56d7d8c13739df6ef0fc4342afb970004a",
+      "spear_target": 0,
+      "cosine_similarity": 0.97484,
+      "canonical_sequence_similarity": 0.981884,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "sanitizacion_pii",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion_y_sanitizacion"
+    },
+    {
+      "pair_id": "conflict-0025",
+      "spa_row": 281,
+      "spa_record_id": "spaphish:163936c40fc74cf2c1497c27c5eed152939a5620abd502fa048a91f7a1dfd874",
+      "spa_target": 1,
+      "spear_row": 2041,
+      "spear_record_id": "spearphishmx:2092",
+      "spear_hash": "13d159e7a4e41e00d32f98c9fb001a200579a58bcd1fa6d5b9002c0e32044805",
+      "spear_target": 0,
+      "cosine_similarity": 0.966877,
+      "canonical_sequence_similarity": 0.977974,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "sanitizacion_pii",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion_y_sanitizacion"
+    },
+    {
+      "pair_id": "conflict-0026",
+      "spa_row": 293,
+      "spa_record_id": "spaphish:f3a303c68cf414e3a747a8c6fba884e466bd26705b0a87d19734e39939495a43",
+      "spa_target": 1,
+      "spear_row": 2127,
+      "spear_record_id": "spearphishmx:2178",
+      "spear_hash": "e1a0c3fe21ce1c47fd850c06a8584df98d03460f29a4caf2398b8d611afaf1d7",
+      "spear_target": 0,
+      "cosine_similarity": 0.956587,
+      "canonical_sequence_similarity": 0.989091,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "sanitizacion_pii",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion_y_sanitizacion"
+    },
+    {
+      "pair_id": "conflict-0027",
+      "spa_row": 297,
+      "spa_record_id": "spaphish:c0c4210c073baaa67eb65de294f43cb9b05a6b41d397ef27714fb165f9f9e7ff",
+      "spa_target": 1,
+      "spear_row": 2130,
+      "spear_record_id": "spearphishmx:2181",
+      "spear_hash": "e95e72a808cd43e651d350637ef0466f24799a698764aacd9b1e92a85890b72e",
+      "spear_target": 0,
+      "cosine_similarity": 0.969688,
+      "canonical_sequence_similarity": 0.979472,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0028",
+      "spa_row": 298,
+      "spa_record_id": "spaphish:2de3a4995989d34df19beaa4ca547b67a51a4beacac3982d1319e763b20060d4",
+      "spa_target": 1,
+      "spear_row": 2131,
+      "spear_record_id": "spearphishmx:2182",
+      "spear_hash": "d79572e35fd5f81d30beff81a5bde78a8bc6372ef1e34cd68b84ff34afd78fa5",
+      "spear_target": 0,
+      "cosine_similarity": 0.967818,
+      "canonical_sequence_similarity": 0.984246,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0029",
+      "spa_row": 300,
+      "spa_record_id": "spaphish:bfdcd838ebcea05a3d1122df7c69ef02490121c24dbded2f96d28f678a026711",
+      "spa_target": 1,
+      "spear_row": 2133,
+      "spear_record_id": "spearphishmx:2184",
+      "spear_hash": "571c8d9a15176c47452e06e930846462ff9b6743b1c0367c0cd16efdfd62a764",
+      "spear_target": 0,
+      "cosine_similarity": 0.956943,
+      "canonical_sequence_similarity": 0.989045,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "sanitizacion_pii",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion_y_sanitizacion"
+    },
+    {
+      "pair_id": "conflict-0030",
+      "spa_row": 303,
+      "spa_record_id": "spaphish:4cc10fefc356385f412dff389c6dbcee0df5f0e9ecbee87188fa25e95a6f986e",
+      "spa_target": 1,
+      "spear_row": 2136,
+      "spear_record_id": "spearphishmx:2187",
+      "spear_hash": "d64bb52466337f3eb0a95a819a106f7a117f52102f29a9823a0feb73b1d48844",
+      "spear_target": 0,
+      "cosine_similarity": 0.979077,
+      "canonical_sequence_similarity": 0.982005,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0031",
+      "spa_row": 310,
+      "spa_record_id": "spaphish:7a41a5c1cde4e6485f584fa17350f900490ce28d2d9ff7193a8778b2725c2ec7",
+      "spa_target": 1,
+      "spear_row": 2142,
+      "spear_record_id": "spearphishmx:2193",
+      "spear_hash": "ab1f48dc7964a5588c6cb393a118f22b8c98141d20d783ddded39646ed9fab04",
+      "spear_target": 0,
+      "cosine_similarity": 0.960042,
+      "canonical_sequence_similarity": 0.973128,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0032",
+      "spa_row": 314,
+      "spa_record_id": "spaphish:245168cf7938673505a5d89f363b52e655613ad0f7b5378c29fe54cd88d15ec4",
+      "spa_target": 1,
+      "spear_row": 2146,
+      "spear_record_id": "spearphishmx:2197",
+      "spear_hash": "1a5685da1f7c5532204ed139b1c71caab7919dfee324813f7e73f0174638b64d",
+      "spear_target": 0,
+      "cosine_similarity": 0.976923,
+      "canonical_sequence_similarity": 0.976,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0033",
+      "spa_row": 317,
+      "spa_record_id": "spaphish:c28930f96700c6272978e8a1c0b3696b20b1f8d5b2d0e007e6017e3fe656de9b",
+      "spa_target": 1,
+      "spear_row": 2148,
+      "spear_record_id": "spearphishmx:2199",
+      "spear_hash": "b0ee648966f3451ed6f5405e1e65ca7e11176ac0dd4909ce394b4c39ddc9dac5",
+      "spear_target": 0,
+      "cosine_similarity": 0.970544,
+      "canonical_sequence_similarity": 0.983607,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0034",
+      "spa_row": 327,
+      "spa_record_id": "spaphish:e0a29da3acc53f7d51464887864dbe22e49716a18218507f35a3a9eab9c09928",
+      "spa_target": 1,
+      "spear_row": 2157,
+      "spear_record_id": "spearphishmx:2208",
+      "spear_hash": "d26c0d33279aac4a83625449702ceff588088dad485ff22d8d039d39fa5dffe1",
+      "spear_target": 0,
+      "cosine_similarity": 0.970241,
+      "canonical_sequence_similarity": 0.985493,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "sanitizacion_pii",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion_y_sanitizacion"
+    },
+    {
+      "pair_id": "conflict-0035",
+      "spa_row": 334,
+      "spa_record_id": "spaphish:fbe17823242770ee1e5631b26678feaa1cc395e422ef1b502255c207334108df",
+      "spa_target": 1,
+      "spear_row": 2163,
+      "spear_record_id": "spearphishmx:2214",
+      "spear_hash": "09955271382e72073bc6de08657c8a36fa5ca77145dac719f45cd1b1f36f61f9",
+      "spear_target": 0,
+      "cosine_similarity": 0.969457,
+      "canonical_sequence_similarity": 0.985493,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "sanitizacion_pii",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion_y_sanitizacion"
+    },
+    {
+      "pair_id": "conflict-0036",
+      "spa_row": 346,
+      "spa_record_id": "spaphish:41a884ac60276cfb74ee01a02762a194cdc269b3d59cf9d0fac156ecab981bfb",
+      "spa_target": 1,
+      "spear_row": 2175,
+      "spear_record_id": "spearphishmx:2226",
+      "spear_hash": "ca9fe4a52b5f350fe7dbfed00fae2ac4d4d7df418863bb7ceed4a4586b86048e",
+      "spear_target": 0,
+      "cosine_similarity": 0.950043,
+      "canonical_sequence_similarity": 0.98984,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "sanitizacion_pii",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion_y_sanitizacion"
+    },
+    {
+      "pair_id": "conflict-0037",
+      "spa_row": 352,
+      "spa_record_id": "spaphish:55a2879feb87f1185a20fd2cf614665ec40269df1a10ab5cc8b27856221dbb14",
+      "spa_target": 1,
+      "spear_row": 2181,
+      "spear_record_id": "spearphishmx:2232",
+      "spear_hash": "fc0ce4e32e7f6fd3cb6079fbeeec90fc92a9705b4ff9d1daa57aceb745317928",
+      "spear_target": 0,
+      "cosine_similarity": 0.965099,
+      "canonical_sequence_similarity": 0.987539,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0038",
+      "spa_row": 355,
+      "spa_record_id": "spaphish:dba820c1aa7d0461146e7c314e3629e41f6554aeb70d041775a46819d44b280f",
+      "spa_target": 1,
+      "spear_row": 2183,
+      "spear_record_id": "spearphishmx:2234",
+      "spear_hash": "6f8b9920457402081a42b96781bf5ba6fd67e7eed76a5389b64ba3e1cafef257",
+      "spear_target": 0,
+      "cosine_similarity": 0.964898,
+      "canonical_sequence_similarity": 0.99035,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "sanitizacion_pii",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion_y_sanitizacion"
+    },
+    {
+      "pair_id": "conflict-0039",
+      "spa_row": 370,
+      "spa_record_id": "spaphish:e611da2ad45b63f64825cb856234aed39f304f5143273aac0844db4e1444fad2",
+      "spa_target": 1,
+      "spear_row": 2196,
+      "spear_record_id": "spearphishmx:2247",
+      "spear_hash": "ea05dcfd75c9185e97d4b6fc29362c5911e370ef4d11eb496debbb850f2ef5cb",
+      "spear_target": 0,
+      "cosine_similarity": 0.968164,
+      "canonical_sequence_similarity": 0.980245,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0040",
+      "spa_row": 371,
+      "spa_record_id": "spaphish:3a3831fa814c950c133af16a6b98284b66190771ec36bee5c15abbfa1fa6945d",
+      "spa_target": 1,
+      "spear_row": 2197,
+      "spear_record_id": "spearphishmx:2248",
+      "spear_hash": "72479962839d4419d91f3f1572df427414d47c3d43a0c91e8e712478a9fbbfce",
+      "spear_target": 0,
+      "cosine_similarity": 0.968195,
+      "canonical_sequence_similarity": 0.982249,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0041",
+      "spa_row": 377,
+      "spa_record_id": "spaphish:282b6268640c436e28633c52530b591bcd018de97f33208627cd57bc5481f5fd",
+      "spa_target": 1,
+      "spear_row": 1931,
+      "spear_record_id": "spearphishmx:1982",
+      "spear_hash": "8a37141fe97efcf8dceb9e15ff3e2668dc13d00f0bd55bdf30ceb0145f491879",
+      "spear_target": 0,
+      "cosine_similarity": 0.978939,
+      "canonical_sequence_similarity": 0.987805,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "sanitizacion_pii",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion_y_sanitizacion"
+    },
+    {
+      "pair_id": "conflict-0042",
+      "spa_row": 384,
+      "spa_record_id": "spaphish:562ce5602b21af29060ff13776fdd3cb5f99fcf1165d743d1b1333c4600156b6",
+      "spa_target": 1,
+      "spear_row": 2208,
+      "spear_record_id": "spearphishmx:2259",
+      "spear_hash": "25d004f5261534827bf7bb86c14c42857d8f44b601f2ebe2e3a34f530bcc3188",
+      "spear_target": 0,
+      "cosine_similarity": 0.972249,
+      "canonical_sequence_similarity": 0.977731,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0043",
+      "spa_row": 388,
+      "spa_record_id": "spaphish:8062dc3f5d83c24dfcbf347b7f08e3a2f4e377c42473a6fb8a0726da3026e45f",
+      "spa_target": 1,
+      "spear_row": 2212,
+      "spear_record_id": "spearphishmx:2263",
+      "spear_hash": "54ca8dcebccad6da7866e9930aab018f2b51329a0706000a71ee74f109826ae8",
+      "spear_target": 0,
+      "cosine_similarity": 0.955741,
+      "canonical_sequence_similarity": 0.977778,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0044",
+      "spa_row": 389,
+      "spa_record_id": "spaphish:e7d5c99d2f0e901dfc6d5e50ed09346e301c8ecec51eaf69e81c3c64a7ba3439",
+      "spa_target": 1,
+      "spear_row": 2213,
+      "spear_record_id": "spearphishmx:2264",
+      "spear_hash": "f64fb42131347efdca13d1212c5e981b7acbe8a55e19659422cca5a14abaf9bf",
+      "spear_target": 0,
+      "cosine_similarity": 0.960277,
+      "canonical_sequence_similarity": 0.97485,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0045",
+      "spa_row": 390,
+      "spa_record_id": "spaphish:5f9f1690f416473c6a37a99ebead90c51ec55ac29d1e6d1835afee1b20e6a3a3",
+      "spa_target": 1,
+      "spear_row": 2214,
+      "spear_record_id": "spearphishmx:2265",
+      "spear_hash": "73240b2dbd94909bb3b4100136dbfefaca2c7972024637759246e26e2a0e9501",
+      "spear_target": 0,
+      "cosine_similarity": 0.950131,
+      "canonical_sequence_similarity": 0.977401,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0046",
+      "spa_row": 401,
+      "spa_record_id": "spaphish:be621b7b77d8777555f966a3d4fa48cdc35fda9aad9eb54fafc1e49ae4e6b399",
+      "spa_target": 1,
+      "spear_row": 2221,
+      "spear_record_id": "spearphishmx:2272",
+      "spear_hash": "62ddca0af3b34e3c16d00455deecde8a727f5d6ab8eb88b30fd81972ed76195b",
+      "spear_target": 0,
+      "cosine_similarity": 0.950127,
+      "canonical_sequence_similarity": 0.953642,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0047",
+      "spa_row": 405,
+      "spa_record_id": "spaphish:da2df3e8bd5cfc9eeb8f76600feb7706353158c4adad221fe122688ed7f4e539",
+      "spa_target": 1,
+      "spear_row": 2225,
+      "spear_record_id": "spearphishmx:2276",
+      "spear_hash": "b50d0a2602ce094cc1d033bdc9d9c467907bdc85fefdd504e4b1d01b31ee9658",
+      "spear_target": 0,
+      "cosine_similarity": 0.952985,
+      "canonical_sequence_similarity": 0.973316,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0048",
+      "spa_row": 415,
+      "spa_record_id": "spaphish:c53af7deca57ec7718acdf6f930bbff252dfc2cff7f218b1f2718378d3184c96",
+      "spa_target": 1,
+      "spear_row": 2232,
+      "spear_record_id": "spearphishmx:2283",
+      "spear_hash": "11002f878cd7a0577be7dc8cf5bdf1171cc169aad31f5ce89f7ddbb1e42236b6",
+      "spear_target": 0,
+      "cosine_similarity": 0.950507,
+      "canonical_sequence_similarity": 0.977811,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0049",
+      "spa_row": 416,
+      "spa_record_id": "spaphish:d90812779cc0cf2f89eb6ccd2b89210e5a9d597270337946412ae17e4560d7b1",
+      "spa_target": 1,
+      "spear_row": 2233,
+      "spear_record_id": "spearphishmx:2284",
+      "spear_hash": "c9be8dac9547a9d9386e51d2175a9a7e34ef237f52490dcfba919f913a621d83",
+      "spear_target": 0,
+      "cosine_similarity": 0.954117,
+      "canonical_sequence_similarity": 0.978471,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0050",
+      "spa_row": 417,
+      "spa_record_id": "spaphish:033b2e5817f4272df55584437282eed2aaf71a6526c48c6cd7ab63ea3cbadbbd",
+      "spa_target": 1,
+      "spear_row": 2234,
+      "spear_record_id": "spearphishmx:2285",
+      "spear_hash": "f9371b7f4375ccf1fd9b80ff73bb2dbec7e196b18b75c5b00d56d57c4a0840b1",
+      "spear_target": 0,
+      "cosine_similarity": 0.950972,
+      "canonical_sequence_similarity": 0.980309,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0051",
+      "spa_row": 421,
+      "spa_record_id": "spaphish:e0345cc83011dae4a04598315533a3d66f0f40538a2df7012256513f9e67f701",
+      "spa_target": 1,
+      "spear_row": 2238,
+      "spear_record_id": "spearphishmx:2289",
+      "spear_hash": "8f23d2e9cb3098d8fb66278d2cb5e720ad262d223caca1fc21c986e183cac8b4",
+      "spear_target": 0,
+      "cosine_similarity": 0.95978,
+      "canonical_sequence_similarity": 0.977099,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0052",
+      "spa_row": 424,
+      "spa_record_id": "spaphish:f6787b8daabab7fe1f8ced1f640ac5952474416816c7ec89da084dcfee556391",
+      "spa_target": 1,
+      "spear_row": 2240,
+      "spear_record_id": "spearphishmx:2291",
+      "spear_hash": "42cf1396e5af669784a17feb2a45c22280178cec8c47d09bca73b55036f45f68",
+      "spear_target": 0,
+      "cosine_similarity": 0.977441,
+      "canonical_sequence_similarity": 0.988327,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0053",
+      "spa_row": 431,
+      "spa_record_id": "spaphish:3e10710d2091903a0180cfef1188df361730939c4d61c2dce6abaaaa332f7371",
+      "spa_target": 1,
+      "spear_row": 2244,
+      "spear_record_id": "spearphishmx:2295",
+      "spear_hash": "d77062a0eb34a0b32e4bc2ef1e58c79e7f176f83e18bc863296a41e3a4de8306",
+      "spear_target": 0,
+      "cosine_similarity": 0.960492,
+      "canonical_sequence_similarity": 0.984859,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0054",
+      "spa_row": 440,
+      "spa_record_id": "spaphish:d9e537e58794cd4a9387de952b4c2549e5f2d04e55670bbd026847c06620c2c4",
+      "spa_target": 1,
+      "spear_row": 2250,
+      "spear_record_id": "spearphishmx:2301",
+      "spear_hash": "62e9ccfd2f7379535bb67c87056295bb0ce813372baa137d060c5be321300f88",
+      "spear_target": 0,
+      "cosine_similarity": 0.97527,
+      "canonical_sequence_similarity": 0.98263,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0055",
+      "spa_row": 442,
+      "spa_record_id": "spaphish:a2b65a36f9817bd5948de49bab1d346a6187781d8f16382ca102e0a25c29244f",
+      "spa_target": 1,
+      "spear_row": 2252,
+      "spear_record_id": "spearphishmx:2303",
+      "spear_hash": "2642fc4ddb9de22f1add9e0128c4e63c6223e388150c7dc84389f4c832a54243",
+      "spear_target": 0,
+      "cosine_similarity": 0.961647,
+      "canonical_sequence_similarity": 0.968205,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0056",
+      "spa_row": 444,
+      "spa_record_id": "spaphish:b0d10f341762658492050aaab5dfe58853781fe04c12114c220dda80cff2617c",
+      "spa_target": 1,
+      "spear_row": 2253,
+      "spear_record_id": "spearphishmx:2304",
+      "spear_hash": "199366c77361066dc446f13ac7b557f8dc1f10b0f240372850de44944199aa9d",
+      "spear_target": 0,
+      "cosine_similarity": 0.97078,
+      "canonical_sequence_similarity": 0.985947,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0057",
+      "spa_row": 445,
+      "spa_record_id": "spaphish:c121ee79d479f36e576a518e94bd559e40ceae95b9ecf05a2248c6284d28e49a",
+      "spa_target": 1,
+      "spear_row": 2254,
+      "spear_record_id": "spearphishmx:2305",
+      "spear_hash": "644e4f1cdc8929a29a895c78632928c8c573310b967fe303ae9733c446a39dc6",
+      "spear_target": 0,
+      "cosine_similarity": 0.981045,
+      "canonical_sequence_similarity": 0.985255,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0058",
+      "spa_row": 453,
+      "spa_record_id": "spaphish:216ef9e4c0ca5b6e454ad7d6ffd9b29a06f6385c20f013e9a3dddad4cd4ba7aa",
+      "spa_target": 1,
+      "spear_row": 2262,
+      "spear_record_id": "spearphishmx:2313",
+      "spear_hash": "abb9e6f63c6bedf45b53d0e0d15f45bf119c055e560ddddfd2dec58d400229ec",
+      "spear_target": 0,
+      "cosine_similarity": 0.982519,
+      "canonical_sequence_similarity": 0.989484,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0059",
+      "spa_row": 455,
+      "spa_record_id": "spaphish:ecf259ab62dadfdf03bf3023a61f89184eae5f9cb04674b405b5f90c207cd8c4",
+      "spa_target": 1,
+      "spear_row": 2264,
+      "spear_record_id": "spearphishmx:2315",
+      "spear_hash": "532fa78e32a90ddd3054bfa4e1c04e3e8c85c3f209fecf262a681d44ffb038a9",
+      "spear_target": 0,
+      "cosine_similarity": 0.976583,
+      "canonical_sequence_similarity": 0.990312,
+      "subject_equal_normalized": true,
+      "directed_to_person": false,
+      "change_flags": [
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "formato_unicode_o_espaciado"
+    },
+    {
+      "pair_id": "conflict-0060",
+      "spa_row": 459,
+      "spa_record_id": "spaphish:432328c4d8aef85c060d3e7ae704b6980944f51bbf7d90d0412dcd62bdc61c24",
+      "spa_target": 1,
+      "spear_row": 2268,
+      "spear_record_id": "spearphishmx:2319",
+      "spear_hash": "c3ba65d8299f84c11a000563159f550442b25aeda7b3b2be1cb32e852a1a6c79",
+      "spear_target": 0,
+      "cosine_similarity": 0.961546,
+      "canonical_sequence_similarity": 0.981604,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0061",
+      "spa_row": 463,
+      "spa_record_id": "spaphish:04d73ba5c991edec4cc987017c5c57574934911923c998659849c1e3a6065354",
+      "spa_target": 1,
+      "spear_row": 2272,
+      "spear_record_id": "spearphishmx:2323",
+      "spear_hash": "d1b785c189bab88711ecc5c1015f9b06c1d0ac9d190a706c9a330be3efba83e5",
+      "spear_target": 0,
+      "cosine_similarity": 0.964727,
+      "canonical_sequence_similarity": 0.981659,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0062",
+      "spa_row": 466,
+      "spa_record_id": "spaphish:f3436cdf45b7a29237b904886b5995ad87bea2524a3b7bc998633a0c6658e59a",
+      "spa_target": 1,
+      "spear_row": 2274,
+      "spear_record_id": "spearphishmx:2325",
+      "spear_hash": "8c58b8e69531e67a37bf31ee5acd0b00a1a0f0a1d6c465200bd953f1f637590e",
+      "spear_target": 0,
+      "cosine_similarity": 0.952198,
+      "canonical_sequence_similarity": 0.977528,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0063",
+      "spa_row": 472,
+      "spa_record_id": "spaphish:11eb4746d83db5fa342b2ad1bc30e126774521df3a0979e0a3bea4c439846ec6",
+      "spa_target": 1,
+      "spear_row": 2278,
+      "spear_record_id": "spearphishmx:2329",
+      "spear_hash": "c3b0935ab8b6bc24854d83ef9819057db63d085cfdc2b5d622f0f3e492264c35",
+      "spear_target": 0,
+      "cosine_similarity": 0.969194,
+      "canonical_sequence_similarity": 0.974233,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0064",
+      "spa_row": 474,
+      "spa_record_id": "spaphish:4c71a84ac28ce2627850c2d7c455bebb00b23e8a4a79511d4227b752d3b6b1b2",
+      "spa_target": 1,
+      "spear_row": 2280,
+      "spear_record_id": "spearphishmx:2331",
+      "spear_hash": "b200f06353f15016d21fedb1bd8782626137c0ff06f8e49fdd4f4353fd29366d",
+      "spear_target": 0,
+      "cosine_similarity": 0.953999,
+      "canonical_sequence_similarity": 0.976879,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0065",
+      "spa_row": 487,
+      "spa_record_id": "spaphish:bff0e53743113b065b0ebafa081718ee2447e50ee7949d5d42d06d6920803711",
+      "spa_target": 1,
+      "spear_row": 2289,
+      "spear_record_id": "spearphishmx:2340",
+      "spear_hash": "03d0e0eb23d7dbf80cd8d9e15ad6c0020a24ab2c466ba44dbfb72841b4f2c56b",
+      "spear_target": 0,
+      "cosine_similarity": 0.964785,
+      "canonical_sequence_similarity": 0.982571,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "defang",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion_y_sanitizacion"
+    },
+    {
+      "pair_id": "conflict-0066",
+      "spa_row": 491,
+      "spa_record_id": "spaphish:6ac788d834000e2dbf01bdf66a327da51b1cf993cf7cab6f54c435afa20f6d16",
+      "spa_target": 1,
+      "spear_row": 2291,
+      "spear_record_id": "spearphishmx:2342",
+      "spear_hash": "6db0479aa745a423e8f589670c95e393a4f7a16bd5dada1d17782493bdfe5e26",
+      "spear_target": 0,
+      "cosine_similarity": 0.957909,
+      "canonical_sequence_similarity": 0.981432,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0067",
+      "spa_row": 495,
+      "spa_record_id": "spaphish:d2de810eb70109c5ba68681b63f8fd2fe233e195d1d66d5519f9ef5a811ef24d",
+      "spa_target": 1,
+      "spear_row": 2296,
+      "spear_record_id": "spearphishmx:2347",
+      "spear_hash": "69593beb70b5b64a0ce413812069d2d2496fb9c17301c65b3209def3961e1735",
+      "spear_target": 0,
+      "cosine_similarity": 0.968074,
+      "canonical_sequence_similarity": 0.98255,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0068",
+      "spa_row": 503,
+      "spa_record_id": "spaphish:9d446d5b49a93d22ab83728131a107c9b7f418e8508528df6e7f6a85c3c8efd4",
+      "spa_target": 1,
+      "spear_row": 2007,
+      "spear_record_id": "spearphishmx:2058",
+      "spear_hash": "a1bbe56811ab1089a1aa633f12fb917af62f155368634be6cc23c66dbd0e5f54",
+      "spear_target": 0,
+      "cosine_similarity": 0.958827,
+      "canonical_sequence_similarity": 0.958855,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0069",
+      "spa_row": 518,
+      "spa_record_id": "spaphish:e8e48e3f25f132f82000dc406c92e1435feee50d82a1b7cfd191fadf83133003",
+      "spa_target": 1,
+      "spear_row": 2313,
+      "spear_record_id": "spearphishmx:2364",
+      "spear_hash": "f703ca01d709308f7b2ac448d8da8a0290559602905c4befc560324c4e834adb",
+      "spear_target": 0,
+      "cosine_similarity": 0.952344,
+      "canonical_sequence_similarity": 0.975779,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0070",
+      "spa_row": 521,
+      "spa_record_id": "spaphish:b6036c8746efa408c499feed78e7236559cec16aa8e228a49808404a66d102d7",
+      "spa_target": 1,
+      "spear_row": 2316,
+      "spear_record_id": "spearphishmx:2367",
+      "spear_hash": "c5968da53821c505888625b14d18c308969942ebd7db86c73e2a11f2ee131c1c",
+      "spear_target": 0,
+      "cosine_similarity": 0.950007,
+      "canonical_sequence_similarity": 0.977778,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "defang",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion_y_sanitizacion"
+    },
+    {
+      "pair_id": "conflict-0071",
+      "spa_row": 530,
+      "spa_record_id": "spaphish:fda6d1e53c69ed5a8be7397b452ca50b39d11149cd44fad91c8d8c1054829603",
+      "spa_target": 1,
+      "spear_row": 2384,
+      "spear_record_id": "spearphishmx:2435",
+      "spear_hash": "a190c190cab5247bc22a2370118bf4878dddf148227b3924c6329e1004db8987",
+      "spear_target": 0,
+      "cosine_similarity": 0.985122,
+      "canonical_sequence_similarity": 0.989463,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0072",
+      "spa_row": 537,
+      "spa_record_id": "spaphish:df110bb107de43c4a14b6007f4f4ae239e473a79401a7b53ae252d8320cadf7d",
+      "spa_target": 1,
+      "spear_row": 2329,
+      "spear_record_id": "spearphishmx:2380",
+      "spear_hash": "39e4a45d1b5a457121c992dc4b57ea7720642421dcb6a981932cff06d46a8377",
+      "spear_target": 0,
+      "cosine_similarity": 0.957894,
+      "canonical_sequence_similarity": 0.960494,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0073",
+      "spa_row": 552,
+      "spa_record_id": "spaphish:86dd9c28792d8b46d34feb684a549d16cc2cbd52dd0c15ef17aa324b9805ae15",
+      "spa_target": 1,
+      "spear_row": 2345,
+      "spear_record_id": "spearphishmx:2396",
+      "spear_hash": "8fb53e68bd0abf09bea86a7f36cc9251808d60ea9b4253f92018f69624e2e766",
+      "spear_target": 0,
+      "cosine_similarity": 0.979883,
+      "canonical_sequence_similarity": 0.984079,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0074",
+      "spa_row": 558,
+      "spa_record_id": "spaphish:9f69b66e439f5b16ad2cbb5d0a4b01e71f05ae1c0b661999288acbc559990ef0",
+      "spa_target": 1,
+      "spear_row": 2351,
+      "spear_record_id": "spearphishmx:2402",
+      "spear_hash": "556cae668b898e2332080941a993ca4ef57d65922d6bed29582048fbccbbe84a",
+      "spear_target": 0,
+      "cosine_similarity": 0.95273,
+      "canonical_sequence_similarity": 0.978554,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0075",
+      "spa_row": 561,
+      "spa_record_id": "spaphish:d55d1d30dfc157cf536e6521a0efcaa8922e60a9f81bae2f56ee53311ebb4d8a",
+      "spa_target": 1,
+      "spear_row": 2354,
+      "spear_record_id": "spearphishmx:2405",
+      "spear_hash": "1baf3171ffe3b5bb99439348c486957e52330026bea6282b5b8a4e9488bc1fdf",
+      "spear_target": 0,
+      "cosine_similarity": 0.97493,
+      "canonical_sequence_similarity": 0.978283,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0076",
+      "spa_row": 567,
+      "spa_record_id": "spaphish:44b8d3f30390d117ca83c04639a96254be087cb5a1788d92bbaaeb558d996ada",
+      "spa_target": 1,
+      "spear_row": 1646,
+      "spear_record_id": "spearphishmx:1697",
+      "spear_hash": "d0f0af7e90facd660e2931d1c9d4e8758a72c837505c944178452483c279f181",
+      "spear_target": 1,
+      "cosine_similarity": 0.953523,
+      "canonical_sequence_similarity": 0.96749,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "defang",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion_y_sanitizacion"
+    },
+    {
+      "pair_id": "conflict-0077",
+      "spa_row": 573,
+      "spa_record_id": "spaphish:19570147d411c835dd14a8d41940a65faaa90f17554fb156acde919c37be263a",
+      "spa_target": 1,
+      "spear_row": 2364,
+      "spear_record_id": "spearphishmx:2415",
+      "spear_hash": "9c7ea149f20dd49ee4c8df8fceb60015ebde6c8ed3114aa85bd655cd1a35d990",
+      "spear_target": 0,
+      "cosine_similarity": 0.972867,
+      "canonical_sequence_similarity": 0.982278,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0078",
+      "spa_row": 578,
+      "spa_record_id": "spaphish:ce48e7a46182badf0117e4f133a65ae24b7e0b3d2c320a80f83b45deb11843e7",
+      "spa_target": 1,
+      "spear_row": 2369,
+      "spear_record_id": "spearphishmx:2420",
+      "spear_hash": "0e781b3f93b54683da24031494939a279e05fd36e9f4546d562a192fa320fd2f",
+      "spear_target": 0,
+      "cosine_similarity": 0.989287,
+      "canonical_sequence_similarity": 0.993767,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0079",
+      "spa_row": 581,
+      "spa_record_id": "spaphish:573d309d0f1da202ac315229fee806236ae9dd879a9659d75f949006dac008b0",
+      "spa_target": 1,
+      "spear_row": 2371,
+      "spear_record_id": "spearphishmx:2422",
+      "spear_hash": "f6a9e20fb219e42a332a9ff2e66ad74b41807afdfc66c95f6913d5227f7e256e",
+      "spear_target": 0,
+      "cosine_similarity": 0.978237,
+      "canonical_sequence_similarity": 0.983425,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0080",
+      "spa_row": 596,
+      "spa_record_id": "spaphish:ed17a5bd8f166aae979a8be85a74fa77ed52320e798bed2b91404e54bcbcb0a6",
+      "spa_target": 1,
+      "spear_row": 2384,
+      "spear_record_id": "spearphishmx:2435",
+      "spear_hash": "a190c190cab5247bc22a2370118bf4878dddf148227b3924c6329e1004db8987",
+      "spear_target": 0,
+      "cosine_similarity": 0.985122,
+      "canonical_sequence_similarity": 0.989463,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0081",
+      "spa_row": 597,
+      "spa_record_id": "spaphish:e0c51c1b2e600a9848c9bb49ad7135719259a26c4ca2a2d63b5364868d7d064a",
+      "spa_target": 1,
+      "spear_row": 2385,
+      "spear_record_id": "spearphishmx:2436",
+      "spear_hash": "c40c565d5c790a053e9ce9ff772e0d3ec8949d76b5cbdbc2374c9f5487ea3667",
+      "spear_target": 0,
+      "cosine_similarity": 0.959841,
+      "canonical_sequence_similarity": 0.973783,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0082",
+      "spa_row": 599,
+      "spa_record_id": "spaphish:6efd4d703aeb54d0cb78ba3efa20c795fb26130afc6c2ad74727cab8ffb45008",
+      "spa_target": 1,
+      "spear_row": 2387,
+      "spear_record_id": "spearphishmx:2438",
+      "spear_hash": "9ec462b46b6908193f5f8977bcfdc896084a1cb31a4d706344083cf762068146",
+      "spear_target": 0,
+      "cosine_similarity": 0.961477,
+      "canonical_sequence_similarity": 0.974233,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0083",
+      "spa_row": 603,
+      "spa_record_id": "spaphish:55cf9378416fe75d9138ba9e19a7f49fc961ebbdff0858e5cf406665fbb3b3d0",
+      "spa_target": 1,
+      "spear_row": 1648,
+      "spear_record_id": "spearphishmx:1699",
+      "spear_hash": "87a821b55d971d1df8f24492beb76195bfe33d31fd3297c69f0502658d801ab0",
+      "spear_target": 1,
+      "cosine_similarity": 0.987503,
+      "canonical_sequence_similarity": 0.991243,
+      "subject_equal_normalized": true,
+      "directed_to_person": false,
+      "change_flags": [
+        "defang",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "sanitizacion"
+    },
+    {
+      "pair_id": "conflict-0084",
+      "spa_row": 609,
+      "spa_record_id": "spaphish:0150af908bd14468fcfb8c56273301c8b6bd87186e3668eb3808b9a429bf12b9",
+      "spa_target": 1,
+      "spear_row": 2396,
+      "spear_record_id": "spearphishmx:2447",
+      "spear_hash": "04f2f5b747e2054ec9ad3acdf7979d9447c652578a2ee63e321464cc238048bb",
+      "spear_target": 0,
+      "cosine_similarity": 0.960179,
+      "canonical_sequence_similarity": 0.97702,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0085",
+      "spa_row": 618,
+      "spa_record_id": "spaphish:450734d41bbe674b70ddafc4a9f566c059ba480a55e37d99376d5c20d5db0703",
+      "spa_target": 1,
+      "spear_row": 2402,
+      "spear_record_id": "spearphishmx:2453",
+      "spear_hash": "f274f575652092dddc0ffef5cb6bcfe9acc89cb740273866010a95a0cbfb4932",
+      "spear_target": 0,
+      "cosine_similarity": 0.955026,
+      "canonical_sequence_similarity": 0.954933,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0086",
+      "spa_row": 619,
+      "spa_record_id": "spaphish:8150a4a3fe327f1cf79971b018b2e23a3fec3a51fcb5170253995662545056e7",
+      "spa_target": 1,
+      "spear_row": 2403,
+      "spear_record_id": "spearphishmx:2454",
+      "spear_hash": "1694e91a636480ff1981289ecdc2d40406dd5da5fa3caffc032213c78dccf8f7",
+      "spear_target": 0,
+      "cosine_similarity": 0.950568,
+      "canonical_sequence_similarity": 0.978811,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "sanitizacion_pii",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion_y_sanitizacion"
+    },
+    {
+      "pair_id": "conflict-0087",
+      "spa_row": 624,
+      "spa_record_id": "spaphish:72a089d7dda770ede1a76e451b9fa968ae96d47a7ae4aa26313e7701334d5731",
+      "spa_target": 1,
+      "spear_row": 2406,
+      "spear_record_id": "spearphishmx:2457",
+      "spear_hash": "419d7890bde8bb6ebbb88aaea26d18322c73f3eba6a2f333adcaecaf7dabb45b",
+      "spear_target": 0,
+      "cosine_similarity": 0.950735,
+      "canonical_sequence_similarity": 0.990889,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "sanitizacion_pii",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion_y_sanitizacion"
+    },
+    {
+      "pair_id": "conflict-0088",
+      "spa_row": 626,
+      "spa_record_id": "spaphish:d54e954f1ee5b67cbffffbbdaa7b9ccef8e495bba8e27c936db5647208150b24",
+      "spa_target": 1,
+      "spear_row": 2408,
+      "spear_record_id": "spearphishmx:2459",
+      "spear_hash": "03d0cc67492767a31bc58acb13e4b963db67183e5b4c6d7a878dec933431af0b",
+      "spear_target": 0,
+      "cosine_similarity": 0.954549,
+      "canonical_sequence_similarity": 0.982039,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "sanitizacion_pii",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion_y_sanitizacion"
+    },
+    {
+      "pair_id": "conflict-0089",
+      "spa_row": 629,
+      "spa_record_id": "spaphish:2667aeef9b485dfba77422c20ab1fab7b1d2f5c40ba07572ad2ad77f8c3933bc",
+      "spa_target": 1,
+      "spear_row": 2410,
+      "spear_record_id": "spearphishmx:2461",
+      "spear_hash": "a5510d6b21eb172d2f7df9506c71e46cdd3e193fb8c75ca77ce77acf31b12d95",
+      "spear_target": 0,
+      "cosine_similarity": 0.994117,
+      "canonical_sequence_similarity": 0.991171,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "sanitizacion_pii",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion_y_sanitizacion"
+    },
+    {
+      "pair_id": "conflict-0090",
+      "spa_row": 632,
+      "spa_record_id": "spaphish:b9ac270fe2766d991dda0421d665c0a721afbd6299c2a940abc6288cf13a45e5",
+      "spa_target": 1,
+      "spear_row": 2412,
+      "spear_record_id": "spearphishmx:2463",
+      "spear_hash": "5714e417d6c3c84e066252ce334dcfda243206c0b55f4c830166a59f936426d6",
+      "spear_target": 0,
+      "cosine_similarity": 0.954579,
+      "canonical_sequence_similarity": 0.97702,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0091",
+      "spa_row": 633,
+      "spa_record_id": "spaphish:a39edbc35e04d6f913048c2d7d1df38e31fcba52cc92108740d52b41b017a3cf",
+      "spa_target": 1,
+      "spear_row": 2413,
+      "spear_record_id": "spearphishmx:2464",
+      "spear_hash": "263060bbd9b9e0da4548062b1463087816a8bf783b33a56f2ac504e423a5b716",
+      "spear_target": 0,
+      "cosine_similarity": 0.96006,
+      "canonical_sequence_similarity": 0.980981,
+      "subject_equal_normalized": true,
+      "directed_to_person": false,
+      "change_flags": [
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "formato_unicode_o_espaciado"
+    },
+    {
+      "pair_id": "conflict-0092",
+      "spa_row": 637,
+      "spa_record_id": "spaphish:a7ec2858c5e31b879227f4889da8b9e611a569289e2b8327707b95979394f8c0",
+      "spa_target": 1,
+      "spear_row": 2417,
+      "spear_record_id": "spearphishmx:2468",
+      "spear_hash": "7da7cd24c78eafbffedfdf5dd4987d302b40cf2adb4f5de6ce7c7729f482bdfc",
+      "spear_target": 0,
+      "cosine_similarity": 0.954735,
+      "canonical_sequence_similarity": 0.955603,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0093",
+      "spa_row": 644,
+      "spa_record_id": "spaphish:5b6f8dae0bad9f1eebea5b601a4be15eb4c20057ae3639dcd7173f1a28f0b0e7",
+      "spa_target": 1,
+      "spear_row": 2421,
+      "spear_record_id": "spearphishmx:2472",
+      "spear_hash": "9d401e801ddd4e6b9c197a4073510290359263e113ec862b3bd47174379b0441",
+      "spear_target": 0,
+      "cosine_similarity": 0.95877,
+      "canonical_sequence_similarity": 0.98646,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0094",
+      "spa_row": 653,
+      "spa_record_id": "spaphish:743f877afcc565b0d3cbadf3f6e98d7133cdc7459de6ac11b29be3551a888b0a",
+      "spa_target": 1,
+      "spear_row": 2428,
+      "spear_record_id": "spearphishmx:2479",
+      "spear_hash": "12fe799e00ef95e454abc3719abee49148a5cfbd9af368528d290c62d04df3d1",
+      "spear_target": 0,
+      "cosine_similarity": 0.962537,
+      "canonical_sequence_similarity": 0.976589,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0095",
+      "spa_row": 658,
+      "spa_record_id": "spaphish:ff8d35cc86e708b299f7822d738a31a6738fb9ae1f6374a60e6191c8976f757f",
+      "spa_target": 1,
+      "spear_row": 2431,
+      "spear_record_id": "spearphishmx:2482",
+      "spear_hash": "6fe1db14ecfff9cc65b4b295e65220a90a81110c24fd684181f8bb75e8f96cb6",
+      "spear_target": 0,
+      "cosine_similarity": 0.973031,
+      "canonical_sequence_similarity": 0.966901,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0096",
+      "spa_row": 662,
+      "spa_record_id": "spaphish:4be57a30f495b8feca6819794089816448a3b404b43670dd9b9443181b913760",
+      "spa_target": 1,
+      "spear_row": 2434,
+      "spear_record_id": "spearphishmx:2485",
+      "spear_hash": "8fb7d03d9582acb337fd3390d50ac95416a7123a6404564db7c5e9f2757e94ef",
+      "spear_target": 0,
+      "cosine_similarity": 0.972705,
+      "canonical_sequence_similarity": 0.977248,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0097",
+      "spa_row": 665,
+      "spa_record_id": "spaphish:cccf38ba5b65afa81ddf54cff946daf00a95568c9b2f8a2caa9d367dbd69199e",
+      "spa_target": 1,
+      "spear_row": 2437,
+      "spear_record_id": "spearphishmx:2488",
+      "spear_hash": "1b463283b5ee977b58ad4db021a0906cf57fd51216f26f5f82b78c30132ee183",
+      "spear_target": 0,
+      "cosine_similarity": 0.959607,
+      "canonical_sequence_similarity": 0.977833,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "sanitizacion_pii",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion_y_sanitizacion"
+    },
+    {
+      "pair_id": "conflict-0098",
+      "spa_row": 667,
+      "spa_record_id": "spaphish:65ed6442f9281a0534dda461ecfcaf94400053eb0dad3cf56fd4f69f9924bcac",
+      "spa_target": 1,
+      "spear_row": 2439,
+      "spear_record_id": "spearphishmx:2490",
+      "spear_hash": "3652dbda32a4667a725efcb39f37c6d0b4dd076c5ac5b28b978c28bbeb6e18c3",
+      "spear_target": 0,
+      "cosine_similarity": 0.961515,
+      "canonical_sequence_similarity": 0.966074,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0099",
+      "spa_row": 668,
+      "spa_record_id": "spaphish:205932c8938edf773c478f4ea940690e16248d2249ce221ae38eded6e321c14f",
+      "spa_target": 1,
+      "spear_row": 2440,
+      "spear_record_id": "spearphishmx:2491",
+      "spear_hash": "af7e3ab9a2ae813c2205b43f401ba73adbe2424bb9ce1035a5814a09601dbacf",
+      "spear_target": 0,
+      "cosine_similarity": 0.959556,
+      "canonical_sequence_similarity": 0.984772,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0100",
+      "spa_row": 670,
+      "spa_record_id": "spaphish:d08726427e519881b623d74a6102fe96194c74d910adc700b854ef1deeb8ddd1",
+      "spa_target": 1,
+      "spear_row": 2441,
+      "spear_record_id": "spearphishmx:2492",
+      "spear_hash": "0800e1f33beb1aa297a939280183348b5bf143191acb6fd1c668ce58dbae26db",
+      "spear_target": 0,
+      "cosine_similarity": 0.963877,
+      "canonical_sequence_similarity": 0.977297,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0101",
+      "spa_row": 673,
+      "spa_record_id": "spaphish:7c5228df79c5b957d4d7a6ed403fb0587d789aa6ff1496eb8c622a61428c8b21",
+      "spa_target": 1,
+      "spear_row": 2444,
+      "spear_record_id": "spearphishmx:2495",
+      "spear_hash": "2aafc39be2559d47f93642b7f8287da4c0fee22597d7f3dd6d49d9fe37e5f2d4",
+      "spear_target": 0,
+      "cosine_similarity": 0.952886,
+      "canonical_sequence_similarity": 0.977088,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0102",
+      "spa_row": 674,
+      "spa_record_id": "spaphish:be208db6f5e85f9dee6cb90ea5c61d3551337203d7f70d6dc950d2bc5496c105",
+      "spa_target": 1,
+      "spear_row": 2445,
+      "spear_record_id": "spearphishmx:2496",
+      "spear_hash": "5a107c2b09f125b3924ea3108c79a59af9d704b5c5773f06375a82362198947b",
+      "spear_target": 0,
+      "cosine_similarity": 0.952301,
+      "canonical_sequence_similarity": 0.970179,
+      "subject_equal_normalized": false,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0103",
+      "spa_row": 680,
+      "spa_record_id": "spaphish:5f651dc8f27cdd7e2bfb48b38ed17fb9cf4dfd9fe349f08f737b13b8f4bfcb27",
+      "spa_target": 1,
+      "spear_row": 2451,
+      "spear_record_id": "spearphishmx:2502",
+      "spear_hash": "e224974bc7ec05494783f16e559f431e1e7a2d58a67218cdb3114989bfa51eba",
+      "spear_target": 0,
+      "cosine_similarity": 0.955135,
+      "canonical_sequence_similarity": 0.972367,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0104",
+      "spa_row": 692,
+      "spa_record_id": "spaphish:9e470fd7fd02b30cb89d3e074e2954621ea999d4f0e053d3871887e6db5d6303",
+      "spa_target": 1,
+      "spear_row": 2461,
+      "spear_record_id": "spearphishmx:2512",
+      "spear_hash": "4f63179820065ed014dddd750989ed351d338b60ef6a1760ff2957393b1a6f20",
+      "spear_target": 0,
+      "cosine_similarity": 0.964552,
+      "canonical_sequence_similarity": 0.95051,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "sanitizacion_pii",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion_y_sanitizacion"
+    },
+    {
+      "pair_id": "conflict-0105",
+      "spa_row": 694,
+      "spa_record_id": "spaphish:fa570f228df73d67466b7e90c84aadf73e28d67c280e83a4888b18af5f4c5c97",
+      "spa_target": 1,
+      "spear_row": 2463,
+      "spear_record_id": "spearphishmx:2514",
+      "spear_hash": "3c50b94fb23cd4047b07cd1aee2a3d1c9a0f84824a1fb96100be4e9b62fd1c7b",
+      "spear_target": 0,
+      "cosine_similarity": 0.96221,
+      "canonical_sequence_similarity": 0.988965,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0106",
+      "spa_row": 697,
+      "spa_record_id": "spaphish:31ed20681317baf61269974f8561aa0fc6db08175d2446cd206cf29f934210c4",
+      "spa_target": 1,
+      "spear_row": 1653,
+      "spear_record_id": "spearphishmx:1704",
+      "spear_hash": "e5106ad9697507710fe0faa2be77fcec3ea99e6b61f40e3872e1a0989b8ea8ef",
+      "spear_target": 1,
+      "cosine_similarity": 0.959559,
+      "canonical_sequence_similarity": 0.976122,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "defang",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion_y_sanitizacion"
+    },
+    {
+      "pair_id": "conflict-0107",
+      "spa_row": 701,
+      "spa_record_id": "spaphish:b064bdcecc53a5682e77a5d492721e82fd32b60b9b468b1e038f9f5626f2743c",
+      "spa_target": 1,
+      "spear_row": 2468,
+      "spear_record_id": "spearphishmx:2519",
+      "spear_hash": "67d94ddc3024126dfd341561eb6111b674d71031cb59676a2ab8784b108b7843",
+      "spear_target": 0,
+      "cosine_similarity": 0.951805,
+      "canonical_sequence_similarity": 0.971466,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0108",
+      "spa_row": 708,
+      "spa_record_id": "spaphish:b2e5c50d85e7f81d18db59765bcbd5712c34c5d09519674eb22cfabac3089f49",
+      "spa_target": 1,
+      "spear_row": 2474,
+      "spear_record_id": "spearphishmx:2525",
+      "spear_hash": "1340cf8c9f75b0cc414fffc0517e5be1da4d7eb8840315477f86dc146a14d490",
+      "spear_target": 0,
+      "cosine_similarity": 0.958418,
+      "canonical_sequence_similarity": 0.973451,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0109",
+      "spa_row": 719,
+      "spa_record_id": "spaphish:3e7049f40004fe6da74d08f26a56c4da222554530c5da7fc7f42c0ca720889d8",
+      "spa_target": 1,
+      "spear_row": 2009,
+      "spear_record_id": "spearphishmx:2060",
+      "spear_hash": "46bb4d3695e7f5a03d22c673abb08bf50bf377b40f1cda6a07bb0bf8b9a31e4a",
+      "spear_target": 0,
+      "cosine_similarity": 0.968393,
+      "canonical_sequence_similarity": 0.95728,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0110",
+      "spa_row": 722,
+      "spa_record_id": "spaphish:36e0f448eb9fd46463aab8145bc9d637a2f854c5c8c92bd966ba03f0fc757f48",
+      "spa_target": 1,
+      "spear_row": 2488,
+      "spear_record_id": "spearphishmx:2539",
+      "spear_hash": "de541e8581d5677df05a9e2925556a3e38eb0b63c7cfd930a07116aed82c1d2f",
+      "spear_target": 0,
+      "cosine_similarity": 0.96936,
+      "canonical_sequence_similarity": 0.977778,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0111",
+      "spa_row": 725,
+      "spa_record_id": "spaphish:22f16d03bc01b72fd8105191003e5d682fff3db9dbaee4d2bc67c4a06a401cf5",
+      "spa_target": 1,
+      "spear_row": 2490,
+      "spear_record_id": "spearphishmx:2541",
+      "spear_hash": "21a14c7b9670552bf064c497d4e11fc028eacb105705e38ebe2fad19f4d942ab",
+      "spear_target": 0,
+      "cosine_similarity": 0.958075,
+      "canonical_sequence_similarity": 0.971812,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0112",
+      "spa_row": 726,
+      "spa_record_id": "spaphish:fd7f5d2ca8b163e63566c9c4bc9a7ca904c084865ac284295b93e23b3b203a99",
+      "spa_target": 1,
+      "spear_row": 2491,
+      "spear_record_id": "spearphishmx:2542",
+      "spear_hash": "31d3491f3e01a86d1b9b9d7b9f84842370711726235d83926ffe3e9637e165e2",
+      "spear_target": 0,
+      "cosine_similarity": 0.951872,
+      "canonical_sequence_similarity": 0.973999,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0113",
+      "spa_row": 733,
+      "spa_record_id": "spaphish:630176d098399977c90c89350f3828b10a211d92d2cbfec1566f94f3f0748382",
+      "spa_target": 0,
+      "spear_row": 2497,
+      "spear_record_id": "spearphishmx:2548",
+      "spear_hash": "944762e5bff5b5bdacfca91bfb38bbafb5e1d90f464a023b1f68711ab1dbe2df",
+      "spear_target": 0,
+      "cosine_similarity": 0.982383,
+      "canonical_sequence_similarity": 0.992565,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "sanitizacion_pii",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion_y_sanitizacion"
+    },
+    {
+      "pair_id": "conflict-0114",
+      "spa_row": 736,
+      "spa_record_id": "spaphish:746e5887a5894f00f5a60f930a68a7f504a71c1402a4729147d9de0ea72d8770",
+      "spa_target": 0,
+      "spear_row": 2500,
+      "spear_record_id": "spearphishmx:2551",
+      "spear_hash": "0efb9186ba0508f4cb565b6d31e69bf38666322354e80dd6d34415d17848b1ee",
+      "spear_target": 0,
+      "cosine_similarity": 0.965253,
+      "canonical_sequence_similarity": 0.980553,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0115",
+      "spa_row": 740,
+      "spa_record_id": "spaphish:fb899c1f4446d588f427f54f31d27fab17d22fdf9a6528d7dc9a83c4bfa9059b",
+      "spa_target": 0,
+      "spear_row": 1658,
+      "spear_record_id": "spearphishmx:1709",
+      "spear_hash": "d564208826d74a5eca26de8c709e63aa38fce77c55e2ca15bf0fd3730e45fa10",
+      "spear_target": 1,
+      "cosine_similarity": 0.97398,
+      "canonical_sequence_similarity": 0.982132,
+      "subject_equal_normalized": true,
+      "directed_to_person": false,
+      "change_flags": [
+        "defang",
+        "sanitizacion_pii",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "sanitizacion"
+    },
+    {
+      "pair_id": "conflict-0116",
+      "spa_row": 741,
+      "spa_record_id": "spaphish:074b5674d6c031f77f55a0ce6d224e5b593f5606b7c4cb7ac0a6d966bd3d4dc1",
+      "spa_target": 0,
+      "spear_row": 1658,
+      "spear_record_id": "spearphishmx:1709",
+      "spear_hash": "d564208826d74a5eca26de8c709e63aa38fce77c55e2ca15bf0fd3730e45fa10",
+      "spear_target": 1,
+      "cosine_similarity": 0.970147,
+      "canonical_sequence_similarity": 0.969421,
+      "subject_equal_normalized": false,
+      "directed_to_person": false,
+      "change_flags": [
+        "defang",
+        "sanitizacion_pii"
+      ],
+      "primary_cause": "sanitizacion"
+    },
+    {
+      "pair_id": "conflict-0117",
+      "spa_row": 742,
+      "spa_record_id": "spaphish:d25584891f9e87aba5bc9bcb2338d0c1d3db31e99437222d73ce097084f918cc",
+      "spa_target": 0,
+      "spear_row": 1659,
+      "spear_record_id": "spearphishmx:1710",
+      "spear_hash": "9bf759a5e20ad9decb1fd2d60edea14a7a5f0edc1b3a1e25da6e5918510acc80",
+      "spear_target": 1,
+      "cosine_similarity": 0.978606,
+      "canonical_sequence_similarity": 0.990548,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "defang",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion_y_sanitizacion"
+    },
+    {
+      "pair_id": "conflict-0118",
+      "spa_row": 748,
+      "spa_record_id": "spaphish:ef2caa85959cd7c1e892a998a39f9c802d498131503c445598ca3f437e54392e",
+      "spa_target": 0,
+      "spear_row": 2511,
+      "spear_record_id": "spearphishmx:2562",
+      "spear_hash": "6c36ab3f47621dab4c8dc2db6a4a3ea31172e2ee62aeaa3f69db6ff3bcc0d3bc",
+      "spear_target": 0,
+      "cosine_similarity": 0.961896,
+      "canonical_sequence_similarity": 0.977477,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0119",
+      "spa_row": 752,
+      "spa_record_id": "spaphish:998dd9aa1e432903fba44ec2230ee908f630ccbb3d5a5ce332bb9d00741fceaf",
+      "spa_target": 0,
+      "spear_row": 2515,
+      "spear_record_id": "spearphishmx:2566",
+      "spear_hash": "fae4cec934963541776985d4a2a5901ba868d5b80d5722d9702ac50f9afb4e70",
+      "spear_target": 0,
+      "cosine_similarity": 0.970948,
+      "canonical_sequence_similarity": 0.994924,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "sanitizacion_pii",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion_y_sanitizacion"
+    },
+    {
+      "pair_id": "conflict-0120",
+      "spa_row": 781,
+      "spa_record_id": "spaphish:71ba8015ea2f22ba9ee804a5068bbac28e145659f46e69a7ecaa90af458f3e43",
+      "spa_target": 0,
+      "spear_row": 2537,
+      "spear_record_id": "spearphishmx:2588",
+      "spear_hash": "822d6fa36dbd0250b1aa3756a5874adba9cf8508293fd77e1f8de89fffc023fd",
+      "spear_target": 0,
+      "cosine_similarity": 0.957421,
+      "canonical_sequence_similarity": 0.981465,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0121",
+      "spa_row": 818,
+      "spa_record_id": "spaphish:539233e7013ead8c55a94350dfadaa85218a80d1ca30616f3aed804f6caf16fb",
+      "spa_target": 0,
+      "spear_row": 2567,
+      "spear_record_id": "spearphishmx:2618",
+      "spear_hash": "1d3dbd915cd150879ce0ece421881a50066671fcdf8b24caf7cd462d62768c6d",
+      "spear_target": 0,
+      "cosine_similarity": 0.967466,
+      "canonical_sequence_similarity": 0.978894,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0122",
+      "spa_row": 879,
+      "spa_record_id": "spaphish:0c5cbf9794d4b69584ca6f86fa84aecfb48e6700cc05c6bae9d6be30519619a5",
+      "spa_target": 0,
+      "spear_row": 2620,
+      "spear_record_id": "spearphishmx:2671",
+      "spear_hash": "4e929d43bd357aa05404d0440426a7d1502f9f53170cd4fea1b019027d57df9c",
+      "spear_target": 0,
+      "cosine_similarity": 0.961667,
+      "canonical_sequence_similarity": 0.974471,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0123",
+      "spa_row": 889,
+      "spa_record_id": "spaphish:2e7cef1a8d7b01d991110bed82b536a86d196dfebc6d297681f99dab97fce914",
+      "spa_target": 0,
+      "spear_row": 2627,
+      "spear_record_id": "spearphishmx:2678",
+      "spear_hash": "7768b830aad6e45eb14234037d9717714677f9431036e3919fedad2dd18174c5",
+      "spear_target": 0,
+      "cosine_similarity": 0.963677,
+      "canonical_sequence_similarity": 0.969849,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0124",
+      "spa_row": 894,
+      "spa_record_id": "spaphish:83c9f830a6215f8b42215ecda4a64c9dbb008b3a0b01c466cca7a3feb9a1dfc2",
+      "spa_target": 0,
+      "spear_row": 2630,
+      "spear_record_id": "spearphishmx:2681",
+      "spear_hash": "915bdc5b6b90435b76fd31176522eade4a8d2f0bbd1d3af0d3f7fdb26e5039e3",
+      "spear_target": 0,
+      "cosine_similarity": 0.952146,
+      "canonical_sequence_similarity": 0.97589,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0125",
+      "spa_row": 907,
+      "spa_record_id": "spaphish:f056adbfeee2057e139ea429c98624bb1a5fba2211bf4479bb1eba78813ff5c1",
+      "spa_target": 0,
+      "spear_row": 2642,
+      "spear_record_id": "spearphishmx:2693",
+      "spear_hash": "b7b467e1aaef13fbcdd064954d4094a8304416e770b483a5b068f6654e9575c6",
+      "spear_target": 0,
+      "cosine_similarity": 0.951342,
+      "canonical_sequence_similarity": 0.978328,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0126",
+      "spa_row": 912,
+      "spa_record_id": "spaphish:c0d0a4f94c3bd1763c0c68a857c3f8ee28e3a6fc02e8bc912eb7e3f5f50ee5ec",
+      "spa_target": 0,
+      "spear_row": 2647,
+      "spear_record_id": "spearphishmx:2698",
+      "spear_hash": "6d8e63397ed06ad5248d6bb672f380f12dabb7c8bf15a77870e22c58d64c492a",
+      "spear_target": 0,
+      "cosine_similarity": 0.968592,
+      "canonical_sequence_similarity": 0.981424,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0127",
+      "spa_row": 976,
+      "spa_record_id": "spaphish:f23d55e97a3242b8a69ba92d27eaaf58c96482d3f806646709f4e70e7fe2ac43",
+      "spa_target": 0,
+      "spear_row": 2696,
+      "spear_record_id": "spearphishmx:2747",
+      "spear_hash": "2a00af6c2303036245521b9f7d9cae79c05d46bba20695d3772751ada5396eb6",
+      "spear_target": 0,
+      "cosine_similarity": 0.988231,
+      "canonical_sequence_similarity": 0.990753,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "defang",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion_y_sanitizacion"
+    },
+    {
+      "pair_id": "conflict-0128",
+      "spa_row": 984,
+      "spa_record_id": "spaphish:2a3729c8945f6f11590bcfcebfb67b0878002752fc537052e85e89e3863500cd",
+      "spa_target": 0,
+      "spear_row": 2702,
+      "spear_record_id": "spearphishmx:2753",
+      "spear_hash": "9ad69a1b7ac450df96f78274eabd477c63cfc1facaeae49134c14fb7554711d0",
+      "spear_target": 0,
+      "cosine_similarity": 0.991993,
+      "canonical_sequence_similarity": 0.981818,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "defang",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion_y_sanitizacion"
+    },
+    {
+      "pair_id": "conflict-0129",
+      "spa_row": 986,
+      "spa_record_id": "spaphish:a89c2ef083438eb67aae9ce0e4da25c1744c47c7c3dae14fb9bfa01db34e9b57",
+      "spa_target": 0,
+      "spear_row": 2703,
+      "spear_record_id": "spearphishmx:2754",
+      "spear_hash": "76d127df40197a9f52ff1b1cffa90a456828ef6867b15aeb7d614c966661ddcc",
+      "spear_target": 0,
+      "cosine_similarity": 0.97157,
+      "canonical_sequence_similarity": 0.985242,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0130",
+      "spa_row": 987,
+      "spa_record_id": "spaphish:390b2379eba4467429e908e1a3b2f60e8bad696491588cfb6bd23f1dba0de9b2",
+      "spa_target": 0,
+      "spear_row": 2704,
+      "spear_record_id": "spearphishmx:2755",
+      "spear_hash": "e5988229573373b6f345ddd399b8817270974d418b3262415cf81df40a996a6f",
+      "spear_target": 0,
+      "cosine_similarity": 0.990468,
+      "canonical_sequence_similarity": 0.995189,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0131",
+      "spa_row": 988,
+      "spa_record_id": "spaphish:77ba375f3b813c7981f68de489575dd276f54c35035b2e31708ccd49d3790b7e",
+      "spa_target": 0,
+      "spear_row": 2705,
+      "spear_record_id": "spearphishmx:2756",
+      "spear_hash": "ed0c58379737ce2c9ed183fee3c2495e27bd52a4bc6796c4ae3d925e86a74971",
+      "spear_target": 0,
+      "cosine_similarity": 0.955356,
+      "canonical_sequence_similarity": 0.98582,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "defang",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion_y_sanitizacion"
+    },
+    {
+      "pair_id": "conflict-0132",
+      "spa_row": 990,
+      "spa_record_id": "spaphish:c4627df38a083550f8725204b90a7cc64b5eadc478217a3f3109c3ba827043b7",
+      "spa_target": 0,
+      "spear_row": 2707,
+      "spear_record_id": "spearphishmx:2758",
+      "spear_hash": "9e63db032e38d4dfbab1b0a8e353aa21d19c0e80f071940d11ddc9f66e2aa06c",
+      "spear_target": 0,
+      "cosine_similarity": 0.965433,
+      "canonical_sequence_similarity": 0.99045,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "sanitizacion_pii",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion_y_sanitizacion"
+    },
+    {
+      "pair_id": "conflict-0133",
+      "spa_row": 991,
+      "spa_record_id": "spaphish:6f937b92d89f81f027007ba4dce519b23821c2cc7fcee11d25aed011852cbf81",
+      "spa_target": 0,
+      "spear_row": 2708,
+      "spear_record_id": "spearphishmx:2759",
+      "spear_hash": "54bf39a605620048ceaaa0a3875229afd70f7ffa7606ce2a2c954525444115e5",
+      "spear_target": 0,
+      "cosine_similarity": 0.989768,
+      "canonical_sequence_similarity": 0.993365,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0134",
+      "spa_row": 992,
+      "spa_record_id": "spaphish:a9afcc3df17de73f5f8095c73620b4ff51d461d0348171b018fb0dc8c7add586",
+      "spa_target": 0,
+      "spear_row": 1730,
+      "spear_record_id": "spearphishmx:1781",
+      "spear_hash": "c044332d8062864bd358d03b5026392114a13eceb2a482a05788896031ae3a01",
+      "spear_target": 1,
+      "cosine_similarity": 0.980668,
+      "canonical_sequence_similarity": 0.996083,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "defang",
+        "sanitizacion_pii",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "sanitizacion"
+    },
+    {
+      "pair_id": "conflict-0135",
+      "spa_row": 1013,
+      "spa_record_id": "spaphish:ee0de0c0b0a5e0d36ec95f79d725ca03b6277e231442f62aef3d07b28229c599",
+      "spa_target": 0,
+      "spear_row": 2722,
+      "spear_record_id": "spearphishmx:2773",
+      "spear_hash": "b307141c6e9d974cc88be89640b4b4d9ee3d62702c68f66c1e1295c664a63864",
+      "spear_target": 0,
+      "cosine_similarity": 0.961491,
+      "canonical_sequence_similarity": 0.986211,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "defang",
+        "sanitizacion_pii",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion_y_sanitizacion"
+    },
+    {
+      "pair_id": "conflict-0136",
+      "spa_row": 1063,
+      "spa_record_id": "spaphish:74c8daa37b76790e31fc5bff19864526d15e545332205c8f685e2b843396ddaf",
+      "spa_target": 0,
+      "spear_row": 2768,
+      "spear_record_id": "spearphishmx:2819",
+      "spear_hash": "8c8e3d90abdbb06c0733a7222f11b613fbc6c0056d10423a3da9d6f6974325bb",
+      "spear_target": 0,
+      "cosine_similarity": 0.988196,
+      "canonical_sequence_similarity": 0.993637,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0137",
+      "spa_row": 1069,
+      "spa_record_id": "spaphish:e2ccbc1cf24420ca7b4b034478042077ec3d16eeaf13ba2d79a1517cdcbae72c",
+      "spa_target": 0,
+      "spear_row": 2772,
+      "spear_record_id": "spearphishmx:2823",
+      "spear_hash": "66a1ef78c339d4c7a3850191353e7e0b9de359b0c512cc373277a1f0f77f9831",
+      "spear_target": 0,
+      "cosine_similarity": 0.990461,
+      "canonical_sequence_similarity": 0.995561,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "defang",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion_y_sanitizacion"
+    },
+    {
+      "pair_id": "conflict-0138",
+      "spa_row": 1145,
+      "spa_record_id": "spaphish:56e90428fc899502add013d42abbc014f511027755b59433c78ea61514beecca",
+      "spa_target": 0,
+      "spear_row": 2818,
+      "spear_record_id": "spearphishmx:2869",
+      "spear_hash": "9a0731496121284f3b54d9074970a02827bdd68ff4c7d98feadcb25bb0ef9dcc",
+      "spear_target": 0,
+      "cosine_similarity": 0.978578,
+      "canonical_sequence_similarity": 0.967819,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "sanitizacion_pii",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion_y_sanitizacion"
+    },
+    {
+      "pair_id": "conflict-0139",
+      "spa_row": 1187,
+      "spa_record_id": "spaphish:7aca4d790facc996d57dcd5a5062e16150a71361d5794c7751646299b8e5a3e7",
+      "spa_target": 0,
+      "spear_row": 2849,
+      "spear_record_id": "spearphishmx:2900",
+      "spear_hash": "eec33325943965eab9af960e53b4a5fecd2b08bc0615225b64d4c532c51f3c31",
+      "spear_target": 0,
+      "cosine_similarity": 0.957882,
+      "canonical_sequence_similarity": 0.979579,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0140",
+      "spa_row": 1195,
+      "spa_record_id": "spaphish:e67a5f931383cc28981974cd989de1379b8f8e99e17eb727f1b6a980f8cf6a61",
+      "spa_target": 0,
+      "spear_row": 2855,
+      "spear_record_id": "spearphishmx:2906",
+      "spear_hash": "2549e4b956cafa983a75a7353f46566fa8b579f2d3261f3bac1cf65a7277ff39",
+      "spear_target": 0,
+      "cosine_similarity": 0.960678,
+      "canonical_sequence_similarity": 0.980331,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0141",
+      "spa_row": 1197,
+      "spa_record_id": "spaphish:7c83bd5399cbdeed2474abf04f6ee53c9530149a8c103bdbb1d7e038d8b09508",
+      "spa_target": 0,
+      "spear_row": 2857,
+      "spear_record_id": "spearphishmx:2908",
+      "spear_hash": "a5ec856953246626af135d76df2df76c35e927d723f96153b0b65781e869e89e",
+      "spear_target": 0,
+      "cosine_similarity": 0.958638,
+      "canonical_sequence_similarity": 0.97916,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0142",
+      "spa_row": 1204,
+      "spa_record_id": "spaphish:6e5a5a0893a07ba42012cabf7f868138dc693be9ddc8178d03f44f78187032c8",
+      "spa_target": 0,
+      "spear_row": 2863,
+      "spear_record_id": "spearphishmx:2914",
+      "spear_hash": "2b789caf1fac8bdb9b7134e13695c7a7394b8f8f9121824567479a603584ad38",
+      "spear_target": 0,
+      "cosine_similarity": 0.964328,
+      "canonical_sequence_similarity": 0.970691,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0143",
+      "spa_row": 1256,
+      "spa_record_id": "spaphish:484ae8a01cbcfc6355f7d2ff6729799615b8fa6f5372466dce50ca96fba38d01",
+      "spa_target": 0,
+      "spear_row": 2896,
+      "spear_record_id": "spearphishmx:2947",
+      "spear_hash": "663d5b40b0dbe06889f200036e6176813458cd69239f011f154272cfd7cb4066",
+      "spear_target": 0,
+      "cosine_similarity": 0.957399,
+      "canonical_sequence_similarity": 0.976601,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "sanitizacion_pii",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion_y_sanitizacion"
+    },
+    {
+      "pair_id": "conflict-0144",
+      "spa_row": 1270,
+      "spa_record_id": "spaphish:8019e9e82b2fc221144ce26a7efb0ed9a3ae02a347052883203aaaf2c9c75bb9",
+      "spa_target": 0,
+      "spear_row": 2903,
+      "spear_record_id": "spearphishmx:2954",
+      "spear_hash": "4ec30615bf550bde1d9f65467b6ba8c6f9ca4315e44bfb12a548692856d3b8fc",
+      "spear_target": 0,
+      "cosine_similarity": 0.952921,
+      "canonical_sequence_similarity": 0.982726,
+      "subject_equal_normalized": true,
+      "directed_to_person": false,
+      "change_flags": [
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "formato_unicode_o_espaciado"
+    },
+    {
+      "pair_id": "conflict-0145",
+      "spa_row": 1281,
+      "spa_record_id": "spaphish:ec327bef1e6c42e5d284dff956d84a1d675cc1084fd2df79b921f0b1a382f1bb",
+      "spa_target": 0,
+      "spear_row": 2911,
+      "spear_record_id": "spearphishmx:2962",
+      "spear_hash": "f964fa560f4cbd00c4d37c67d4c8564a1738c3012b751794507d41fd2b088e03",
+      "spear_target": 0,
+      "cosine_similarity": 0.969824,
+      "canonical_sequence_similarity": 0.992296,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "defang",
+        "sanitizacion_pii",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion_y_sanitizacion"
+    },
+    {
+      "pair_id": "conflict-0146",
+      "spa_row": 1283,
+      "spa_record_id": "spaphish:91ff38a3cded1d3e65910ae8b062dd159b97ec1f5d925a8e827f308fd34149a1",
+      "spa_target": 0,
+      "spear_row": 2913,
+      "spear_record_id": "spearphishmx:2964",
+      "spear_hash": "9d10f95ac508b33c65780789ac3bd43285ad7ea2a0c5432e7aa5e3b69131758f",
+      "spear_target": 0,
+      "cosine_similarity": 0.993766,
+      "canonical_sequence_similarity": 0.99325,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0147",
+      "spa_row": 1290,
+      "spa_record_id": "spaphish:508cd17757f0eca29a124c7468c0ae1aec7eab7ea6e049b5065f00bad19cb40f",
+      "spa_target": 0,
+      "spear_row": 2917,
+      "spear_record_id": "spearphishmx:2968",
+      "spear_hash": "3eaeaaf0f6a9c19efe5400534439c7fdbdd2b400dd4f58a5d07a740c4da4d504",
+      "spear_target": 0,
+      "cosine_similarity": 0.982024,
+      "canonical_sequence_similarity": 0.989158,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0148",
+      "spa_row": 1293,
+      "spa_record_id": "spaphish:8cf66d8e88e1fd97ebb5597c4bd9b137947ada1b9bcc729887e927b74d9fd7be",
+      "spa_target": 0,
+      "spear_row": 2919,
+      "spear_record_id": "spearphishmx:2970",
+      "spear_hash": "83d75e124aab2217219e8fcb47ae85e24aee0aefe0662280e5066a0823d9f4f7",
+      "spear_target": 0,
+      "cosine_similarity": 0.970484,
+      "canonical_sequence_similarity": 0.984633,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0149",
+      "spa_row": 1295,
+      "spa_record_id": "spaphish:51c653cf615a5faf3e60e749043873a6abf5a0b815fb3449a496756a2252ebee",
+      "spa_target": 0,
+      "spear_row": 2921,
+      "spear_record_id": "spearphishmx:2972",
+      "spear_hash": "dc496c79985d556a1667ff2d254b8d9cb17df4b5850a0b6ecae0b597b7347b8b",
+      "spear_target": 0,
+      "cosine_similarity": 0.960142,
+      "canonical_sequence_similarity": 0.980892,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0150",
+      "spa_row": 1296,
+      "spa_record_id": "spaphish:751d7e65ce01930d6bad3e100b16d55df5d9a8ce4414eaaa457e50d33eead1e5",
+      "spa_target": 0,
+      "spear_row": 2922,
+      "spear_record_id": "spearphishmx:2973",
+      "spear_hash": "b3783ff2f91fd3b0ffc8d9ea1ab93bf6f816857c7a28f77c24c1a6905c80c94f",
+      "spear_target": 0,
+      "cosine_similarity": 0.966502,
+      "canonical_sequence_similarity": 0.981595,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0151",
+      "spa_row": 1301,
+      "spa_record_id": "spaphish:7deb3354bb9d4eac9bbedc3cf016ed725e0944270672bddece32008ac8b88609",
+      "spa_target": 0,
+      "spear_row": 2926,
+      "spear_record_id": "spearphishmx:2977",
+      "spear_hash": "485a27dfcc9c652dcb04f0a311d3937d49dbd7e91281481d0f6adfb15b7ca41d",
+      "spear_target": 0,
+      "cosine_similarity": 0.997215,
+      "canonical_sequence_similarity": 0.99789,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0152",
+      "spa_row": 1303,
+      "spa_record_id": "spaphish:5aa22ca25ca524db85d92b092272aab31c0cb7224d4d30a403aa4ff5dccf650c",
+      "spa_target": 0,
+      "spear_row": 2929,
+      "spear_record_id": "spearphishmx:2980",
+      "spear_hash": "696611004dea2df6bbfe929fe79a06f1c3a51c3adee9840f2486327e4817ea6f",
+      "spear_target": 0,
+      "cosine_similarity": 0.97964,
+      "canonical_sequence_similarity": 0.989474,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "sanitizacion_pii",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion_y_sanitizacion"
+    },
+    {
+      "pair_id": "conflict-0153",
+      "spa_row": 1305,
+      "spa_record_id": "spaphish:169e119095e9fb26a448870232960fa18532693d1d90fda9c2d2436fd8f035b2",
+      "spa_target": 0,
+      "spear_row": 2930,
+      "spear_record_id": "spearphishmx:2981",
+      "spear_hash": "6a71998811ba0ef1afd24cd38130cc782ae12524cec40ba75d7378f796d1c128",
+      "spear_target": 0,
+      "cosine_similarity": 0.984895,
+      "canonical_sequence_similarity": 0.983544,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "defang",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion_y_sanitizacion"
+    },
+    {
+      "pair_id": "conflict-0154",
+      "spa_row": 1306,
+      "spa_record_id": "spaphish:fdb9ffa0267109300f897cfc39e9a8fdfc0f6d8022cbab7508fc3521294a5330",
+      "spa_target": 0,
+      "spear_row": 2931,
+      "spear_record_id": "spearphishmx:2982",
+      "spear_hash": "3169295979b20a7f71592ac240cb66439821be4d0b55e291a8f5059af1c92dff",
+      "spear_target": 0,
+      "cosine_similarity": 0.957457,
+      "canonical_sequence_similarity": 0.914182,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "defang",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion_y_sanitizacion"
+    },
+    {
+      "pair_id": "conflict-0155",
+      "spa_row": 1309,
+      "spa_record_id": "spaphish:235f6c21a6567d06b8255b3382802fa9d3f304dbec44014cd1d1612c27ebe1e0",
+      "spa_target": 0,
+      "spear_row": 1857,
+      "spear_record_id": "spearphishmx:1908",
+      "spear_hash": "3d56cf371f55416130aa481a3455117bf8696f488b89f02dbf76f3ba707ee103",
+      "spear_target": 1,
+      "cosine_similarity": 0.954722,
+      "canonical_sequence_similarity": 0.995695,
+      "subject_equal_normalized": true,
+      "directed_to_person": false,
+      "change_flags": [
+        "defang",
+        "sanitizacion_pii",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "sanitizacion"
+    },
+    {
+      "pair_id": "conflict-0156",
+      "spa_row": 1310,
+      "spa_record_id": "spaphish:e10f0d0a67733b3ad8a7a25b5b54d32da901688ab986dc39bcba372761269e04",
+      "spa_target": 0,
+      "spear_row": 2937,
+      "spear_record_id": "spearphishmx:2988",
+      "spear_hash": "74aaedbbe71d8b2aac62ca21d0d28ce5d9d3d5e8484582f982186e08a9aaf3d2",
+      "spear_target": 0,
+      "cosine_similarity": 0.960921,
+      "canonical_sequence_similarity": 0.907777,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "defang",
+        "sanitizacion_pii",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion_y_sanitizacion"
+    },
+    {
+      "pair_id": "conflict-0157",
+      "spa_row": 1315,
+      "spa_record_id": "spaphish:1742f895d8a8295af3126c1b8c4cbbc56d288c3512b28b698690837cabf26d82",
+      "spa_target": 0,
+      "spear_row": 1860,
+      "spear_record_id": "spearphishmx:1911",
+      "spear_hash": "edc17c7d8b75cc2920404175cdeca1a7676a875dbcfdbff2735b55094b67ce51",
+      "spear_target": 1,
+      "cosine_similarity": 0.987153,
+      "canonical_sequence_similarity": 0.988968,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "defang",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "sanitizacion"
+    },
+    {
+      "pair_id": "conflict-0158",
+      "spa_row": 1316,
+      "spa_record_id": "spaphish:a0c8ea85b3580008240f243d96fd2b2bf75990eadd857127e96295b75d6fc6cc",
+      "spa_target": 0,
+      "spear_row": 2941,
+      "spear_record_id": "spearphishmx:2992",
+      "spear_hash": "75904b7292fa7d1ae9f1507d3492d3281a8cf2b72e1a6aa17703d8f5e191980f",
+      "spear_target": 0,
+      "cosine_similarity": 0.977297,
+      "canonical_sequence_similarity": 0.987805,
+      "subject_equal_normalized": true,
+      "directed_to_person": false,
+      "change_flags": [
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "formato_unicode_o_espaciado"
+    },
+    {
+      "pair_id": "conflict-0159",
+      "spa_row": 1324,
+      "spa_record_id": "spaphish:9c0c80987f86213ca550734f2348e2d0729a40932ad1ff5190ca78519c536dbc",
+      "spa_target": 0,
+      "spear_row": 2948,
+      "spear_record_id": "spearphishmx:2999",
+      "spear_hash": "57d228949a1393fc8559897d13c9c1898cbfa52ea4f424ec32f627ee5d1b07c1",
+      "spear_target": 0,
+      "cosine_similarity": 0.975186,
+      "canonical_sequence_similarity": 0.986022,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0160",
+      "spa_row": 1328,
+      "spa_record_id": "spaphish:7a3e04b4a0ad39f8632fcadffb725b3da2448d80de779fde40c1db930013a128",
+      "spa_target": 0,
+      "spear_row": 1867,
+      "spear_record_id": "spearphishmx:1918",
+      "spear_hash": "59137f2335618cca4b5320a581e79da6e1ad6716ae6d81cfb250a2eb6afba11b",
+      "spear_target": 1,
+      "cosine_similarity": 0.99373,
+      "canonical_sequence_similarity": 1.0,
+      "subject_equal_normalized": true,
+      "directed_to_person": false,
+      "change_flags": [
+        "defang",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "sanitizacion"
+    },
+    {
+      "pair_id": "conflict-0161",
+      "spa_row": 1330,
+      "spa_record_id": "spaphish:deb0a0dc3d895f24632f7bde76eee2ad8f54f6b6e5728212903d979fc200aef3",
+      "spa_target": 0,
+      "spear_row": 2951,
+      "spear_record_id": "spearphishmx:3002",
+      "spear_hash": "1056c411b20c78f3876ad22acf3e663354e9e93352796a539395eebff5f5ad83",
+      "spear_target": 0,
+      "cosine_similarity": 0.960919,
+      "canonical_sequence_similarity": 0.992946,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "sanitizacion_pii",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion_y_sanitizacion"
+    },
+    {
+      "pair_id": "conflict-0162",
+      "spa_row": 1333,
+      "spa_record_id": "spaphish:9d495ecb309efa088d21cca77044ffb10e55c831071bc24a0817af8f79a2f938",
+      "spa_target": 0,
+      "spear_row": 2954,
+      "spear_record_id": "spearphishmx:3005",
+      "spear_hash": "e015b791ee438adeff9175173b786ed0b5a697054bd74f0f95dcbbfe437b1bbd",
+      "spear_target": 0,
+      "cosine_similarity": 0.954805,
+      "canonical_sequence_similarity": 0.975579,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "sanitizacion_pii",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion_y_sanitizacion"
+    },
+    {
+      "pair_id": "conflict-0163",
+      "spa_row": 1336,
+      "spa_record_id": "spaphish:ee7413311d7f7cd619a51a4ad98cc4b54262091a5ec831319148a09e430eed67",
+      "spa_target": 0,
+      "spear_row": 2955,
+      "spear_record_id": "spearphishmx:3006",
+      "spear_hash": "255f024180ca90058a16e68c22a6cbfade901608d05aa1fd5c2637e3f86575dd",
+      "spear_target": 0,
+      "cosine_similarity": 0.95232,
+      "canonical_sequence_similarity": 0.945293,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "defang",
+        "sanitizacion_pii",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion_y_sanitizacion"
+    },
+    {
+      "pair_id": "conflict-0164",
+      "spa_row": 1337,
+      "spa_record_id": "spaphish:c0f6b064108065b40b26b25f2671290a37b97c741fea9750e2755374ce812518",
+      "spa_target": 0,
+      "spear_row": 2956,
+      "spear_record_id": "spearphishmx:3007",
+      "spear_hash": "842c0189992bd770454244446af7bcc0cd017d320928c5832cab28fc0f6097e6",
+      "spear_target": 0,
+      "cosine_similarity": 0.972881,
+      "canonical_sequence_similarity": 0.993532,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "defang",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion_y_sanitizacion"
+    },
+    {
+      "pair_id": "conflict-0165",
+      "spa_row": 1343,
+      "spa_record_id": "spaphish:1cdf439760772fe0c85447ebccd6771fbb946c93b22a4d831d928109c83b39f4",
+      "spa_target": 0,
+      "spear_row": 2959,
+      "spear_record_id": "spearphishmx:3010",
+      "spear_hash": "b3ea28b945249c9107b4a6c8c75c344c5c0cea5737944fbf847274c42d2c3868",
+      "spear_target": 0,
+      "cosine_similarity": 0.982687,
+      "canonical_sequence_similarity": 0.995282,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "defang",
+        "sanitizacion_pii",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion_y_sanitizacion"
+    },
+    {
+      "pair_id": "conflict-0166",
+      "spa_row": 1345,
+      "spa_record_id": "spaphish:a14ceda3e7d6981e14ef6d5abf31c8332f7bd60483ef6fd29d1f85e1d56e7dee",
+      "spa_target": 0,
+      "spear_row": 1871,
+      "spear_record_id": "spearphishmx:1922",
+      "spear_hash": "26d09ed05c4db3d07bbda2a27d0c33740f00b2608a75d829dcb5e0893f391a5d",
+      "spear_target": 1,
+      "cosine_similarity": 0.978293,
+      "canonical_sequence_similarity": 1.0,
+      "subject_equal_normalized": true,
+      "directed_to_person": false,
+      "change_flags": [
+        "defang",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "sanitizacion"
+    },
+    {
+      "pair_id": "conflict-0167",
+      "spa_row": 1351,
+      "spa_record_id": "spaphish:8c5997f1634634870b0783480cd9529c01286fd3775fafb0785e0831a2bc0f4f",
+      "spa_target": 0,
+      "spear_row": 1875,
+      "spear_record_id": "spearphishmx:1926",
+      "spear_hash": "ecee7cdd59401b0001e807ecd293056b3ae6df100f1e2f358e0ad5c4e3af9ba1",
+      "spear_target": 1,
+      "cosine_similarity": 0.98437,
+      "canonical_sequence_similarity": 0.98539,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "defang",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "sanitizacion"
+    },
+    {
+      "pair_id": "conflict-0168",
+      "spa_row": 1354,
+      "spa_record_id": "spaphish:32c2cbc3c9136416dbe03a1b9b315ed45c340a6747c8e3467dbe97525cd20c94",
+      "spa_target": 0,
+      "spear_row": 2967,
+      "spear_record_id": "spearphishmx:3018",
+      "spear_hash": "aacc62e6edda99106d6ea857abcda1a87296c2459b1c81755864367b0a95c45a",
+      "spear_target": 0,
+      "cosine_similarity": 0.963679,
+      "canonical_sequence_similarity": 0.858757,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "defang",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion_y_sanitizacion"
+    },
+    {
+      "pair_id": "conflict-0169",
+      "spa_row": 1356,
+      "spa_record_id": "spaphish:4a8ff62b9b6c6049b9988c1b069cbd1dad374b4c8ed65aa38711458c5457326a",
+      "spa_target": 0,
+      "spear_row": 2969,
+      "spear_record_id": "spearphishmx:3020",
+      "spear_hash": "1c9ad4142571fbd88f0f3a200bc6076677d3059c13813a1f28b79c45723317b9",
+      "spear_target": 0,
+      "cosine_similarity": 0.995461,
+      "canonical_sequence_similarity": 0.99219,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "defang",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion_y_sanitizacion"
+    },
+    {
+      "pair_id": "conflict-0170",
+      "spa_row": 1359,
+      "spa_record_id": "spaphish:d866de29c0f2e53085abffbf430d1664ce022b76d2bf4f5e543291aa35b31e86",
+      "spa_target": 0,
+      "spear_row": 1877,
+      "spear_record_id": "spearphishmx:1928",
+      "spear_hash": "0acd1b40b2fcca5a418d0a292feb78f195e91ed6fe38fe4c9692d978b265383c",
+      "spear_target": 1,
+      "cosine_similarity": 0.954992,
+      "canonical_sequence_similarity": 0.968806,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "defang",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion_y_sanitizacion"
+    },
+    {
+      "pair_id": "conflict-0171",
+      "spa_row": 1360,
+      "spa_record_id": "spaphish:8478e337e51ef9e2a8ed53a6f4f554261051de8dc4d93438bfb9f03e1ce6be87",
+      "spa_target": 0,
+      "spear_row": 2973,
+      "spear_record_id": "spearphishmx:3024",
+      "spear_hash": "8a5d31e09e0940a6847b1d5386aba02a581d9ba51bfce323863a13a2085313d7",
+      "spear_target": 0,
+      "cosine_similarity": 0.985232,
+      "canonical_sequence_similarity": 0.984843,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "defang",
+        "sanitizacion_pii",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion_y_sanitizacion"
+    },
+    {
+      "pair_id": "conflict-0172",
+      "spa_row": 1361,
+      "spa_record_id": "spaphish:f6cb5457e5454d01076736758f09652853867caf22fb2a28fe0bf95e7d374c3f",
+      "spa_target": 0,
+      "spear_row": 2974,
+      "spear_record_id": "spearphishmx:3025",
+      "spear_hash": "aeba770e00719de0380b7907d61f9a538e6da5deb0cb2cf7bc4f6934938c29bc",
+      "spear_target": 0,
+      "cosine_similarity": 0.98361,
+      "canonical_sequence_similarity": 0.992126,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "personalizacion"
+    },
+    {
+      "pair_id": "conflict-0173",
+      "spa_row": 1364,
+      "spa_record_id": "spaphish:7f5b7cb463e826429bb62aefc360034227937a1a4818e89a0df5d6e9c3762fe9",
+      "spa_target": 0,
+      "spear_row": 2977,
+      "spear_record_id": "spearphishmx:3028",
+      "spear_hash": "93748e708eb4216203f3e5f608153a9019505297a03a6cde3055de847967c344",
+      "spear_target": 0,
+      "cosine_similarity": 0.960459,
+      "canonical_sequence_similarity": 0.971873,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "defang",
+        "sanitizacion_pii",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion_y_sanitizacion"
+    },
+    {
+      "pair_id": "conflict-0174",
+      "spa_row": 1374,
+      "spa_record_id": "spaphish:59a9224a3b40ac1a423c0549997202e06c64ba79f93bafb0bfc3ea3741f706bd",
+      "spa_target": 0,
+      "spear_row": 1885,
+      "spear_record_id": "spearphishmx:1936",
+      "spear_hash": "19fc7b744bfe3b9a6e660af5e5b1c58a89c3b78e020017e1128882fac95fd448",
+      "spear_target": 1,
+      "cosine_similarity": 0.966256,
+      "canonical_sequence_similarity": 0.990043,
+      "subject_equal_normalized": true,
+      "directed_to_person": false,
+      "change_flags": [
+        "defang",
+        "sanitizacion_pii",
+        "asunto_igual",
+        "contenido_canonico_casi_igual"
+      ],
+      "primary_cause": "sanitizacion"
+    },
+    {
+      "pair_id": "conflict-0175",
+      "spa_row": 1380,
+      "spa_record_id": "spaphish:301ccdb92cc778570a030d475f5d0474d8174b52fe85480ccb66555303ebb170",
+      "spa_target": 0,
+      "spear_row": 2992,
+      "spear_record_id": "spearphishmx:3043",
+      "spear_hash": "d36796935c66873939eaf18ffe2bc933a9c87d8498ea7404ef154df77a8e2055",
+      "spear_target": 0,
+      "cosine_similarity": 0.950282,
+      "canonical_sequence_similarity": 0.976072,
+      "subject_equal_normalized": true,
+      "directed_to_person": true,
+      "change_flags": [
+        "personalizacion",
+        "asunto_igual"
+      ],
+      "primary_cause": "personalizacion"
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "nombre_dataset": "SpearPhishMX (público) — Spear-Phishing en español: dataset de correos dirigidos con señales de personalización (SpearPhishMX)",
+  "formato": {
+    "tipo": "csv",
+    "encoding": "utf-8",
+    "separador": ";"
+  },
+  "columnas": [
+    {
+      "nombre": "hash",
+      "tipo": "string",
+      "nullable": false,
+      "ejemplo": "5388d8aa612fa7287034c560ea8f01b0024307c37cb392587c668e9de5b52bba",
+      "descripcion": "Identificador estable (hash SHA-256) del registro."
+    },
+    {
+      "nombre": "id_original",
+      "tipo": "integer",
+      "nullable": false,
+      "ejemplo": "1",
+      "descripcion": "ID original del registro en el archivo fuente."
+    },
+    {
+      "nombre": "etiqueta",
+      "tipo": "integer",
+      "nullable": false,
+      "ejemplo": "1",
+      "descripcion": "Etiqueta binaria: 1 = spear-phishing, 0 = legítimo."
+    },
+    {
+      "nombre": "asunto",
+      "tipo": "string",
+      "nullable": true,
+      "ejemplo": "Acción Requerida: Verificación de Cuenta Pendiente - Tienes 48 horas para completar",
+      "descripcion": "Asunto del correo electrónico."
+    },
+    {
+      "nombre": "cuerpo_sanitizado",
+      "tipo": "string",
+      "nullable": false,
+      "ejemplo": "Estimada Luz Lerma Esparza,\n\nNuestro sistema ha detectado actividad inusual en tu cuenta corporativa. Para mantener la s",
+      "descripcion": "Cuerpo anonimizado: reemplaza PII (correo, teléfono, RFC/CLABE) y desactiva URLs."
+    },
+    {
+      "nombre": "fecha",
+      "tipo": "number",
+      "nullable": true,
+      "ejemplo": null,
+      "descripcion": "Fecha del correo (si está disponible)."
+    },
+    {
+      "nombre": "conteo_urls",
+      "tipo": "integer",
+      "nullable": false,
+      "ejemplo": "1",
+      "descripcion": "Número de URLs detectadas en el correo."
+    },
+    {
+      "nombre": "urls_desactivadas",
+      "tipo": "string",
+      "nullable": false,
+      "ejemplo": "[hxxp://www[.]mail[.]allanbyer[.]com]",
+      "descripcion": "Lista de URLs desactivadas (defanged) en formato texto."
+    },
+    {
+      "nombre": "dirigido_a_persona_v2",
+      "tipo": "boolean",
+      "nullable": false,
+      "ejemplo": "True",
+      "descripcion": "Indicador de que el correo incluye saludo dirigido a una persona."
+    },
+    {
+      "nombre": "destinatario_detectado_v2",
+      "tipo": "string",
+      "nullable": true,
+      "ejemplo": "Luz Lerma Esparza",
+      "descripcion": "Nombre del destinatario detectado en el saludo (si aplica)."
+    },
+    {
+      "nombre": "destinatario_tiene_apellido_v2",
+      "tipo": "boolean",
+      "nullable": false,
+      "ejemplo": "True",
+      "descripcion": "Indicador de si el destinatario detectado incluye apellido."
+    },
+    {
+      "nombre": "destinatario_normalizado",
+      "tipo": "string",
+      "nullable": false,
+      "ejemplo": "Luz Lerma Esparza",
+      "descripcion": "Destinatario normalizado para análisis (puede incluir placeholders)."
+    },
+    {
+      "nombre": "conteo_adjuntos",
+      "tipo": "integer",
+      "nullable": false,
+      "ejemplo": "0",
+      "descripcion": "Cantidad de adjuntos (no disponible en este dataset; se deja en 0/NA)."
+    },
+    {
+      "nombre": "tipos_adjuntos",
+      "tipo": "number",
+      "nullable": true,
+      "ejemplo": null,
+      "descripcion": "Tipos/MIME de adjuntos (no disponible; NA)."
+    },
+    {
+      "nombre": "tamano_total_adjuntos",
+      "tipo": "integer",
+      "nullable": false,
+      "ejemplo": "0",
+      "descripcion": "Tamaño total de adjuntos (no disponible; 0/NA)."
+    },
+    {
+      "nombre": "tamanos_adjuntos",
+      "tipo": "number",
+      "nullable": true,
+      "ejemplo": null,
+      "descripcion": "Tamaños individuales de adjuntos (no disponible; NA)."
+    },
+    {
+      "nombre": "conteo_saltos",
+      "tipo": "number",
+      "nullable": true,
+      "ejemplo": null,
+      "descripcion": "Complejidad de ruteo (hops) (no disponible; NA)."
+    }
+  ]
+}
