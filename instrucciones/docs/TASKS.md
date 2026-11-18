@@ -190,9 +190,9 @@ Contar con un procedimiento de extracción de texto evaluado y documentado, adec
 
 # FASE 03 - Preprocesamiento e ingeniería de características
 
-**Estado:** Pendiente.
+**Estado:** En progreso. Corpus SpaPhish V5 preparado; revisión de candidatos similares pendiente antes de ML.
 
-**Rama de trabajo:** `fase/03-preprocesamiento`
+**Rama de trabajo actual:** `preparacion-datos`
 
 ## Objetivo
 
@@ -200,16 +200,20 @@ Definir cómo transformar los mensajes en características utilizables por Rando
 
 ## Actividades
 
-- [ ] Evaluar estrategias de limpieza textual.
+- [x] Definir preparación mínima del texto sin eliminar URL, números, dominios ni Unicode.
 - [ ] Analizar tokenización.
 - [ ] Evaluar normalización.
 - [ ] Analizar características TF-IDF.
 - [ ] Evaluar características adicionales.
 - [ ] Considerar URLs y dominios.
-- [ ] Analizar diferencias entre español e inglés.
-- [ ] Evitar pérdida de información relevante.
-- [ ] Diseñar pipeline de procesamiento.
-- [ ] Definir separación de datos.
+- [x] Delimitar el corpus inicial exclusivamente en español (SpaPhish V5).
+- [x] Evitar pérdida de información relevante en la preparación del corpus.
+- [x] Implementar un pipeline reproducible de preparación de datos.
+- [x] Definir separación preliminar 70/15/15 por grupos con semilla 42.
+- [x] Auditar y excluir identificadores, hashes y anotaciones psicológicas como predictores.
+- [x] Generar corpus, manifiesto y archivos de revisión de duplicados.
+- [ ] Resolver o aprobar los 325 pares similares pendientes; 142 cruzan particiones.
+- [ ] Congelar la partición definitiva después de la revisión de similitud.
 
 ## Entregables
 
@@ -221,6 +225,15 @@ Definir cómo transformar los mensajes en características utilizables por Rando
 ## Criterio de finalización
 
 Disponer de un pipeline reproducible para transformar los datos en características de entrenamiento.
+
+## Avance 03.1 - Preparación de SpaPhish V5
+
+- Se conservaron 1.395 de 1.395 registros; no se modificaron etiquetas ni el CSV original.
+- Se generaron 1.301 grupos; 47 contienen más de un registro y no hay conflictos de etiqueta dentro de grupos.
+- La partición preliminar contiene 977/208/210 registros en train/validación/prueba, sin compartir grupos.
+- SpearPhishMX permanece separado y no forma parte de `target`.
+- Evidencia: `notebooks/reports/spaphish_v5_preparation.md`, notebook, script, corpus y manifiesto.
+- Decisión pendiente: adjudicar o aprobar la política para 325 pares similares, especialmente los 142 que cruzan particiones, antes de iniciar ML.
 
 ---
 
@@ -403,7 +416,7 @@ Registrar al finalizar cada fase:
 | 01.6. Validación del corpus español | Completada; combinación directa no recomendada | validacion-dataset | `373c480` |
 | 01.7. Conflictos y decisión del corpus | Completada; estrategia pendiente de aprobación | analisis-conflictos-decision | `c6d2e71` |
 | 02. OCR | Completada con muestra limitada | exploracion-dataset-fernando | `850710c` |
-| 03. Preprocesamiento | Pendiente | fase/03-preprocesamiento | Pendiente |
+| 03. Preprocesamiento | En progreso; SpaPhish V5 preparado, similitud pendiente | preparacion-datos | Pendiente |
 | 04. Modelo ML | Pendiente | fase/04-modelo-random-forest | Pendiente |
 | 05. Backend | Pendiente | fase/05-backend | Pendiente |
 | 06. Frontend | Pendiente | fase/06-frontend | Pendiente |
