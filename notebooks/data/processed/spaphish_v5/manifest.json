@@ -1,0 +1,416 @@
+{
+  "dataset": {
+    "doi": "10.17632/hz2d6gz7pc.5",
+    "license": "CC BY 4.0",
+    "name": "SpaPhish",
+    "source_columns": 47,
+    "source_path": "notebooks/data/spanish-dataset/SpanishDataset.csv",
+    "source_records": 1395,
+    "source_sha256": "656b2245d58da72d640680e5c2a168673a130b38607f2a427c773bbb167e995e",
+    "version": 5
+  },
+  "duplicates_and_groups": {
+    "exact_normalized_groups": 0,
+    "exact_template_groups": 26,
+    "label_conflict_groups": 0,
+    "max_group_size": 10,
+    "multi_record_groups": 47,
+    "near_candidate_pairs_cosine_ge_0.90": 486,
+    "near_grouping_pairs_cosine_ge_0.95_same_subject": 121,
+    "near_pairs_cosine_ge_0.95": 154,
+    "pending_candidate_pairs": 325,
+    "pending_candidate_pairs_cross_split": 142,
+    "records_in_multi_record_groups": 141,
+    "total_groups": 1301
+  },
+  "feature_contract": {
+    "base_predictors": [
+      "text"
+    ],
+    "column_audit": [
+      {
+        "column": "hash",
+        "decision": "Usar solo en record_id y trazabilidad; excluir como predictor.",
+        "role": "identifier"
+      },
+      {
+        "column": "subject",
+        "decision": "Combinar en text preservando URL, números, dominios y Unicode.",
+        "role": "base_predictor_source"
+      },
+      {
+        "column": "body",
+        "decision": "Combinar en text preservando URL, números, dominios y Unicode.",
+        "role": "base_predictor_source"
+      },
+      {
+        "column": "date",
+        "decision": "Excluir del modelo base: posible señal temporal/fuente y 24 valores nulos.",
+        "role": "metadata_reserved"
+      },
+      {
+        "column": "url_count",
+        "decision": "Excluir del modelo textual base; evaluar después en una ablación controlada.",
+        "role": "technical_metadata_reserved"
+      },
+      {
+        "column": "urls",
+        "decision": "Excluir del modelo textual base; evaluar después en una ablación controlada.",
+        "role": "technical_metadata_reserved"
+      },
+      {
+        "column": "attachments_count",
+        "decision": "Excluir del modelo textual base; evaluar después en una ablación controlada.",
+        "role": "technical_metadata_reserved"
+      },
+      {
+        "column": "attachments_types",
+        "decision": "Excluir del modelo textual base; evaluar después en una ablación controlada.",
+        "role": "technical_metadata_reserved"
+      },
+      {
+        "column": "attachments_total_size",
+        "decision": "Excluir del modelo textual base; evaluar después en una ablación controlada.",
+        "role": "technical_metadata_reserved"
+      },
+      {
+        "column": "attachments_sizes",
+        "decision": "Excluir del modelo textual base; evaluar después en una ablación controlada.",
+        "role": "technical_metadata_reserved"
+      },
+      {
+        "column": "hops_count",
+        "decision": "Excluir del modelo textual base; evaluar después en una ablación controlada.",
+        "role": "technical_metadata_reserved"
+      },
+      {
+        "column": "Label",
+        "decision": "Mapear sin cambios a target; nunca usar como predictor.",
+        "role": "target"
+      },
+      {
+        "column": "authority_A",
+        "decision": "Excluir: anotación posterior a la lectura del mensaje y fuga del objetivo.",
+        "role": "psychological_annotation"
+      },
+      {
+        "column": "justif_authority_A",
+        "decision": "Excluir: anotación posterior a la lectura del mensaje y fuga del objetivo.",
+        "role": "psychological_annotation"
+      },
+      {
+        "column": "social_proof_A",
+        "decision": "Excluir: anotación posterior a la lectura del mensaje y fuga del objetivo.",
+        "role": "psychological_annotation"
+      },
+      {
+        "column": "justif_social_proof_A",
+        "decision": "Excluir: anotación posterior a la lectura del mensaje y fuga del objetivo.",
+        "role": "psychological_annotation"
+      },
+      {
+        "column": "liking_similarity_deception_A",
+        "decision": "Excluir: anotación posterior a la lectura del mensaje y fuga del objetivo.",
+        "role": "psychological_annotation"
+      },
+      {
+        "column": "justif_liking_similarity_deception_A",
+        "decision": "Excluir: anotación posterior a la lectura del mensaje y fuga del objetivo.",
+        "role": "psychological_annotation"
+      },
+      {
+        "column": "commitment_integrity_reciprocation_A",
+        "decision": "Excluir: anotación posterior a la lectura del mensaje y fuga del objetivo.",
+        "role": "psychological_annotation"
+      },
+      {
+        "column": "justif_commitment_integrity_reciprocation_A",
+        "decision": "Excluir: anotación posterior a la lectura del mensaje y fuga del objetivo.",
+        "role": "psychological_annotation"
+      },
+      {
+        "column": "distraction_A",
+        "decision": "Excluir: anotación posterior a la lectura del mensaje y fuga del objetivo.",
+        "role": "psychological_annotation"
+      },
+      {
+        "column": "justif_distraction_A",
+        "decision": "Excluir: anotación posterior a la lectura del mensaje y fuga del objetivo.",
+        "role": "psychological_annotation"
+      },
+      {
+        "column": "authority_B",
+        "decision": "Excluir: anotación posterior a la lectura del mensaje y fuga del objetivo.",
+        "role": "psychological_annotation"
+      },
+      {
+        "column": "justif_authority_B",
+        "decision": "Excluir: anotación posterior a la lectura del mensaje y fuga del objetivo.",
+        "role": "psychological_annotation"
+      },
+      {
+        "column": "social_proof_B",
+        "decision": "Excluir: anotación posterior a la lectura del mensaje y fuga del objetivo.",
+        "role": "psychological_annotation"
+      },
+      {
+        "column": "justif_social_proof_B",
+        "decision": "Excluir: anotación posterior a la lectura del mensaje y fuga del objetivo.",
+        "role": "psychological_annotation"
+      },
+      {
+        "column": "liking_similarity_deception_B",
+        "decision": "Excluir: anotación posterior a la lectura del mensaje y fuga del objetivo.",
+        "role": "psychological_annotation"
+      },
+      {
+        "column": "justif_liking_similarity_deception_B",
+        "decision": "Excluir: anotación posterior a la lectura del mensaje y fuga del objetivo.",
+        "role": "psychological_annotation"
+      },
+      {
+        "column": "commitment_integrity_reciprocation_B",
+        "decision": "Excluir: anotación posterior a la lectura del mensaje y fuga del objetivo.",
+        "role": "psychological_annotation"
+      },
+      {
+        "column": "justif_commitment_integrity_reciprocation_B",
+        "decision": "Excluir: anotación posterior a la lectura del mensaje y fuga del objetivo.",
+        "role": "psychological_annotation"
+      },
+      {
+        "column": "distraction_B",
+        "decision": "Excluir: anotación posterior a la lectura del mensaje y fuga del objetivo.",
+        "role": "psychological_annotation"
+      },
+      {
+        "column": "justif_distraction_B",
+        "decision": "Excluir: anotación posterior a la lectura del mensaje y fuga del objetivo.",
+        "role": "psychological_annotation"
+      },
+      {
+        "column": "authority_C",
+        "decision": "Excluir: anotación posterior a la lectura del mensaje y fuga del objetivo.",
+        "role": "psychological_annotation"
+      },
+      {
+        "column": "justif_authority_C",
+        "decision": "Excluir: anotación posterior a la lectura del mensaje y fuga del objetivo.",
+        "role": "psychological_annotation"
+      },
+      {
+        "column": "social_proof_C",
+        "decision": "Excluir: anotación posterior a la lectura del mensaje y fuga del objetivo.",
+        "role": "psychological_annotation"
+      },
+      {
+        "column": "justif_social_proof_C",
+        "decision": "Excluir: anotación posterior a la lectura del mensaje y fuga del objetivo.",
+        "role": "psychological_annotation"
+      },
+      {
+        "column": "liking_similarity_deception_C",
+        "decision": "Excluir: anotación posterior a la lectura del mensaje y fuga del objetivo.",
+        "role": "psychological_annotation"
+      },
+      {
+        "column": "justif_liking_similarity_deception_C",
+        "decision": "Excluir: anotación posterior a la lectura del mensaje y fuga del objetivo.",
+        "role": "psychological_annotation"
+      },
+      {
+        "column": "commitment_integrity_reciprocation_C",
+        "decision": "Excluir: anotación posterior a la lectura del mensaje y fuga del objetivo.",
+        "role": "psychological_annotation"
+      },
+      {
+        "column": "justif_commitment_integrity_reciprocation_C",
+        "decision": "Excluir: anotación posterior a la lectura del mensaje y fuga del objetivo.",
+        "role": "psychological_annotation"
+      },
+      {
+        "column": "distraction_C",
+        "decision": "Excluir: anotación posterior a la lectura del mensaje y fuga del objetivo.",
+        "role": "psychological_annotation"
+      },
+      {
+        "column": "justif_distraction_C",
+        "decision": "Excluir: anotación posterior a la lectura del mensaje y fuga del objetivo.",
+        "role": "psychological_annotation"
+      },
+      {
+        "column": "authority",
+        "decision": "Excluir: anotación posterior a la lectura del mensaje y fuga del objetivo.",
+        "role": "psychological_annotation"
+      },
+      {
+        "column": "social_proof",
+        "decision": "Excluir: anotación posterior a la lectura del mensaje y fuga del objetivo.",
+        "role": "psychological_annotation"
+      },
+      {
+        "column": "liking_similarity_deception",
+        "decision": "Excluir: anotación posterior a la lectura del mensaje y fuga del objetivo.",
+        "role": "psychological_annotation"
+      },
+      {
+        "column": "commitment_integrity_reciprocation",
+        "decision": "Excluir: anotación posterior a la lectura del mensaje y fuga del objetivo.",
+        "role": "psychological_annotation"
+      },
+      {
+        "column": "distraction",
+        "decision": "Excluir: anotación posterior a la lectura del mensaje y fuga del objetivo.",
+        "role": "psychological_annotation"
+      }
+    ],
+    "non_predictive_tracking": [
+      "text_original",
+      "language",
+      "source_dataset",
+      "record_id",
+      "group_id",
+      "split"
+    ],
+    "target": "target"
+  },
+  "labels": {
+    "by_split": {
+      "test": {
+        "groups": 199,
+        "proportion": 0.150538,
+        "records": 210,
+        "target_0": 99,
+        "target_1": 111
+      },
+      "train": {
+        "groups": 905,
+        "proportion": 0.700358,
+        "records": 977,
+        "target_0": 466,
+        "target_1": 511
+      },
+      "validation": {
+        "groups": 197,
+        "proportion": 0.149104,
+        "records": 208,
+        "target_0": 99,
+        "target_1": 109
+      }
+    },
+    "overall": {
+      "0": 664,
+      "1": 731
+    }
+  },
+  "limitations": [
+    "Los pares con coseno >= 0.90 que no cumplen la regla conservadora permanecen pendientes de revisión antes de ML.",
+    "La detección de plantillas es heurística; group_id evita fuga conocida, no prueba independencia semántica total.",
+    "Los 16 avisos conservadores de codificación se mantienen para no borrar posibles señales de ofuscación."
+  ],
+  "outputs": {
+    "corpus": "notebooks/data/processed/spaphish_v5/spaphish_v5_corpus.csv",
+    "corpus_sha256": "3e18a2e818536b0e07810822642736b6f0ae42e722a3a40057239bc3741596f5",
+    "exclusions": "notebooks/data/processed/spaphish_v5/exclusions.csv",
+    "exclusions_sha256": "4242005f72e5af56c1e150d98db1415cb039bd2a846ffb1e8b103a02a2ded6e6",
+    "group_review": "notebooks/data/processed/spaphish_v5/group_review.csv",
+    "group_review_sha256": "0e5016660c19429fde075d9f2d9e1a577e6c513fff73c37626cc3c4974ddf3f2",
+    "near_candidates": "notebooks/data/processed/spaphish_v5/near_duplicate_candidates.csv",
+    "near_candidates_sha256": "9bbe2fe53f57f1a6d4a77cce4fe70fc7a2f67b5aceb8af698ab23e27f5af21a3"
+  },
+  "partition": {
+    "actual": {
+      "test": {
+        "groups": 199,
+        "proportion": 0.150538,
+        "records": 210,
+        "target_0": 99,
+        "target_1": 111
+      },
+      "train": {
+        "groups": 905,
+        "proportion": 0.700358,
+        "records": 977,
+        "target_0": 466,
+        "target_1": 511
+      },
+      "validation": {
+        "groups": 197,
+        "proportion": 0.149104,
+        "records": 208,
+        "target_0": 99,
+        "target_1": 109
+      }
+    },
+    "fold_mapping": {
+      "test": [
+        17,
+        18,
+        19
+      ],
+      "train": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "validation": [
+        14,
+        15,
+        16
+      ]
+    },
+    "group_overlap_count": 0,
+    "method": "StratifiedGroupKFold de 20 folds; 14 train, 3 validation, 3 test",
+    "seed": 42,
+    "target_proportions": {
+      "test": 0.15,
+      "train": 0.7,
+      "validation": 0.15
+    }
+  },
+  "records": {
+    "conserved": 1395,
+    "encoding_warning_records_conserved": 16,
+    "excluded": 0,
+    "exclusion_reasons": {},
+    "missing_body": 0,
+    "missing_subject_conserved": 3,
+    "original": 1395
+  },
+  "reproducibility": {
+    "preparation_date": "2026-11-17",
+    "script": "notebooks/preparacion-datos/prepare_spaphish_v5.py",
+    "script_sha256": "940ba9706999a7bc1253f9f0303241529dbae8b81e39babf4f01d3766353b12e"
+  },
+  "schema": [
+    "text_original",
+    "text",
+    "target",
+    "language",
+    "source_dataset",
+    "record_id",
+    "group_id",
+    "split"
+  ],
+  "transformations": [
+    "Verificar SHA-256 y estructura SpaPhish V5.",
+    "Conservar text_original antes de la normalización mínima.",
+    "Sustituir asunto nulo por cadena vacía; conservar el cuerpo completo.",
+    "Normalizar solo finales de línea y espacios exteriores en text.",
+    "Combinar asunto y cuerpo con dos saltos de línea.",
+    "Preservar URL, dominios, números, signos, mayúsculas, acentos y caracteres Unicode.",
+    "Mapear Label sin cambios a target.",
+    "Asignar record_id desde el hash de origen y group_id antes de particionar."
+  ]
+}
