@@ -1,0 +1,572 @@
+{
+  "inputs": {
+    "spanish_phishing": "notebooks/data/spanish-dataset/SpanishDataset.csv",
+    "spear_phish_mx": "notebooks/data/spear-pish/SpearPhishMX_dataset_publico.csv"
+  },
+  "sha256": {
+    "spanish_phishing": "656b2245d58da72d640680e5c2a168673a130b38607f2a427c773bbb167e995e",
+    "spear_phish_mx": "038fdfeac20c554a66b1ef42b2044627b3d2f5692135ac444b8a9e8486444a5b"
+  },
+  "label_distribution": {
+    "spanish_phishing": {
+      "0": 664,
+      "1": 731
+    },
+    "spear_phish_mx": {
+      "0": 1115,
+      "1": 1891
+    }
+  },
+  "quality": {
+    "spanish_phishing": {
+      "records": 1395,
+      "invalid_labels": 0,
+      "empty_text": 0,
+      "missing_subject": 3,
+      "missing_body": 0,
+      "encoding_warning_records": 6,
+      "duplicate_text_records": 0,
+      "duplicate_hash_records": 0,
+      "preliminarily_conservable": 1389,
+      "pending_manual_review": 6,
+      "automatically_discarded": 0
+    },
+    "spear_phish_mx": {
+      "records": 3006,
+      "invalid_labels": 0,
+      "empty_text": 0,
+      "missing_subject": 2,
+      "missing_body": 0,
+      "encoding_warning_records": 16,
+      "duplicate_text_records": 4,
+      "duplicate_hash_records": 2,
+      "preliminarily_conservable": 2986,
+      "pending_manual_review": 20,
+      "automatically_discarded": 0
+    }
+  },
+  "duplicates": {
+    "spanish_phishing_exact_text": {
+      "groups": 0,
+      "records_in_groups": 0,
+      "surplus_records": 0,
+      "max_group_size": 0
+    },
+    "spear_phish_mx_exact_text": {
+      "groups": 2,
+      "records_in_groups": 4,
+      "surplus_records": 2,
+      "max_group_size": 2
+    },
+    "combined_exact_text": {
+      "groups": 2,
+      "records_in_groups": 4,
+      "surplus_records": 2,
+      "max_group_size": 2
+    },
+    "combined_template": {
+      "groups": 54,
+      "records_in_groups": 127,
+      "surplus_records": 73,
+      "max_group_size": 6
+    },
+    "cross_exact_text": {
+      "shared_groups": 0,
+      "spanish_phishing_records": 0,
+      "spear_phish_mx_records": 0
+    },
+    "cross_exact_template": {
+      "shared_groups": 7,
+      "spanish_phishing_records": 7,
+      "spear_phish_mx_records": 7
+    },
+    "near_cross_dataset": {
+      "method": "TF-IDF de caracteres (3-5) y similitud coseno; máximo vecino cruzado",
+      "vocabulary_size": 60000,
+      "best_similarity_distribution": {
+        "min": 0.101592,
+        "median": 0.842422,
+        "p90": 0.955222,
+        "p95": 0.968255,
+        "p99": 0.987544,
+        "max": 0.99801
+      },
+      "candidate_pair_counts_all_five_neighbors": {
+        "0.75": 2292,
+        "0.80": 1956,
+        "0.85": 1491,
+        "0.90": 837,
+        "0.95": 219
+      },
+      "best_match_threshold_summary": {
+        "0.75": {
+          "spanish_records_with_best_match": 954,
+          "same_label": 302,
+          "different_label": 652,
+          "label_pairs": {
+            "0->0": 280,
+            "0->1": 81,
+            "1->0": 571,
+            "1->1": 22
+          }
+        },
+        "0.80": {
+          "spanish_records_with_best_match": 840,
+          "same_label": 248,
+          "different_label": 592,
+          "label_pairs": {
+            "0->0": 229,
+            "0->1": 68,
+            "1->0": 524,
+            "1->1": 19
+          }
+        },
+        "0.85": {
+          "spanish_records_with_best_match": 669,
+          "same_label": 173,
+          "different_label": 496,
+          "label_pairs": {
+            "0->0": 159,
+            "0->1": 49,
+            "1->0": 447,
+            "1->1": 14
+          }
+        },
+        "0.90": {
+          "spanish_records_with_best_match": 465,
+          "same_label": 111,
+          "different_label": 354,
+          "label_pairs": {
+            "0->0": 103,
+            "0->1": 32,
+            "1->0": 322,
+            "1->1": 8
+          }
+        },
+        "0.95": {
+          "spanish_records_with_best_match": 175,
+          "same_label": 55,
+          "different_label": 120,
+          "label_pairs": {
+            "0->0": 52,
+            "0->1": 11,
+            "1->0": 109,
+            "1->1": 3
+          }
+        }
+      },
+      "top_pairs": [
+        {
+          "spanish_row": 179,
+          "spanish_target": 1,
+          "spear_row": 2042,
+          "spear_target": 0,
+          "similarity": 0.99801
+        },
+        {
+          "spanish_row": 1301,
+          "spanish_target": 0,
+          "spear_row": 2926,
+          "spear_target": 0,
+          "similarity": 0.997215
+        },
+        {
+          "spanish_row": 1356,
+          "spanish_target": 0,
+          "spear_row": 2969,
+          "spear_target": 0,
+          "similarity": 0.995461
+        },
+        {
+          "spanish_row": 629,
+          "spanish_target": 1,
+          "spear_row": 2410,
+          "spear_target": 0,
+          "similarity": 0.994117
+        },
+        {
+          "spanish_row": 1283,
+          "spanish_target": 0,
+          "spear_row": 2913,
+          "spear_target": 0,
+          "similarity": 0.993766
+        },
+        {
+          "spanish_row": 1328,
+          "spanish_target": 0,
+          "spear_row": 1867,
+          "spear_target": 1,
+          "similarity": 0.99373
+        },
+        {
+          "spanish_row": 984,
+          "spanish_target": 0,
+          "spear_row": 2702,
+          "spear_target": 0,
+          "similarity": 0.991993
+        },
+        {
+          "spanish_row": 1328,
+          "spanish_target": 0,
+          "spear_row": 2950,
+          "spear_target": 0,
+          "similarity": 0.991342
+        },
+        {
+          "spanish_row": 165,
+          "spanish_target": 1,
+          "spear_row": 2030,
+          "spear_target": 0,
+          "similarity": 0.990832
+        },
+        {
+          "spanish_row": 987,
+          "spanish_target": 0,
+          "spear_row": 2704,
+          "spear_target": 0,
+          "similarity": 0.990468
+        },
+        {
+          "spanish_row": 1069,
+          "spanish_target": 0,
+          "spear_row": 2772,
+          "spear_target": 0,
+          "similarity": 0.990461
+        },
+        {
+          "spanish_row": 1069,
+          "spanish_target": 0,
+          "spear_row": 1758,
+          "spear_target": 1,
+          "similarity": 0.990195
+        },
+        {
+          "spanish_row": 991,
+          "spanish_target": 0,
+          "spear_row": 2708,
+          "spear_target": 0,
+          "similarity": 0.989768
+        },
+        {
+          "spanish_row": 578,
+          "spanish_target": 1,
+          "spear_row": 2369,
+          "spear_target": 0,
+          "similarity": 0.989287
+        },
+        {
+          "spanish_row": 976,
+          "spanish_target": 0,
+          "spear_row": 2696,
+          "spear_target": 0,
+          "similarity": 0.988231
+        },
+        {
+          "spanish_row": 1063,
+          "spanish_target": 0,
+          "spear_row": 2768,
+          "spear_target": 0,
+          "similarity": 0.988196
+        },
+        {
+          "spanish_row": 603,
+          "spanish_target": 1,
+          "spear_row": 1648,
+          "spear_target": 1,
+          "similarity": 0.987503
+        },
+        {
+          "spanish_row": 1315,
+          "spanish_target": 0,
+          "spear_row": 1860,
+          "spear_target": 1,
+          "similarity": 0.987153
+        },
+        {
+          "spanish_row": 1360,
+          "spanish_target": 0,
+          "spear_row": 2973,
+          "spear_target": 0,
+          "similarity": 0.985232
+        },
+        {
+          "spanish_row": 530,
+          "spanish_target": 1,
+          "spear_row": 2384,
+          "spear_target": 0,
+          "similarity": 0.985122
+        }
+      ],
+      "top_conflicting_best_pairs": [
+        {
+          "spanish_row": 179,
+          "spanish_target": 1,
+          "spear_row": 2042,
+          "spear_target": 0,
+          "similarity": 0.99801
+        },
+        {
+          "spanish_row": 629,
+          "spanish_target": 1,
+          "spear_row": 2410,
+          "spear_target": 0,
+          "similarity": 0.994117
+        },
+        {
+          "spanish_row": 1328,
+          "spanish_target": 0,
+          "spear_row": 1867,
+          "spear_target": 1,
+          "similarity": 0.99373
+        },
+        {
+          "spanish_row": 165,
+          "spanish_target": 1,
+          "spear_row": 2030,
+          "spear_target": 0,
+          "similarity": 0.990832
+        },
+        {
+          "spanish_row": 578,
+          "spanish_target": 1,
+          "spear_row": 2369,
+          "spear_target": 0,
+          "similarity": 0.989287
+        },
+        {
+          "spanish_row": 1315,
+          "spanish_target": 0,
+          "spear_row": 1860,
+          "spear_target": 1,
+          "similarity": 0.987153
+        },
+        {
+          "spanish_row": 530,
+          "spanish_target": 1,
+          "spear_row": 2384,
+          "spear_target": 0,
+          "similarity": 0.985122
+        },
+        {
+          "spanish_row": 596,
+          "spanish_target": 1,
+          "spear_row": 2384,
+          "spear_target": 0,
+          "similarity": 0.985122
+        },
+        {
+          "spanish_row": 1351,
+          "spanish_target": 0,
+          "spear_row": 1875,
+          "spear_target": 1,
+          "similarity": 0.98437
+        },
+        {
+          "spanish_row": 453,
+          "spanish_target": 1,
+          "spear_row": 2262,
+          "spear_target": 0,
+          "similarity": 0.982519
+        },
+        {
+          "spanish_row": 445,
+          "spanish_target": 1,
+          "spear_row": 2254,
+          "spear_target": 0,
+          "similarity": 0.981045
+        },
+        {
+          "spanish_row": 992,
+          "spanish_target": 0,
+          "spear_row": 1730,
+          "spear_target": 1,
+          "similarity": 0.980668
+        },
+        {
+          "spanish_row": 258,
+          "spanish_target": 1,
+          "spear_row": 2101,
+          "spear_target": 0,
+          "similarity": 0.980095
+        },
+        {
+          "spanish_row": 552,
+          "spanish_target": 1,
+          "spear_row": 2345,
+          "spear_target": 0,
+          "similarity": 0.979883
+        },
+        {
+          "spanish_row": 303,
+          "spanish_target": 1,
+          "spear_row": 2136,
+          "spear_target": 0,
+          "similarity": 0.979077
+        },
+        {
+          "spanish_row": 377,
+          "spanish_target": 1,
+          "spear_row": 1931,
+          "spear_target": 0,
+          "similarity": 0.978939
+        },
+        {
+          "spanish_row": 742,
+          "spanish_target": 0,
+          "spear_row": 1659,
+          "spear_target": 1,
+          "similarity": 0.978606
+        },
+        {
+          "spanish_row": 1345,
+          "spanish_target": 0,
+          "spear_row": 1871,
+          "spear_target": 1,
+          "similarity": 0.978293
+        },
+        {
+          "spanish_row": 581,
+          "spanish_target": 1,
+          "spear_row": 2371,
+          "spear_target": 0,
+          "similarity": 0.978237
+        },
+        {
+          "spanish_row": 424,
+          "spanish_target": 1,
+          "spear_row": 2240,
+          "spear_target": 0,
+          "similarity": 0.977441
+        }
+      ]
+    }
+  },
+  "privacy_patterns": {
+    "spanish_phishing": {
+      "records_with_email_pattern": 334,
+      "records_with_phone_pattern": 532,
+      "records_with_active_url_pattern": 406,
+      "records_with_defanged_url_pattern": 0,
+      "note": "Los patrones son indicadores técnicos; no prueban que los datos sean reales ni identificables."
+    },
+    "spear_phish_mx": {
+      "records_with_email_pattern": 4,
+      "records_with_phone_pattern": 296,
+      "records_with_active_url_pattern": 2,
+      "records_with_defanged_url_pattern": 1955,
+      "note": "Los patrones son indicadores técnicos; no prueban que los datos sean reales ni identificables."
+    }
+  },
+  "potential_leakage": {
+    "spear_dirigido_a_persona_v2_by_target": {
+      "False": {
+        "0": 20,
+        "1": 266
+      },
+      "True": {
+        "0": 1095,
+        "1": 1625
+      }
+    },
+    "spanish_annotation_columns": 35,
+    "warning": "Campos de anotación o derivados posteriores a la lectura del mensaje no deben ser predictores del modelo base."
+  },
+  "representative_samples": {
+    "spanish_phishing": [
+      {
+        "source_row": 768,
+        "target": 0,
+        "length_quantile": 0.1,
+        "subject_excerpt_redacted": "Algoritmo arbol de decision",
+        "body_excerpt_redacted": "Camarada, ya le metí un update bueno al paper, incluida una nueva grafica en los experimentos que aporta más información sobre la ventaja del algoritmo. Despáchalo para donde estim…"
+      },
+      {
+        "source_row": 864,
+        "target": 0,
+        "length_quantile": 0.5,
+        "subject_excerpt_redacted": "Con la app Uber, puedes llegar a donde quieras",
+        "body_excerpt_redacted": "Toca en la app y relájate. Tu viaje está en camino. Viaja con menos estrés La app RápidoMóvil te ayuda a aprovechar el día. Solicita un viaje por encargo en cualquier momento. Soli…"
+      },
+      {
+        "source_row": 972,
+        "target": 0,
+        "length_quantile": 0.9,
+        "subject_excerpt_redacted": "Fwd: 🤖​ [Workshop] Te falta un clic para confirmar tu asistencia",
+        "body_excerpt_redacted": "Forwarded message --------- De: Javier Ríos <<EMAIL>> Date: jue, 15 nov 2024 a la(s) 11:30 a.m. Subject: 🤖 [Workshop] Te falta un clic para confirmar tu asistencia To: Daniel Soto …"
+      },
+      {
+        "source_row": 397,
+        "target": 1,
+        "length_quantile": 0.1,
+        "subject_excerpt_redacted": "Ezequiela Miguelina ! - 𝐓𝐢𝐞𝐧𝐞𝐬 (𝟏) 𝐍𝐮𝐞𝐯𝐨 𝐑𝐞𝐠𝐚𝐥𝐨 𝐝𝐞 𝐋𝐄𝐑𝐎𝐘 𝐌𝐄𝐑𝐋𝐈𝐍!! , ID#0758",
+        "body_excerpt_redacted": "Leroy Merlin ¡USTED ES NUESTRO GANADOR! Recompensa: Juego de herramientas Dexter, 108 piezas Pueden aplicarse costos de envío Número de cliente: #<TELEFONO> Haga clic aquí para par…"
+      },
+      {
+        "source_row": 156,
+        "target": 1,
+        "length_quantile": 0.5,
+        "subject_excerpt_redacted": ">>Ezequiela Miguelina!! - Tienes un (1) paquete en espera de entrega 📦. Usa tu código para rastrearlo y recibirlo ___🚚.",
+        "body_excerpt_redacted": "❒ ENTREGA DEL PAQUETE PENDIENTE ◉ Registro / Inicio de sesión ❒SEUR. <TELEFONO> SEGUIMIENTO ➢ Andrea López Tienes (1) paquete pendiente de entrega ---------------------------------…"
+      },
+      {
+        "source_row": 25,
+        "target": 1,
+        "length_quantile": 0.9,
+        "subject_excerpt_redacted": "ÚLTIMA ALERTA: ¡TODAS TUS FOTOS SERÁN BORRADAS!",
+        "body_excerpt_redacted": "iCloud ® No se pudo intentar realizar el pago al renovar su Suscripción de almacenamiento en la nube 0 GB 48.9GB /50 GB No pudimos renovar su almacenamiento de iCloud ¡Tus fotos y …"
+      }
+    ],
+    "spear_phish_mx": [
+      {
+        "source_row": 1925,
+        "target": 0,
+        "length_quantile": 0.1,
+        "subject_excerpt_redacted": "¿cómo fue su experiencia de compra?",
+        "body_excerpt_redacted": "Hola Teresa Rentería Mendoza, ¿Cómo le pareció? Gracias por comprar con Apple. Cuéntenos cómo fue su experiencia al hacer su pedido, incluso si todavía no lo ha recibido. ¡Responda…"
+      },
+      {
+        "source_row": 1927,
+        "target": 0,
+        "length_quantile": 0.5,
+        "subject_excerpt_redacted": "recordatorio !#O9o0u",
+        "body_excerpt_redacted": "Hola Sergio Zarate Hurtado, ﻿Aviso de Entrega PendienteAviso Importante: Pago Pendiente Estimado/a Cliente, Su paquete está listo para ser entregado, pero se encuentra retenido deb…"
+      },
+      {
+        "source_row": 2721,
+        "target": 0,
+        "length_quantile": 0.9,
+        "subject_excerpt_redacted": "Invitación a evento \"Métodos Ágiles para la Creación de Negocios\"",
+        "body_excerpt_redacted": "Hola Pablo Armenta Quiroz, 📣COMUNIDAD UNADISTA La Vicerrectoría de Servicios a Aspirantes, Estudiantes y Egresados VISAE, el Sistema de Bienestar Integral Unadista y Consejería Aca…"
+      },
+      {
+        "source_row": 782,
+        "target": 1,
+        "length_quantile": 0.1,
+        "subject_excerpt_redacted": "Actualización de Perfil de Riesgo",
+        "body_excerpt_redacted": "Estimado Rosa María Rodríguez Serrano,Su perfil de riesgo ha sido actualizado. Revise y acepte. Acceda al documento en: <URL_DESACTIVADA> Plazo: 29/09/2023 Riesgos"
+      },
+      {
+        "source_row": 565,
+        "target": 1,
+        "length_quantile": 0.5,
+        "subject_excerpt_redacted": "Problema con Credenciales de VPN",
+        "body_excerpt_redacted": "Hola Isidoro Laguna Castro, Sus credenciales de VPN presentan problemas de autenticación. Restablezca su acceso en: <URL_DESACTIVADA> Si no actúa en 4 horas horas, será suspendido.…"
+      },
+      {
+        "source_row": 4,
+        "target": 1,
+        "length_quantile": 0.9,
+        "subject_excerpt_redacted": "Implementación Inmediata: Nueva Política de Seguridad Informática 4.0",
+        "body_excerpt_redacted": "Estimada Martha Orozco De la Cruz, A partir del lunes 25 de noviembre 2024, entra en vigor la nueva Política de Seguridad Informática versión 4.0, aprobada por el Comité Ejecutivo …"
+      }
+    ]
+  },
+  "unified_schema": {
+    "text": "subject/asunto + salto de línea + body/cuerpo_sanitizado, con faltantes como cadena vacía",
+    "target": "int8: 0=legítimo, 1=phishing (en SpearPhishMX, spear-phishing)",
+    "language": "es",
+    "source_dataset": "spanish_phishing | spear_phish_mx",
+    "record_id": "prefijo de fuente + source_row + hash; no usar solo hash",
+    "group_id": "componente de duplicados exactos/plantillas; recalcular antes de particionar"
+  }
+}
