@@ -416,7 +416,7 @@ Registrar al finalizar cada fase:
 | 01.6. Validación del corpus español | Completada; combinación directa no recomendada | validacion-dataset | `373c480` |
 | 01.7. Conflictos y decisión del corpus | Completada; estrategia pendiente de aprobación | analisis-conflictos-decision | `c6d2e71` |
 | 02. OCR | Completada con muestra limitada | exploracion-dataset-fernando | `850710c` |
-| 03. Preprocesamiento | En progreso; SpaPhish V5 preparado, similitud pendiente | preparacion-datos | Pendiente |
+| 03. Preprocesamiento | En progreso; SpaPhish V5 preparado, similitud pendiente | preparacion-datos | `c7267b0`, `2b455f1` |
 | 04. Modelo ML | Pendiente | fase/04-modelo-random-forest | Pendiente |
 | 05. Backend | Pendiente | fase/05-backend | Pendiente |
 | 06. Frontend | Pendiente | fase/06-frontend | Pendiente |
